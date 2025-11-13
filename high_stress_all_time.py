@@ -7,10 +7,8 @@ Creates a composite view of von Mises stress evolution with threshold filters
 import numpy as np
 
 # Open the database
-OpenDatabase("localhost:/home/mungerct/research/alamo/output.scpsphereselastic.old.coarse_mesh3/celloutput.visit", 0)
-
-# Save session for crash recovery
-SaveSession("/home/mungerct/.visit/crash_recovery.695408.session")
+# OpenDatabase("localhost:/home/mungerct/research/alamo/output.scpsphereselastic.old.coarse_mesh3/celloutput.visit", 0)
+OpenDatabase("localhost:/home/mungerct/research/alamo/output.scpthermalsandwich.old.coarsemesh3/celloutput.visit", 0)
 
 # Define custom expression for von Mises stress (scaled by 1/10)
 DefineScalarExpression("stress_von_mesis", 
@@ -52,7 +50,7 @@ PhiAtts.min = 0
 PhiAtts.maxFlag = 1
 PhiAtts.max = 1
 PhiAtts.colorTableName = "gray"
-PhiAtts.invertColorTable = 0
+PhiAtts.invertColorTable = 1
 PhiAtts.legendFlag = 0
 PhiAtts.lightingFlag = 0
 SetPlotOptions(PhiAtts)

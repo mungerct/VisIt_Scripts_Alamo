@@ -3,9 +3,8 @@ ScriptVersion = "3.4.2"
 if ScriptVersion != Version():
     print "This script is for VisIt %s. It may not work with version %s" % (ScriptVersion, Version())
 ShowAllWindows()
-OpenDatabase("localhost:/home/mungerct/research/alamo/output.scpsphereselastic.old.coarse_mesh3/celloutput.visit", 0)
+OpenDatabase("localhost:/home/mungerct/research/alamo/output.scpthermalsandwich.old.coarsemesh3/celloutput.visit", 0)
 # The UpdateDBPluginInfo RPC is not supported in the VisIt module so it will not be logged.
-SaveSession("/home/mungerct/.visit/crash_recovery.695408.session")
 DefineScalarExpression("operators/ConnectedComponents/Mesh", "cell_constant(<Mesh>, 0.)")
 DefineCurveExpression("operators/DataBinning/1D/Mesh", "cell_constant(<Mesh>, 0)")
 DefineScalarExpression("operators/DataBinning/2D/Mesh", "cell_constant(<Mesh>, 0)")
@@ -701,7 +700,7 @@ PseudocolorAtts.useAboveMaxColor = 0
 PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
 PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
 PseudocolorAtts.colorTableName = "gray"
-PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.invertColorTable = 1
 PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
 PseudocolorAtts.opacityVariable = ""
 PseudocolorAtts.opacity = 1
@@ -2730,7 +2729,7 @@ ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(28)
 SetPlotFollowsTime()
-SetTimeSliderState(0)
+SetTimeSliderState(280)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
@@ -2793,15 +2792,15 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (10, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(29)
 SetPlotFollowsTime()
-SetTimeSliderState(10)
+SetTimeSliderState(290)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
@@ -2864,15 +2863,15 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (10, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(30)
 SetPlotFollowsTime()
-SetTimeSliderState(20)
+SetTimeSliderState(300)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
@@ -2935,15 +2934,15 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (10, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(31)
 SetPlotFollowsTime()
-SetTimeSliderState(30)
+SetTimeSliderState(310)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
@@ -3006,15 +3005,15 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (10, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(32)
 SetPlotFollowsTime()
-SetTimeSliderState(40)
+SetTimeSliderState(320)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
@@ -3077,15 +3076,15 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (10, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(33)
 SetPlotFollowsTime()
-SetTimeSliderState(50)
+SetTimeSliderState(330)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
@@ -3148,15 +3147,15 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (10, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(34)
 SetPlotFollowsTime()
-SetTimeSliderState(60)
+SetTimeSliderState(340)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
@@ -3219,15 +3218,15 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (10, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(35)
 SetPlotFollowsTime()
-SetTimeSliderState(70)
+SetTimeSliderState(350)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
@@ -3290,15 +3289,15 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (10, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(36)
 SetPlotFollowsTime()
-SetTimeSliderState(80)
+SetTimeSliderState(360)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
@@ -3361,15 +3360,15 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (10, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(37)
 SetPlotFollowsTime()
-SetTimeSliderState(90)
+SetTimeSliderState(370)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
@@ -3432,15 +3431,15 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (10, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(38)
 SetPlotFollowsTime()
-SetTimeSliderState(100)
+SetTimeSliderState(380)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
@@ -3503,15 +3502,15 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (10, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(39)
 SetPlotFollowsTime()
-SetTimeSliderState(110)
+SetTimeSliderState(390)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
@@ -3574,15 +3573,15 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (10, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(40)
 SetPlotFollowsTime()
-SetTimeSliderState(120)
+SetTimeSliderState(400)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
@@ -3645,15 +3644,15 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (10, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(41)
 SetPlotFollowsTime()
-SetTimeSliderState(130)
+SetTimeSliderState(410)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
@@ -3716,15 +3715,15 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (10, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(42)
 SetPlotFollowsTime()
-SetTimeSliderState(140)
+SetTimeSliderState(420)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
@@ -3787,15 +3786,15 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (10, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(43)
 SetPlotFollowsTime()
-SetTimeSliderState(150)
+SetTimeSliderState(430)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
@@ -3858,15 +3857,15 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (10, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(44)
 SetPlotFollowsTime()
-SetTimeSliderState(160)
+SetTimeSliderState(440)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
@@ -3929,15 +3928,15 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (10, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(45)
 SetPlotFollowsTime()
-SetTimeSliderState(170)
+SetTimeSliderState(450)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
@@ -4000,15 +3999,15 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (10, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(46)
 SetPlotFollowsTime()
-SetTimeSliderState(180)
+SetTimeSliderState(460)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
@@ -4071,15 +4070,15 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (10, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(47)
 SetPlotFollowsTime()
-SetTimeSliderState(190)
+SetTimeSliderState(470)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
@@ -4142,15 +4141,15 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (10, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(48)
 SetPlotFollowsTime()
-SetTimeSliderState(200)
+SetTimeSliderState(480)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
@@ -4213,15 +4212,15 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (10, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(49)
 SetPlotFollowsTime()
-SetTimeSliderState(210)
+SetTimeSliderState(490)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
@@ -4284,15 +4283,15 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (10, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(50)
 SetPlotFollowsTime()
-SetTimeSliderState(220)
+SetTimeSliderState(500)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
@@ -4355,15 +4354,15 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (10, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(51)
 SetPlotFollowsTime()
-SetTimeSliderState(230)
+SetTimeSliderState(510)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
@@ -4426,15 +4425,15 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (10, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(52)
 SetPlotFollowsTime()
-SetTimeSliderState(240)
+SetTimeSliderState(520)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
@@ -4497,15 +4496,15 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (10, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(53)
 SetPlotFollowsTime()
-SetTimeSliderState(250)
+SetTimeSliderState(530)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
@@ -4568,15 +4567,15 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (10, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(54)
 SetPlotFollowsTime()
-SetTimeSliderState(260)
+SetTimeSliderState(540)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
@@ -4639,15 +4638,15 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (10, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(55)
 SetPlotFollowsTime()
-SetTimeSliderState(270)
+SetTimeSliderState(0)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
@@ -4718,7 +4717,7 @@ ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(56)
 SetPlotFollowsTime()
-SetTimeSliderState(0)
+SetTimeSliderState(10)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
@@ -4781,14 +4780,3848 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (15, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(57)
 SetPlotFollowsTime()
+SetTimeSliderState(20)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(58)
+SetPlotFollowsTime()
+SetTimeSliderState(30)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(59)
+SetPlotFollowsTime()
+SetTimeSliderState(40)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(60)
+SetPlotFollowsTime()
+SetTimeSliderState(50)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(61)
+SetPlotFollowsTime()
+SetTimeSliderState(60)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(62)
+SetPlotFollowsTime()
+SetTimeSliderState(70)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(63)
+SetPlotFollowsTime()
+SetTimeSliderState(80)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(64)
+SetPlotFollowsTime()
+SetTimeSliderState(90)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(65)
+SetPlotFollowsTime()
+SetTimeSliderState(100)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(66)
+SetPlotFollowsTime()
+SetTimeSliderState(110)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(67)
+SetPlotFollowsTime()
+SetTimeSliderState(120)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(68)
+SetPlotFollowsTime()
+SetTimeSliderState(130)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(69)
+SetPlotFollowsTime()
+SetTimeSliderState(140)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(70)
+SetPlotFollowsTime()
+SetTimeSliderState(150)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(71)
+SetPlotFollowsTime()
+SetTimeSliderState(160)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(72)
+SetPlotFollowsTime()
+SetTimeSliderState(170)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(73)
+SetPlotFollowsTime()
+SetTimeSliderState(180)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(74)
+SetPlotFollowsTime()
+SetTimeSliderState(190)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(75)
+SetPlotFollowsTime()
+SetTimeSliderState(200)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(76)
+SetPlotFollowsTime()
+SetTimeSliderState(210)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(77)
+SetPlotFollowsTime()
+SetTimeSliderState(220)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(78)
+SetPlotFollowsTime()
+SetTimeSliderState(230)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(79)
+SetPlotFollowsTime()
+SetTimeSliderState(240)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(80)
+SetPlotFollowsTime()
+SetTimeSliderState(250)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(81)
+SetPlotFollowsTime()
+SetTimeSliderState(260)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(82)
+SetPlotFollowsTime()
+SetTimeSliderState(270)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(83)
+SetPlotFollowsTime()
+SetTimeSliderState(280)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(84)
+SetPlotFollowsTime()
+SetTimeSliderState(290)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(85)
+SetPlotFollowsTime()
+SetTimeSliderState(300)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(86)
+SetPlotFollowsTime()
+SetTimeSliderState(310)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(87)
+SetPlotFollowsTime()
+SetTimeSliderState(320)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(88)
+SetPlotFollowsTime()
+SetTimeSliderState(330)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(89)
+SetPlotFollowsTime()
+SetTimeSliderState(340)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(90)
+SetPlotFollowsTime()
+SetTimeSliderState(350)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(91)
+SetPlotFollowsTime()
+SetTimeSliderState(360)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(92)
+SetPlotFollowsTime()
+SetTimeSliderState(370)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(93)
+SetPlotFollowsTime()
+SetTimeSliderState(380)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(94)
+SetPlotFollowsTime()
+SetTimeSliderState(390)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(95)
+SetPlotFollowsTime()
+SetTimeSliderState(400)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(96)
+SetPlotFollowsTime()
+SetTimeSliderState(410)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(97)
+SetPlotFollowsTime()
+SetTimeSliderState(420)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(98)
+SetPlotFollowsTime()
+SetTimeSliderState(430)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(99)
+SetPlotFollowsTime()
+SetTimeSliderState(440)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(100)
+SetPlotFollowsTime()
+SetTimeSliderState(450)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(101)
+SetPlotFollowsTime()
+SetTimeSliderState(460)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(102)
+SetPlotFollowsTime()
+SetTimeSliderState(470)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(103)
+SetPlotFollowsTime()
+SetTimeSliderState(480)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(104)
+SetPlotFollowsTime()
+SetTimeSliderState(490)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(105)
+SetPlotFollowsTime()
+SetTimeSliderState(500)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(106)
+SetPlotFollowsTime()
+SetTimeSliderState(510)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(107)
+SetPlotFollowsTime()
+SetTimeSliderState(520)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(108)
+SetPlotFollowsTime()
+SetTimeSliderState(530)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(109)
+SetPlotFollowsTime()
+SetTimeSliderState(540)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(110)
+SetPlotFollowsTime()
+SetTimeSliderState(0)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(111)
+SetPlotFollowsTime()
 SetTimeSliderState(10)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
 PseudocolorAtts = PseudocolorAttributes()
@@ -4858,7 +8691,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(58)
+SetActivePlots(112)
 SetPlotFollowsTime()
 SetTimeSliderState(20)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -4929,7 +8762,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(59)
+SetActivePlots(113)
 SetPlotFollowsTime()
 SetTimeSliderState(30)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -5000,7 +8833,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(60)
+SetActivePlots(114)
 SetPlotFollowsTime()
 SetTimeSliderState(40)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -5071,7 +8904,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(61)
+SetActivePlots(115)
 SetPlotFollowsTime()
 SetTimeSliderState(50)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -5142,7 +8975,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(62)
+SetActivePlots(116)
 SetPlotFollowsTime()
 SetTimeSliderState(60)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -5213,7 +9046,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(63)
+SetActivePlots(117)
 SetPlotFollowsTime()
 SetTimeSliderState(70)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -5284,7 +9117,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(64)
+SetActivePlots(118)
 SetPlotFollowsTime()
 SetTimeSliderState(80)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -5355,7 +9188,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(65)
+SetActivePlots(119)
 SetPlotFollowsTime()
 SetTimeSliderState(90)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -5426,7 +9259,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(66)
+SetActivePlots(120)
 SetPlotFollowsTime()
 SetTimeSliderState(100)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -5497,7 +9330,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(67)
+SetActivePlots(121)
 SetPlotFollowsTime()
 SetTimeSliderState(110)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -5568,7 +9401,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(68)
+SetActivePlots(122)
 SetPlotFollowsTime()
 SetTimeSliderState(120)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -5639,7 +9472,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(69)
+SetActivePlots(123)
 SetPlotFollowsTime()
 SetTimeSliderState(130)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -5710,7 +9543,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(70)
+SetActivePlots(124)
 SetPlotFollowsTime()
 SetTimeSliderState(140)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -5781,7 +9614,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(71)
+SetActivePlots(125)
 SetPlotFollowsTime()
 SetTimeSliderState(150)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -5852,7 +9685,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(72)
+SetActivePlots(126)
 SetPlotFollowsTime()
 SetTimeSliderState(160)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -5923,7 +9756,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(73)
+SetActivePlots(127)
 SetPlotFollowsTime()
 SetTimeSliderState(170)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -5994,7 +9827,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(74)
+SetActivePlots(128)
 SetPlotFollowsTime()
 SetTimeSliderState(180)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -6065,7 +9898,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(75)
+SetActivePlots(129)
 SetPlotFollowsTime()
 SetTimeSliderState(190)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -6136,7 +9969,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(76)
+SetActivePlots(130)
 SetPlotFollowsTime()
 SetTimeSliderState(200)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -6207,7 +10040,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(77)
+SetActivePlots(131)
 SetPlotFollowsTime()
 SetTimeSliderState(210)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -6278,7 +10111,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(78)
+SetActivePlots(132)
 SetPlotFollowsTime()
 SetTimeSliderState(220)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -6349,7 +10182,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(79)
+SetActivePlots(133)
 SetPlotFollowsTime()
 SetTimeSliderState(230)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -6420,7 +10253,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(80)
+SetActivePlots(134)
 SetPlotFollowsTime()
 SetTimeSliderState(240)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -6491,7 +10324,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(81)
+SetActivePlots(135)
 SetPlotFollowsTime()
 SetTimeSliderState(250)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -6562,7 +10395,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(82)
+SetActivePlots(136)
 SetPlotFollowsTime()
 SetTimeSliderState(260)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -6633,7 +10466,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(83)
+SetActivePlots(137)
 SetPlotFollowsTime()
 SetTimeSliderState(270)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -6704,7 +10537,1924 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(84)
+SetActivePlots(138)
+SetPlotFollowsTime()
+SetTimeSliderState(280)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(139)
+SetPlotFollowsTime()
+SetTimeSliderState(290)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(140)
+SetPlotFollowsTime()
+SetTimeSliderState(300)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(141)
+SetPlotFollowsTime()
+SetTimeSliderState(310)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(142)
+SetPlotFollowsTime()
+SetTimeSliderState(320)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(143)
+SetPlotFollowsTime()
+SetTimeSliderState(330)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(144)
+SetPlotFollowsTime()
+SetTimeSliderState(340)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(145)
+SetPlotFollowsTime()
+SetTimeSliderState(350)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(146)
+SetPlotFollowsTime()
+SetTimeSliderState(360)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(147)
+SetPlotFollowsTime()
+SetTimeSliderState(370)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(148)
+SetPlotFollowsTime()
+SetTimeSliderState(380)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(149)
+SetPlotFollowsTime()
+SetTimeSliderState(390)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(150)
+SetPlotFollowsTime()
+SetTimeSliderState(400)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(151)
+SetPlotFollowsTime()
+SetTimeSliderState(410)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(152)
+SetPlotFollowsTime()
+SetTimeSliderState(420)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(153)
+SetPlotFollowsTime()
+SetTimeSliderState(430)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(154)
+SetPlotFollowsTime()
+SetTimeSliderState(440)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(155)
+SetPlotFollowsTime()
+SetTimeSliderState(450)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(156)
+SetPlotFollowsTime()
+SetTimeSliderState(460)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(157)
+SetPlotFollowsTime()
+SetTimeSliderState(470)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(158)
+SetPlotFollowsTime()
+SetTimeSliderState(480)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(159)
+SetPlotFollowsTime()
+SetTimeSliderState(490)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(160)
+SetPlotFollowsTime()
+SetTimeSliderState(500)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(161)
+SetPlotFollowsTime()
+SetTimeSliderState(510)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(162)
+SetPlotFollowsTime()
+SetTimeSliderState(520)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(163)
+SetPlotFollowsTime()
+SetTimeSliderState(530)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(164)
+SetPlotFollowsTime()
+SetTimeSliderState(540)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(165)
 SetPlotFollowsTime()
 SetTimeSliderState(0)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -6775,7 +12525,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(85)
+SetActivePlots(166)
 SetPlotFollowsTime()
 SetTimeSliderState(10)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -6846,7 +12596,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(86)
+SetActivePlots(167)
 SetPlotFollowsTime()
 SetTimeSliderState(20)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -6917,7 +12667,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(87)
+SetActivePlots(168)
 SetPlotFollowsTime()
 SetTimeSliderState(30)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -6988,7 +12738,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(88)
+SetActivePlots(169)
 SetPlotFollowsTime()
 SetTimeSliderState(40)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -7059,7 +12809,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(89)
+SetActivePlots(170)
 SetPlotFollowsTime()
 SetTimeSliderState(50)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -7130,7 +12880,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(90)
+SetActivePlots(171)
 SetPlotFollowsTime()
 SetTimeSliderState(60)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -7201,7 +12951,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(91)
+SetActivePlots(172)
 SetPlotFollowsTime()
 SetTimeSliderState(70)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -7272,7 +13022,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(92)
+SetActivePlots(173)
 SetPlotFollowsTime()
 SetTimeSliderState(80)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -7343,7 +13093,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(93)
+SetActivePlots(174)
 SetPlotFollowsTime()
 SetTimeSliderState(90)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -7414,7 +13164,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(94)
+SetActivePlots(175)
 SetPlotFollowsTime()
 SetTimeSliderState(100)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -7485,7 +13235,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(95)
+SetActivePlots(176)
 SetPlotFollowsTime()
 SetTimeSliderState(110)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -7556,7 +13306,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(96)
+SetActivePlots(177)
 SetPlotFollowsTime()
 SetTimeSliderState(120)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -7627,7 +13377,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(97)
+SetActivePlots(178)
 SetPlotFollowsTime()
 SetTimeSliderState(130)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -7698,7 +13448,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(98)
+SetActivePlots(179)
 SetPlotFollowsTime()
 SetTimeSliderState(140)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -7769,7 +13519,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(99)
+SetActivePlots(180)
 SetPlotFollowsTime()
 SetTimeSliderState(150)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -7840,7 +13590,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(100)
+SetActivePlots(181)
 SetPlotFollowsTime()
 SetTimeSliderState(160)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -7911,7 +13661,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(101)
+SetActivePlots(182)
 SetPlotFollowsTime()
 SetTimeSliderState(170)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -7982,7 +13732,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(102)
+SetActivePlots(183)
 SetPlotFollowsTime()
 SetTimeSliderState(180)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -8053,7 +13803,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(103)
+SetActivePlots(184)
 SetPlotFollowsTime()
 SetTimeSliderState(190)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -8124,7 +13874,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(104)
+SetActivePlots(185)
 SetPlotFollowsTime()
 SetTimeSliderState(200)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -8195,7 +13945,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(105)
+SetActivePlots(186)
 SetPlotFollowsTime()
 SetTimeSliderState(210)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -8266,7 +14016,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(106)
+SetActivePlots(187)
 SetPlotFollowsTime()
 SetTimeSliderState(220)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -8337,7 +14087,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(107)
+SetActivePlots(188)
 SetPlotFollowsTime()
 SetTimeSliderState(230)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -8408,7 +14158,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(108)
+SetActivePlots(189)
 SetPlotFollowsTime()
 SetTimeSliderState(240)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -8479,7 +14229,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(109)
+SetActivePlots(190)
 SetPlotFollowsTime()
 SetTimeSliderState(250)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -8550,7 +14300,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(110)
+SetActivePlots(191)
 SetPlotFollowsTime()
 SetTimeSliderState(260)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -8621,7 +14371,7 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(111)
+SetActivePlots(192)
 SetPlotFollowsTime()
 SetTimeSliderState(270)
 AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
@@ -8692,7 +14442,1924 @@ ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
 ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
-SetActivePlots(112)
+SetActivePlots(193)
+SetPlotFollowsTime()
+SetTimeSliderState(280)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (25, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(194)
+SetPlotFollowsTime()
+SetTimeSliderState(290)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (25, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(195)
+SetPlotFollowsTime()
+SetTimeSliderState(300)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (25, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(196)
+SetPlotFollowsTime()
+SetTimeSliderState(310)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (25, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(197)
+SetPlotFollowsTime()
+SetTimeSliderState(320)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (25, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(198)
+SetPlotFollowsTime()
+SetTimeSliderState(330)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (25, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(199)
+SetPlotFollowsTime()
+SetTimeSliderState(340)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (25, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(200)
+SetPlotFollowsTime()
+SetTimeSliderState(350)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (25, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(201)
+SetPlotFollowsTime()
+SetTimeSliderState(360)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (25, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(202)
+SetPlotFollowsTime()
+SetTimeSliderState(370)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (25, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(203)
+SetPlotFollowsTime()
+SetTimeSliderState(380)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (25, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(204)
+SetPlotFollowsTime()
+SetTimeSliderState(390)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (25, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(205)
+SetPlotFollowsTime()
+SetTimeSliderState(400)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (25, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(206)
+SetPlotFollowsTime()
+SetTimeSliderState(410)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (25, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(207)
+SetPlotFollowsTime()
+SetTimeSliderState(420)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (25, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(208)
+SetPlotFollowsTime()
+SetTimeSliderState(430)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (25, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(209)
+SetPlotFollowsTime()
+SetTimeSliderState(440)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (25, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(210)
+SetPlotFollowsTime()
+SetTimeSliderState(450)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (25, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(211)
+SetPlotFollowsTime()
+SetTimeSliderState(460)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (25, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(212)
+SetPlotFollowsTime()
+SetTimeSliderState(470)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (25, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(213)
+SetPlotFollowsTime()
+SetTimeSliderState(480)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (25, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(214)
+SetPlotFollowsTime()
+SetTimeSliderState(490)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (25, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(215)
+SetPlotFollowsTime()
+SetTimeSliderState(500)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (25, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(216)
+SetPlotFollowsTime()
+SetTimeSliderState(510)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (25, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(217)
+SetPlotFollowsTime()
+SetTimeSliderState(520)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (25, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(218)
+SetPlotFollowsTime()
+SetTimeSliderState(530)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (25, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(219)
+SetPlotFollowsTime()
+SetTimeSliderState(540)
+AddPlot("Pseudocolor", "stress_von_mesis", 1, 1)
+PseudocolorAtts = PseudocolorAttributes()
+PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
+PseudocolorAtts.skewFactor = 1
+PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
+PseudocolorAtts.minFlag = 1
+PseudocolorAtts.min = 0
+PseudocolorAtts.useBelowMinColor = 0
+PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
+PseudocolorAtts.maxFlag = 1
+PseudocolorAtts.max = 25
+PseudocolorAtts.useAboveMaxColor = 0
+PseudocolorAtts.aboveMaxColor = (0, 0, 0, 255)
+PseudocolorAtts.centering = PseudocolorAtts.Natural  # Natural, Nodal, Zonal
+PseudocolorAtts.colorTableName = "Default"
+PseudocolorAtts.invertColorTable = 0
+PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque  # ColorTable, FullyOpaque, Constant, Ramp, VariableRange
+PseudocolorAtts.opacityVariable = ""
+PseudocolorAtts.opacity = 1
+PseudocolorAtts.opacityVarMin = 0
+PseudocolorAtts.opacityVarMax = 1
+PseudocolorAtts.opacityVarMinFlag = 0
+PseudocolorAtts.opacityVarMaxFlag = 0
+PseudocolorAtts.pointSize = 0.05
+PseudocolorAtts.pointType = PseudocolorAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+PseudocolorAtts.pointSizeVarEnabled = 0
+PseudocolorAtts.pointSizeVar = "default"
+PseudocolorAtts.pointSizePixels = 2
+PseudocolorAtts.lineType = PseudocolorAtts.Line  # Line, Tube, Ribbon
+PseudocolorAtts.lineWidth = 0
+PseudocolorAtts.tubeResolution = 10
+PseudocolorAtts.tubeRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.tubeRadiusAbsolute = 0.125
+PseudocolorAtts.tubeRadiusBBox = 0.005
+PseudocolorAtts.tubeRadiusVarEnabled = 0
+PseudocolorAtts.tubeRadiusVar = ""
+PseudocolorAtts.tubeRadiusVarRatio = 10
+PseudocolorAtts.tailStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.headStyle = PseudocolorAtts.NONE  # NONE, Spheres, Cones
+PseudocolorAtts.endPointRadiusSizeType = PseudocolorAtts.FractionOfBBox  # Absolute, FractionOfBBox
+PseudocolorAtts.endPointRadiusAbsolute = 0.125
+PseudocolorAtts.endPointRadiusBBox = 0.05
+PseudocolorAtts.endPointResolution = 10
+PseudocolorAtts.endPointRatio = 5
+PseudocolorAtts.endPointRadiusVarEnabled = 0
+PseudocolorAtts.endPointRadiusVar = ""
+PseudocolorAtts.endPointRadiusVarRatio = 10
+PseudocolorAtts.renderSurfaces = 1
+PseudocolorAtts.renderWireframe = 0
+PseudocolorAtts.renderPoints = 0
+PseudocolorAtts.smoothingLevel = 0
+PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.lightingFlag = 0
+PseudocolorAtts.wireframeColor = (0, 0, 0, 0)
+PseudocolorAtts.pointColor = (0, 0, 0, 0)
+SetPlotOptions(PseudocolorAtts)
+AddOperator("Threshold", 1)
+ThresholdAtts = ThresholdAttributes()
+ThresholdAtts.outputMeshType = 0
+ThresholdAtts.boundsInputType = 0
+ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
+ThresholdAtts.zonePortions = (1, 1)
+ThresholdAtts.lowerBounds = (25, 0.5)
+ThresholdAtts.upperBounds = (1e+37, 1e+37)
+ThresholdAtts.defaultVarName = "stress_von_mesis"
+ThresholdAtts.defaultVarIsScalar = 1
+ThresholdAtts.boundsRange = ("25.0:1e+37", "0.5:1e+37")
+SetOperatorOptions(ThresholdAtts, 0, 1)
+SetActivePlots(220)
 SetPlotFollowsTime()
 DrawPlots()
 SaveWindowAtts = SaveWindowAttributes()
