@@ -28,3 +28,4 @@ This Python script automates the visualization of von Mises stress evolution acr
 - num_levels = 4             # Number of "levels" of the stress that are plotted, more levels will increase fidelity of output
 - min_stress_thres = 10      # Minimum stress threshold
 - max_stress_thres = 25      # Maximum stress threshold
+- invert_phi = 0 # Boolean to invert phi colormap
