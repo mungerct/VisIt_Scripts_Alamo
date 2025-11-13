@@ -804,11 +804,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(1)
 SetPlotFollowsTime()
@@ -875,11 +875,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(2)
 SetPlotFollowsTime()
@@ -946,11 +946,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(3)
 SetPlotFollowsTime()
@@ -1017,11 +1017,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(4)
 SetPlotFollowsTime()
@@ -1088,11 +1088,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(5)
 SetPlotFollowsTime()
@@ -1159,11 +1159,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(6)
 SetPlotFollowsTime()
@@ -1230,11 +1230,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(7)
 SetPlotFollowsTime()
@@ -1301,11 +1301,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(8)
 SetPlotFollowsTime()
@@ -1372,11 +1372,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(9)
 SetPlotFollowsTime()
@@ -1443,11 +1443,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(10)
 SetPlotFollowsTime()
@@ -1514,11 +1514,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(11)
 SetPlotFollowsTime()
@@ -1585,11 +1585,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(12)
 SetPlotFollowsTime()
@@ -1656,11 +1656,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(13)
 SetPlotFollowsTime()
@@ -1727,11 +1727,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(14)
 SetPlotFollowsTime()
@@ -1798,11 +1798,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(15)
 SetPlotFollowsTime()
@@ -1869,11 +1869,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(16)
 SetPlotFollowsTime()
@@ -1940,11 +1940,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(17)
 SetPlotFollowsTime()
@@ -2011,11 +2011,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(18)
 SetPlotFollowsTime()
@@ -2082,11 +2082,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(19)
 SetPlotFollowsTime()
@@ -2153,11 +2153,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(20)
 SetPlotFollowsTime()
@@ -2224,11 +2224,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(21)
 SetPlotFollowsTime()
@@ -2295,11 +2295,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(22)
 SetPlotFollowsTime()
@@ -2366,11 +2366,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(23)
 SetPlotFollowsTime()
@@ -2437,11 +2437,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(24)
 SetPlotFollowsTime()
@@ -2508,11 +2508,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(25)
 SetPlotFollowsTime()
@@ -2579,11 +2579,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(26)
 SetPlotFollowsTime()
@@ -2650,11 +2650,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(27)
 SetPlotFollowsTime()
@@ -2721,11 +2721,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(28)
 SetPlotFollowsTime()
@@ -2792,11 +2792,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(29)
 SetPlotFollowsTime()
@@ -2863,11 +2863,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(30)
 SetPlotFollowsTime()
@@ -2934,11 +2934,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(31)
 SetPlotFollowsTime()
@@ -3005,11 +3005,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(32)
 SetPlotFollowsTime()
@@ -3076,11 +3076,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(33)
 SetPlotFollowsTime()
@@ -3147,11 +3147,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(34)
 SetPlotFollowsTime()
@@ -3218,11 +3218,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(35)
 SetPlotFollowsTime()
@@ -3289,11 +3289,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(36)
 SetPlotFollowsTime()
@@ -3360,11 +3360,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(37)
 SetPlotFollowsTime()
@@ -3431,11 +3431,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(38)
 SetPlotFollowsTime()
@@ -3502,11 +3502,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(39)
 SetPlotFollowsTime()
@@ -3573,11 +3573,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(40)
 SetPlotFollowsTime()
@@ -3644,11 +3644,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(41)
 SetPlotFollowsTime()
@@ -3715,11 +3715,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(42)
 SetPlotFollowsTime()
@@ -3786,11 +3786,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(43)
 SetPlotFollowsTime()
@@ -3857,11 +3857,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(44)
 SetPlotFollowsTime()
@@ -3928,11 +3928,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(45)
 SetPlotFollowsTime()
@@ -3999,11 +3999,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(46)
 SetPlotFollowsTime()
@@ -4070,11 +4070,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(47)
 SetPlotFollowsTime()
@@ -4141,11 +4141,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(48)
 SetPlotFollowsTime()
@@ -4212,11 +4212,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(49)
 SetPlotFollowsTime()
@@ -4283,11 +4283,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(50)
 SetPlotFollowsTime()
@@ -4354,11 +4354,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(51)
 SetPlotFollowsTime()
@@ -4425,11 +4425,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(52)
 SetPlotFollowsTime()
@@ -4496,11 +4496,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(53)
 SetPlotFollowsTime()
@@ -4567,11 +4567,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(54)
 SetPlotFollowsTime()
@@ -4638,11 +4638,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (10, 0.5)
+ThresholdAtts.lowerBounds = (12.5, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("10.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("12.5:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(55)
 SetPlotFollowsTime()
@@ -4709,11 +4709,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(56)
 SetPlotFollowsTime()
@@ -4780,11 +4780,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(57)
 SetPlotFollowsTime()
@@ -4851,11 +4851,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(58)
 SetPlotFollowsTime()
@@ -4922,11 +4922,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(59)
 SetPlotFollowsTime()
@@ -4993,11 +4993,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(60)
 SetPlotFollowsTime()
@@ -5064,11 +5064,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(61)
 SetPlotFollowsTime()
@@ -5135,11 +5135,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(62)
 SetPlotFollowsTime()
@@ -5206,11 +5206,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(63)
 SetPlotFollowsTime()
@@ -5277,11 +5277,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(64)
 SetPlotFollowsTime()
@@ -5348,11 +5348,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(65)
 SetPlotFollowsTime()
@@ -5419,11 +5419,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(66)
 SetPlotFollowsTime()
@@ -5490,11 +5490,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(67)
 SetPlotFollowsTime()
@@ -5561,11 +5561,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(68)
 SetPlotFollowsTime()
@@ -5632,11 +5632,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(69)
 SetPlotFollowsTime()
@@ -5703,11 +5703,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(70)
 SetPlotFollowsTime()
@@ -5774,11 +5774,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(71)
 SetPlotFollowsTime()
@@ -5845,11 +5845,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(72)
 SetPlotFollowsTime()
@@ -5916,11 +5916,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(73)
 SetPlotFollowsTime()
@@ -5987,11 +5987,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(74)
 SetPlotFollowsTime()
@@ -6058,11 +6058,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(75)
 SetPlotFollowsTime()
@@ -6129,11 +6129,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(76)
 SetPlotFollowsTime()
@@ -6200,11 +6200,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(77)
 SetPlotFollowsTime()
@@ -6271,11 +6271,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(78)
 SetPlotFollowsTime()
@@ -6342,11 +6342,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(79)
 SetPlotFollowsTime()
@@ -6413,11 +6413,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(80)
 SetPlotFollowsTime()
@@ -6484,11 +6484,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(81)
 SetPlotFollowsTime()
@@ -6555,11 +6555,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(82)
 SetPlotFollowsTime()
@@ -6626,11 +6626,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(83)
 SetPlotFollowsTime()
@@ -6697,11 +6697,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(84)
 SetPlotFollowsTime()
@@ -6768,11 +6768,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(85)
 SetPlotFollowsTime()
@@ -6839,11 +6839,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(86)
 SetPlotFollowsTime()
@@ -6910,11 +6910,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(87)
 SetPlotFollowsTime()
@@ -6981,11 +6981,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(88)
 SetPlotFollowsTime()
@@ -7052,11 +7052,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(89)
 SetPlotFollowsTime()
@@ -7123,11 +7123,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(90)
 SetPlotFollowsTime()
@@ -7194,11 +7194,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(91)
 SetPlotFollowsTime()
@@ -7265,11 +7265,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(92)
 SetPlotFollowsTime()
@@ -7336,11 +7336,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(93)
 SetPlotFollowsTime()
@@ -7407,11 +7407,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(94)
 SetPlotFollowsTime()
@@ -7478,11 +7478,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(95)
 SetPlotFollowsTime()
@@ -7549,11 +7549,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(96)
 SetPlotFollowsTime()
@@ -7620,11 +7620,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(97)
 SetPlotFollowsTime()
@@ -7691,11 +7691,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(98)
 SetPlotFollowsTime()
@@ -7762,11 +7762,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(99)
 SetPlotFollowsTime()
@@ -7833,11 +7833,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(100)
 SetPlotFollowsTime()
@@ -7904,11 +7904,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(101)
 SetPlotFollowsTime()
@@ -7975,11 +7975,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(102)
 SetPlotFollowsTime()
@@ -8046,11 +8046,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(103)
 SetPlotFollowsTime()
@@ -8117,11 +8117,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(104)
 SetPlotFollowsTime()
@@ -8188,11 +8188,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(105)
 SetPlotFollowsTime()
@@ -8259,11 +8259,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(106)
 SetPlotFollowsTime()
@@ -8330,11 +8330,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(107)
 SetPlotFollowsTime()
@@ -8401,11 +8401,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(108)
 SetPlotFollowsTime()
@@ -8472,11 +8472,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(109)
 SetPlotFollowsTime()
@@ -8543,11 +8543,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (15, 0.5)
+ThresholdAtts.lowerBounds = (16.6667, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("15.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("16.666666666666668:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(110)
 SetPlotFollowsTime()
@@ -8614,11 +8614,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(111)
 SetPlotFollowsTime()
@@ -8685,11 +8685,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(112)
 SetPlotFollowsTime()
@@ -8756,11 +8756,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(113)
 SetPlotFollowsTime()
@@ -8827,11 +8827,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(114)
 SetPlotFollowsTime()
@@ -8898,11 +8898,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(115)
 SetPlotFollowsTime()
@@ -8969,11 +8969,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(116)
 SetPlotFollowsTime()
@@ -9040,11 +9040,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(117)
 SetPlotFollowsTime()
@@ -9111,11 +9111,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(118)
 SetPlotFollowsTime()
@@ -9182,11 +9182,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(119)
 SetPlotFollowsTime()
@@ -9253,11 +9253,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(120)
 SetPlotFollowsTime()
@@ -9324,11 +9324,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(121)
 SetPlotFollowsTime()
@@ -9395,11 +9395,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(122)
 SetPlotFollowsTime()
@@ -9466,11 +9466,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(123)
 SetPlotFollowsTime()
@@ -9537,11 +9537,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(124)
 SetPlotFollowsTime()
@@ -9608,11 +9608,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(125)
 SetPlotFollowsTime()
@@ -9679,11 +9679,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(126)
 SetPlotFollowsTime()
@@ -9750,11 +9750,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(127)
 SetPlotFollowsTime()
@@ -9821,11 +9821,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(128)
 SetPlotFollowsTime()
@@ -9892,11 +9892,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(129)
 SetPlotFollowsTime()
@@ -9963,11 +9963,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(130)
 SetPlotFollowsTime()
@@ -10034,11 +10034,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(131)
 SetPlotFollowsTime()
@@ -10105,11 +10105,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(132)
 SetPlotFollowsTime()
@@ -10176,11 +10176,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(133)
 SetPlotFollowsTime()
@@ -10247,11 +10247,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(134)
 SetPlotFollowsTime()
@@ -10318,11 +10318,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(135)
 SetPlotFollowsTime()
@@ -10389,11 +10389,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(136)
 SetPlotFollowsTime()
@@ -10460,11 +10460,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(137)
 SetPlotFollowsTime()
@@ -10531,11 +10531,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(138)
 SetPlotFollowsTime()
@@ -10602,11 +10602,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(139)
 SetPlotFollowsTime()
@@ -10673,11 +10673,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(140)
 SetPlotFollowsTime()
@@ -10744,11 +10744,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(141)
 SetPlotFollowsTime()
@@ -10815,11 +10815,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(142)
 SetPlotFollowsTime()
@@ -10886,11 +10886,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(143)
 SetPlotFollowsTime()
@@ -10957,11 +10957,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(144)
 SetPlotFollowsTime()
@@ -11028,11 +11028,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(145)
 SetPlotFollowsTime()
@@ -11099,11 +11099,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(146)
 SetPlotFollowsTime()
@@ -11170,11 +11170,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(147)
 SetPlotFollowsTime()
@@ -11241,11 +11241,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(148)
 SetPlotFollowsTime()
@@ -11312,11 +11312,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(149)
 SetPlotFollowsTime()
@@ -11383,11 +11383,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(150)
 SetPlotFollowsTime()
@@ -11454,11 +11454,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(151)
 SetPlotFollowsTime()
@@ -11525,11 +11525,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(152)
 SetPlotFollowsTime()
@@ -11596,11 +11596,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(153)
 SetPlotFollowsTime()
@@ -11667,11 +11667,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(154)
 SetPlotFollowsTime()
@@ -11738,11 +11738,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(155)
 SetPlotFollowsTime()
@@ -11809,11 +11809,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(156)
 SetPlotFollowsTime()
@@ -11880,11 +11880,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(157)
 SetPlotFollowsTime()
@@ -11951,11 +11951,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(158)
 SetPlotFollowsTime()
@@ -12022,11 +12022,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(159)
 SetPlotFollowsTime()
@@ -12093,11 +12093,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(160)
 SetPlotFollowsTime()
@@ -12164,11 +12164,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(161)
 SetPlotFollowsTime()
@@ -12235,11 +12235,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(162)
 SetPlotFollowsTime()
@@ -12306,11 +12306,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(163)
 SetPlotFollowsTime()
@@ -12377,11 +12377,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(164)
 SetPlotFollowsTime()
@@ -12448,11 +12448,11 @@ ThresholdAtts.outputMeshType = 0
 ThresholdAtts.boundsInputType = 0
 ThresholdAtts.listedVarNames = ("stress_von_mesis", "eta")
 ThresholdAtts.zonePortions = (1, 1)
-ThresholdAtts.lowerBounds = (20, 0.5)
+ThresholdAtts.lowerBounds = (20.8333, 0.5)
 ThresholdAtts.upperBounds = (1e+37, 1e+37)
 ThresholdAtts.defaultVarName = "stress_von_mesis"
 ThresholdAtts.defaultVarIsScalar = 1
-ThresholdAtts.boundsRange = ("20.0:1e+37", "0.5:1e+37")
+ThresholdAtts.boundsRange = ("20.833333333333336:1e+37", "0.5:1e+37")
 SetOperatorOptions(ThresholdAtts, 0, 1)
 SetActivePlots(165)
 SetPlotFollowsTime()
@@ -16471,7 +16471,7 @@ PseudocolorAtts.scaling = PseudocolorAtts.Linear  # Linear, Log, Skew
 PseudocolorAtts.skewFactor = 1
 PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData  # OriginalData, ActualData
 PseudocolorAtts.minFlag = 1
-PseudocolorAtts.min = 10
+PseudocolorAtts.min = 0
 PseudocolorAtts.useBelowMinColor = 0
 PseudocolorAtts.belowMinColor = (0, 0, 0, 255)
 PseudocolorAtts.maxFlag = 1
