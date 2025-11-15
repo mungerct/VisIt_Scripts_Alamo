@@ -78,7 +78,7 @@ else:
     stress_levels = [min_stress_thres]
 
 # Loop over stress levels and time steps
-for level in stress_levels
+for level in stress_levels:
     print(f"Processing stress level {level:.2f}")
     
     # Configure threshold attributes
