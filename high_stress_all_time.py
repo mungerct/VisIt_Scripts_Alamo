@@ -4,11 +4,10 @@
 VisIt visualization script for overlaying stress plots across all time steps
 Creates a composite view of von Mises stress evolution with threshold filters
 """
-import numpy as np
 
 # Open the database
-# OpenDatabase("localhost:/home/mungerct/research/alamo/output.scpsphereselastic.old.coarse_mesh3/celloutput.visit", 0)
-OpenDatabase("localhost:/home/mungerct/research/alamo/output.scpthermalsandwich.old.coarsemesh3/celloutput.visit", 0)
+OpenDatabase("localhost:/home/mungerct/research/alamo/output.scpsphereselastic.old.coarse_mesh3/celloutput.visit", 0)
+# OpenDatabase("localhost:/home/mungerct/research/alamo/output.scpthermalsandwich.old.coarsemesh3/celloutput.visit", 0)
 
 # Define custom expression for von Mises stress (scaled by 1/10)
 DefineScalarExpression("stress_von_mesis", 
@@ -19,13 +18,13 @@ numStates = TimeSliderGetNStates()
 print(f"Found {numStates} time steps")
 
 # Optional: Sample every Nth timestep to reduce processing time
-step_interval = 10  # Change to 5, 10, etc. to skip timesteps
+step_interval = 2  # Change to 5, 10, etc. to skip timesteps
 start_state = 0
 end_state = numStates
-num_levels = 4  # Number of "levels" of the stress that are plotted
-min_stress_thres = 12.5  # Minimum stress threshold
+num_levels = 6  # Number of "levels" of the stress that are plotted
+min_stress_thres = 10  # Minimum stress threshold
 max_stress_thres = 25  # Maximum stress threshold
-invert_phi = 1 # Boolean to invert phi colormap
+invert_phi = 0 # Boolean to invert phi colormap
 
 # Configure annotation settings - hide axes and other annotations
 AnnotationAtts = AnnotationAttributes()
@@ -71,8 +70,15 @@ PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque
 PseudocolorAtts.legendFlag = 0
 PseudocolorAtts.lightingFlag = 0
 
+# Generate stress levels without numpy
+if num_levels > 1:
+    step_size = (max_stress_thres - min_stress_thres) / (num_levels - 1)
+    stress_levels = [min_stress_thres + i * step_size for i in range(num_levels)]
+else:
+    stress_levels = [min_stress_thres]
+
 # Loop over stress levels and time steps
-for level in np.linspace(min_stress_thres, max_stress_thres, num_levels):
+for level in stress_levels
     print(f"Processing stress level {level:.2f}")
     
     # Configure threshold attributes
@@ -117,8 +123,8 @@ SaveWindowAtts.outputDirectory = "."
 SaveWindowAtts.fileName = "stress_von_mises_all_timesteps"
 SaveWindowAtts.family = 1
 SaveWindowAtts.format = SaveWindowAtts.PNG
-SaveWindowAtts.width = 1024
-SaveWindowAtts.height = 1024
+SaveWindowAtts.width = 4000
+SaveWindowAtts.height = 4000
 SaveWindowAtts.screenCapture = 0
 SaveWindowAtts.resConstraint = SaveWindowAtts.NoConstraint
 SetSaveWindowAttributes(SaveWindowAtts)
