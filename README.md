@@ -36,6 +36,8 @@ This Python script automates the visualization of von Mises stress evolution acr
 - max_stress_thres = 25      # Maximum stress threshold
 - invert_phi = 0 # Boolean to invert phi colormap
 
+</details>
+
 # VisIt Stress Images for .gif Script (high_stress_gif_images.py)
 <details>
 
@@ -138,6 +140,7 @@ sqrt(stress_xx^2 + stress_yy^2 - stress_xx*stress_yy + 3*stress_xy^2) / 10
 **Blank or unexpected visualization**
 - Adjust threshold values if your data range differs
 - Verify that `eta > 0.5` regions exist in your simulation
+</details>
 
 ## Author
 
