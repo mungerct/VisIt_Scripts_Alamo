@@ -21,6 +21,10 @@ This Python script automates the visualization of von Mises stress evolution acr
    ```bash
    visit -cli -s -nowin high_stress_all_time.py
 
+3. (Optional) To run VisIt in parallel with mpi use, replace 8 with your specified number of core
+   ```bash
+   visit -cli -nowin -np 8 -s high_stress_all_time.py
+
 ## Parameters
 - step_interval = 10         # Change to 5, 10, etc. to skip timesteps
 - start_state = 0            # Starting time step index
