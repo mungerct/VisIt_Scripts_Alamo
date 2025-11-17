@@ -19,11 +19,13 @@ This Python script automates the visualization of von Mises stress evolution acr
 1. Update the `OpenDatabase` path to point to your `.visit` file.
 2. Run the script using VisIt's Python interpreter:
    ```bash
-   visit -cli -s -nowin high_stress_all_time.py
+   visit -cli -nowing -s high_stress_all_time.py /path/to/database
 
 3. (Optional) To run VisIt in parallel with mpi use, replace 8 with your specified number of core
    ```bash
-   visit -cli -nowin -np 8 -s high_stress_all_time.py
+   visit -cli -nowin -np 8 -s high_stress_all_time.py /path/to/database
+
+   Note: The code asuumes your VisIt database is named `celloutput.visit` and you do not need to include this in the file path. i.e. A/B/simulation_folder/ is correct, A/B/simulation_folder/celloutput.visit is wrong
 
 ## Parameters
 - step_interval = 10         # Change to 5, 10, etc. to skip timesteps
