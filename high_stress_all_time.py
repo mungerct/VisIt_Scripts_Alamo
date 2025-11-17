@@ -5,9 +5,44 @@ VisIt visualization script for overlaying stress plots across all time steps
 Creates a composite view of von Mises stress evolution with threshold filters
 """
 
-# Open the database
-OpenDatabase("localhost:/home/mungerct/research/alamo/output.scpsphereselastic.old.coarse_mesh3/celloutput.visit", 0)
-# OpenDatabase("localhost:/home/mungerct/research/alamo/output.scpthermalsandwich.old.coarsemesh3/celloutput.visit", 0)
+import sys
+import os
+
+default_db = "celloutput.visit"
+
+# If user supplied a path (e.g., running from elsewhere)
+if len(sys.argv) > 1:
+    db_path = sys.argv[1]
+    if not db_path.endswith(default_db):
+        db_path = os.path.join(db_path, default_db)
+else:
+    db_path = os.path.join(os.getcwd(), default_db)
+
+# Normalize path
+db_path = os.path.abspath(db_path)
+
+if not os.path.exists(db_path):
+    print("ERROR: Could not find celloutput.visit at:")
+    print("   " + db_path)
+    sys.exit(1)
+
+print(f"Opening database: {db_path}")
+OpenDatabase(db_path, 0)
+
+# --- Create output folder based on last directory of the input path ---
+# Example: /path/to/sim/output.scp.../celloutput.visit
+# → folder name = "output.scp...”
+parent_dir = os.path.dirname(db_path)
+folder_name = os.path.basename(parent_dir)
+
+output_dir = os.path.join(os.getcwd(), folder_name)
+
+# Create directory if it doesn't exist
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
+    print(f"Created output directory: {output_dir}")
+else:
+    print(f"Saving frames in existing directory: {output_dir}")
 
 # Define custom expression for von Mises stress (scaled by 1/10)
 DefineScalarExpression("stress_von_mesis", 
@@ -18,11 +53,12 @@ numStates = TimeSliderGetNStates()
 print(f"Found {numStates} time steps")
 
 # Optional: Sample every Nth timestep to reduce processing time
-step_interval = 2  # Change to 5, 10, etc. to skip timesteps
+step_interval = 10  # Change to 5, 10, etc. to skip timesteps
 start_state = 0
-end_state = numStates
-num_levels = 6  # Number of "levels" of the stress that are plotted
-min_stress_thres = 10  # Minimum stress threshold
+# end_state = numStates
+end_state = 500
+num_levels = 4  # Number of "levels" of the stress that are plotted
+min_stress_thres = 12.5  # Minimum stress threshold
 max_stress_thres = 25  # Maximum stress threshold
 invert_phi = 0 # Boolean to invert phi colormap
 
@@ -118,8 +154,8 @@ print("All time steps overlaid, preparing to save...")
 
 # Save the composite plot as an image
 SaveWindowAtts = SaveWindowAttributes()
-SaveWindowAtts.outputToCurrentDirectory = 1
-SaveWindowAtts.outputDirectory = "."
+SaveWindowAtts.outputToCurrentDirectory = 0
+SaveWindowAtts.outputDirectory = output_dir
 SaveWindowAtts.fileName = "stress_von_mises_all_timesteps"
 SaveWindowAtts.family = 1
 SaveWindowAtts.format = SaveWindowAtts.PNG
@@ -128,7 +164,6 @@ SaveWindowAtts.height = 4000
 SaveWindowAtts.screenCapture = 0
 SaveWindowAtts.resConstraint = SaveWindowAtts.NoConstraint
 SetSaveWindowAttributes(SaveWindowAtts)
-SaveWindow()
 
 # Add one invisible plot just to show a single legend
 print("Adding legend...")
