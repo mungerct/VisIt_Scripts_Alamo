@@ -116,13 +116,13 @@ sqrt(stress_xx^2 + stress_yy^2 - stress_xx*stress_yy + 3*stress_xy^2) / 10
 - **Color scheme**: Grayscale
 - **Range**: 0 to 1
 - **Visibility**: Only where `eta > 0.5`
-- **Purpose**: Shows phase field distribution in the material
+- **Purpose**: Shows inital phi (AP/HTPB) distribution of material
 
 ### Layer 2: Von Mises Stress
 - **Variable**: `stress_von_mesis` (custom expression)
 - **Color scheme**: Default VisIt colormap
 - **Range**: 0 to 25 (configurable)
-- **Visibility**: Only where stress > 12.5 AND `eta > 0.5`
+- **Visibility**: Only where `stress` > 12.5 AND `eta` > 0.5
 - **Purpose**: Highlights regions of high mechanical stress
 
 ```
