@@ -108,6 +108,7 @@ The script defines von Mises stress as:
 ```python
 sqrt(stress_xx^2 + stress_yy^2 - stress_xx*stress_yy + 3*stress_xy^2) / 10
 ```
+The `/10` is to make the units be in kilopascals
 
 ## Visualization Details
 
