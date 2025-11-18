@@ -544,3 +544,288 @@ step_interval = 5   # Export every 5th timestep
 
 ## Author
 Caleb Munger
+
+</details>
+
+# VisIt Velocity-Strain Visualization Script (velmag_stainxx_gif_images.py)
+<details>
+
+## Overview
+
+This script creates dual-layer visualizations that separate gas and solid phase dynamics:
+- **Velocity magnitude**: Displayed where eta < 0.5 (gas phase) using the default colormap
+- **X-direction strain**: Displayed where eta > 0.5 (solid phase) using the bluehot colormap
+
+Each layer has its own customized legend positioned vertically on the right side, making it ideal for analyzing coupled fluid-structure interactions in phase-field simulations.
+
+## Requirements
+
+- VisIt visualization software
+- Simulation output file: `celloutput.visit`
+- Python (bundled with VisIt)
+
+## Usage
+
+### Basic Usage
+
+Run from the directory containing `celloutput.visit`:
+
+```bash
+visit -cli -nowin -s velmag_stainxx_gif_images.py
+```
+
+### Specify Custom Path
+
+Provide the path to the directory containing your data:
+
+```bash
+visit -cli -nowin -s visualization_script.py /path/to/simulation/data/
+```
+
+## Output
+
+The script creates a directory named after the parent folder of your database and saves PNG frames:
+
+```
+output.scp.../
+├── velamg_strainxx_0004.png
+├── velamg_strainxx_0005.png
+├── velamg_strainxx_0006.png
+└── ...
+```
+
+**Frame specifications:**
+- Format: PNG
+- Resolution: 1080×1080 pixels
+- Naming: `velamg_strainxx_####.png` with zero-padded timestep
+- Background: White
+- Legends: Two vertical legends on right side
+
+## Configuration
+
+### Adjustable Parameters
+
+Edit these variables in the script to customize output:
+
+```python
+# Time range
+start_state = 4           # Starting timestep (skips initial frames)
+end_state = numStates     # Process all available timesteps
+step_interval = 1         # Frame every N timesteps
+
+# Visualization thresholds
+max_velmag = 20           # Maximum velocity magnitude for colormap
+max_strain_thres = 1.1    # Maximum strain for colormap
+min_strain_thres = 1      # Minimum strain for colormap
+
+# Output resolution
+width = 1080              # Image width in pixels
+height = 1080             # Image height in pixels
+```
+
+### Strain Transformation
+
+The script applies a custom transformation to the strain field so the stress field is in units of kPa
+
+```python
+DefineScalarExpression("Xstrain", "(strain_xx - 1)/10 + 1")
+```
+
+## Visualization Details
+
+### Layer 1: Velocity Magnitude
+- **Variable**: `velocity_magnitude`
+- **Color scheme**: Default VisIt colormap
+- **Range**: 0 to 20
+- **Visibility**: Only where `eta < 0.5` (gas phase)
+- **Legend position**: Upper right (0.0, 0.9)
+- **Purpose**: Shows flow velocity in the gas phase
+
+### Layer 2: X-Direction Strain
+- **Variable**: `Xstrain` (transformed from strain_xx)
+- **Color scheme**: Bluehot (blue to white to red)
+- **Range**: 1.0 to 1.1
+- **Visibility**: Only where `eta > 0.5` (solid phase)
+- **Legend position**: Middle right (0.0, 0.45)
+- **Purpose**: Shows mechanical deformation in the solid phase
+
+### Legend Customization
+
+Both legends are configured with:
+- Horizontal scale: 1.0× (normal width)
+- Vertical scale: 1.5× (50% taller)
+- Font height: 0.03
+- Number format: One decimal place (%1.1f)
+- No titles or min/max labels
+- Vertical right orientation
+
+## Required Variables
+
+Your `celloutput.visit` database must contain:
+- `velocity_magnitude` - Flow velocity magnitude field
+- `strain_xx` - X-direction strain component
+- `eta` - Phase field indicator (0 = gas, 1 = solid)
+
+## Creating an Animation
+
+After running the script, assemble frames into an animation:
+
+### Using ImageMagick:
+```bash
+convert -delay 10 -loop 0 velamg_strainxx_*.png animation.gif
+```
+
+### Using FFmpeg (MP4):
+```bash
+ffmpeg -framerate 10 -pattern_type glob -i 'velamg_strainxx_*.png' \
+       -c:v libx264 -pix_fmt yuv420p -crf 18 output.mp4
+```
+
+### Using FFmpeg (WebM for web):
+```bash
+ffmpeg -framerate 10 -pattern_type glob -i 'velamg_strainxx_*.png' \
+       -c:v libvpx-vp9 -b:v 2M output.webm
+```
+
+### Frame Rate Guide:
+- `-delay 10` (ImageMagick) = 10 centiseconds = 10 fps
+- `-framerate 10` (FFmpeg) = 10 frames per second
+- Increase for slower animations, decrease for faster
+
+## Common Modifications
+
+### Change Color Schemes
+
+Modify the color tables:
+
+```python
+VelMagAtts.colorTableName = "hot"         # Try: hot, cool, rainbow, plasma
+StrainAtts.colorTableName = "coolwarm"    # Try: coolwarm, RdBu, seismic
+```
+
+Note: Layer 2 already uses "bluehot" in the legend but "Default" in the initial attributes.
+
+### Adjust Value Ranges
+
+Modify min/max thresholds to match your data:
+
+```python
+max_velmag = 30              # Higher max for faster flows
+max_strain_thres = 1.2       # Higher max for larger strains
+min_strain_thres = 0.9       # Lower min to show compression
+```
+
+### Change Strain Transformation
+
+Modify the expression to adjust scaling:
+
+```python
+DefineScalarExpression("Xstrain", "(strain_xx - 1)/5 + 1")  # Less sensitive
+DefineScalarExpression("Xstrain", "strain_xx")              # No transformation
+```
+
+### Reposition Legends
+
+Adjust legend placement (coordinates in [0.0-1.0] range):
+
+```python
+legend.position = (0.85, 0.9)   # Move to far right
+legend.position = (0.0, 0.7)    # Adjust vertical position
+```
+
+### Export Higher Resolution
+
+For publication-quality images:
+
+```python
+SaveWindowAtts.width = 2160    # 2K resolution
+SaveWindowAtts.height = 2160
+```
+
+### Skip Initial Transients
+
+Start visualization after initial conditions stabilize:
+
+```python
+start_state = 10   # Skip first 10 timesteps
+```
+
+### Export Subset of Frames
+
+Process only a portion of the simulation:
+
+```python
+start_state = 50
+end_state = 150
+step_interval = 2   # Export every other frame
+```
+
+## Troubleshooting
+
+**Error: "Could not find celloutput.visit"**
+- Ensure the database file exists in the specified directory
+- Verify the path is correct when using command-line arguments
+- Check for typos in the filename
+
+**Missing variables error**
+- Verify your database contains `velocity_magnitude`, `strain_xx`, and `eta`
+- Variable names are case-sensitive
+- Use VisIt GUI to check available variables
+
+**Blank or partial visualization**
+- Check that eta values properly separate gas (< 0.5) and solid (> 0.5) regions
+- Verify velocity and strain values are within expected ranges
+- Try adjusting threshold values to match your data scale
+
+**Legends overlapping or cut off**
+- Adjust `legend.position` to reposition
+- Modify `legend.yScale` to change height
+- Reduce `legend.fontHeight` if text is too large
+
+**Only one layer visible**
+- Ensure both `legendFlag = 1` in plot attributes
+- Check that both DrawPlots() calls are executed
+- Verify threshold ranges don't exclude all data
+
+**Strain values look wrong**
+- Check the strain transformation expression
+- Verify input `strain_xx` units and expected range
+- Adjust transformation parameters in DefineScalarExpression
+
+**Script runs slowly**
+- Use `step_interval > 1` to skip frames
+- Reduce output resolution for preview runs
+- Process smaller time ranges by adjusting start/end states
+
+**Out of memory errors**
+- Lower the output resolution
+- Process frames in batches (adjust start_state/end_state)
+- Close other applications to free memory
+
+## Performance Tips
+
+- **Preview first**: Run with `step_interval = 10` and low resolution for quick preview
+- **Batch processing**: Split long simulations into chunks
+- **Resolution trade-off**: Use 1080×1080 for drafts, 2160×2160 or higher for finals
+- **Monitor progress**: Watch console output to track frame generation
+- **Disk space**: Ensure adequate space (1080p PNGs ≈ 1-2 MB each)
+
+## Understanding the Output
+
+### Velocity Magnitude (Gas Phase)
+- **High values** (red/yellow): Fast-moving gas regions, potential turbulence
+- **Low values** (blue): Slow or stagnant gas
+- **Spatial patterns**: Indicate flow structures, vortices, or jets
+
+### X-Direction Strain (Solid Phase)
+- **> 1.0**: Tensile strain (stretching)
+- **< 1.0**: Compressive strain (squeezing)
+- **Spatial distribution**: Shows deformation patterns and stress concentration
+
+### Phase Separation
+The eta threshold (0.5) cleanly separates:
+- Gas dynamics (eta < 0.5): Flow and transport
+- Solid mechanics (eta > 0.5): Deformation and structural response
+
+## Author
+Caleb Munger
