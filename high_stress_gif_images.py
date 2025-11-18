@@ -53,12 +53,12 @@ DefineScalarExpression(
 numStates = TimeSliderGetNStates()
 print(f"Found {numStates} time steps")
 
-start_state = 0
-end_state = min(500, numStates)
-step_interval = 10
+start_state = 4
+end_state = numStates
+step_interval = 1
 
 # --- Parameters ---
-min_stress_thres = 12.5
+min_stress_thres = 10.0
 max_stress_thres = 25
 
 # --- Turn off axes, metadata, etc. ---
@@ -151,8 +151,8 @@ for state in range(start_state, end_state, step_interval):
     SaveWindowAtts.fileName = f"phi_highvonMises_gif_frame_{state:04d}"
     SaveWindowAtts.family = 0
     SaveWindowAtts.format = SaveWindowAtts.PNG
-    SaveWindowAtts.width = 2000
-    SaveWindowAtts.height = 2000
+    SaveWindowAtts.width = 1080
+    SaveWindowAtts.height = 1080
     SaveWindowAtts.screenCapture = 0
     SaveWindowAtts.resConstraint = SaveWindowAtts.NoConstraint
     SetSaveWindowAttributes(SaveWindowAtts)
@@ -160,3 +160,4 @@ for state in range(start_state, end_state, step_interval):
     SaveWindow()
 
 print("All frames exported! Ready to assemble into a GIF.")
+sys.exit(0)

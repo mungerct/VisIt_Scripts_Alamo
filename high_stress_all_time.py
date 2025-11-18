@@ -53,12 +53,12 @@ numStates = TimeSliderGetNStates()
 print(f"Found {numStates} time steps")
 
 # Optional: Sample every Nth timestep to reduce processing time
-step_interval = 10  # Change to 5, 10, etc. to skip timesteps
+step_interval = 5  # Change to 5, 10, etc. to skip timesteps
 start_state = 0
-# end_state = numStates
-end_state = 500
+end_state = numStates
+# end_state = 500
 num_levels = 4  # Number of "levels" of the stress that are plotted
-min_stress_thres = 12.5  # Minimum stress threshold
+min_stress_thres = 10.0  # Minimum stress threshold
 max_stress_thres = 25  # Maximum stress threshold
 invert_phi = 0 # Boolean to invert phi colormap
 
@@ -195,3 +195,4 @@ legend.numberFormat = "%1.1f"
 SaveWindow()
 
 print("Image saved successfully!")
+sys.exit(0)
