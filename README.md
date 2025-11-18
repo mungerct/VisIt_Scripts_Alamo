@@ -319,3 +319,228 @@ for state in range(0, 100, 10):  # Every 10th timestep from 0-100
 
 ## Author
 Caleb Munger
+</details>
+
+  
+# VisIt X Direction Stress and Relative Gas Density (rel_density_stressXX_gif_images.py)
+<details>
+
+A Python script for [VisIt](https://visit-dav.github.io/visit-website/) that exports time-series visualization frames showing relative gas density and X-direction stress with spatial separation based on the eta field.
+
+## Overview
+
+This script creates dual-layer visualizations that separate gas and solid phases:
+- **Relative gas density**: Displayed where eta < 0.5 (gas phase) using the magma colormap
+- **X-direction stress**: Displayed where eta > 0.5 (solid phase) using the default colormap
+
+Each layer has its own customized legend, making it ideal for visualizing phase-field simulations with coupled mechanical and density fields.
+
+## Requirements
+
+- VisIt visualization software
+- Simulation output file: `celloutput.visit`
+- Python (bundled with VisIt)
+
+## Usage
+
+### Basic Usage
+
+Run from the directory containing `celloutput.visit`:
+
+```bash
+visit -cli -nowin -s visualization_script.py
+```
+
+### Specify Custom Path
+
+Provide the path to the directory containing your data:
+
+```bash
+visit -cli -nowin -s visualization_script.py /path/to/simulation/data/
+```
+
+## Output
+
+The script creates a directory named after the parent folder of your database and saves PNG frames:
+
+```
+output.scp.../
+├── rel_density_stressXX_fig_frame_0004.png
+├── rel_density_stressXX_fig_frame_0005.png
+├── rel_density_stressXX_fig_frame_0006.png
+└── ...
+```
+
+**Frame specifications:**
+- Format: PNG
+- Resolution: 1080×1080 pixels
+- Naming: Sequential with timestep number
+- Background: White
+- Legends: Two vertical legends on right side
+
+## Configuration
+
+### Adjustable Parameters
+
+Edit these variables in the script to customize output:
+
+```python
+# Time range
+start_state = 4           # Starting timestep (skips initial frames)
+end_state = numStates     # Process all available timesteps
+step_interval = 1         # Frame every N timesteps
+
+# Visualization thresholds
+max_rel_density = 2.5     # Maximum relative density for colormap
+max_stress_thres = 15     # Maximum stress (in kPa) for colormap
+min_stress_thres = 0      # Minimum stress threshold (currently unused)
+
+# Output resolution
+width = 1080              # Image width in pixels
+height = 1080             # Image height in pixels
+```
+
+### Stress Conversion
+
+The script converts stress from base units to kPa:
+
+```python
+DefineScalarExpression("Xstress", "stress_xx/10")
+```
+
+## Visualization Details
+
+### Layer 1: Relative Gas Density
+- **Variable**: `density`
+- **Color scheme**: Magma (purple-orange gradient)
+- **Range**: 1.0 to 2.5
+- **Visibility**: Only where `eta < 0.5` AND `density ≤ max_rel_density`
+- **Legend position**: Upper right (0.0, 0.9)
+- **Purpose**: Shows density variations in the gas phase
+
+### Layer 2: X-Direction Stress
+- **Variable**: `Xstress` (stress_xx converted to kPa)
+- **Color scheme**: Default VisIt colormap
+- **Range**: 0 to 15 kPa
+- **Visibility**: Only where `eta > 0.5`
+- **Legend position**: Middle right (0.0, 0.45)
+- **Purpose**: Shows mechanical stress in the solid phase
+
+### Legend Customization
+
+Both legends are configured with:
+- Font family: Times
+- Font height: 0.03
+- Vertical scale: 1.5× (50% taller)
+- Number format: One decimal place
+- No titles or min/max labels
+
+## Required Variables
+
+Your `celloutput.visit` database must contain:
+- `density` - Relative density field
+- `stress_xx` - X-direction stress component
+- `eta` - Phase field indicator (0 = gas, 1 = solid)
+
+## Creating an Animation
+
+After running the script, assemble frames into an animation:
+
+### Using ImageMagick:
+```bash
+convert -delay 10 -loop 0 rel_density_stressXX_fig_frame_*.png animation.gif
+```
+
+### Using FFmpeg:
+```bash
+ffmpeg -framerate 10 -pattern_type glob -i 'rel_density_stressXX_fig_frame_*.png' \
+       -c:v libx264 -pix_fmt yuv420p -crf 18 output.mp4
+```
+
+### Adjust Frame Rate:
+- `-delay 10` (ImageMagick) = 10/100 second = 10 fps
+- `-framerate 10` (FFmpeg) = 10 fps
+- Increase for slower animations, decrease for faster
+
+## Common Modifications
+
+### Change Color Schemes
+
+Modify the color tables:
+
+```python
+DenAtts.colorTableName = "plasma"      # Try: viridis, plasma, inferno, cividis
+StressAtts.colorTableName = "bluehot"  # Try: hot, cool, rainbow, bluehot
+```
+
+### Adjust Value Ranges
+
+Modify min/max thresholds:
+
+```python
+max_rel_density = 3.0      # Higher max for density
+max_stress_thres = 20      # Higher max for stress
+```
+
+### Change Legend Positions
+
+Adjust legend placement:
+
+```python
+legend.position = (0.0, 0.9)   # (x, y) in normalized coordinates [0.0-1.0]
+```
+
+### Skip More Initial Frames
+
+Start visualization later:
+
+```python
+start_state = 10   # Skip first 10 timesteps
+```
+
+### Export Every Nth Frame
+
+Save processing time:
+
+```python
+step_interval = 5   # Export every 5th timestep
+```
+
+## Troubleshooting
+
+**Error: "Could not find celloutput.visit"**
+- Ensure the database file exists in the specified directory
+- Check that the path is correct when using command-line arguments
+
+**Missing variables error**
+- Verify your database contains `density`, `stress_xx`, and `eta`
+- Check variable names match exactly (case-sensitive)
+
+**Blank or partial visualization**
+- Verify that eta values separate into gas (< 0.5) and solid (> 0.5) regions
+- Check that density and stress values are within expected ranges
+- Try adjusting `max_rel_density` and `max_stress_thres` to match your data
+
+**Legends overlapping or not visible**
+- Adjust `legend.position` values to reposition
+- Modify `legend.yScale` to change height
+- Check that `legendFlag = 1` in plot attributes
+
+**Script runs but no output**
+- Check that `start_state` is less than total timesteps
+- Verify write permissions for output directory
+- Look for error messages in console output
+
+**Poor image quality**
+- Increase resolution: `width = 2000, height = 2000`
+- Note: Higher resolution requires more memory and processing time
+
+## Performance Tips
+
+- Use `step_interval > 1` to reduce number of frames
+- Lower resolution for preview runs (e.g., 540×540)
+- Process subsets by adjusting `start_state` and `end_state`
+- Monitor memory usage for high-resolution exports
+
+## Author
+Caleb Munger
