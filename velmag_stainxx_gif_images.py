@@ -52,14 +52,14 @@ end_state = numStates
 step_interval = 1
 
 # --- Parameters ---
-max_rel_density = 2.5
-max_stress_thres = 15
-min_stress_thres = 0
+max_velmag = 20
+max_strain_thres = 1.1
+min_strain_thres = 1
 
 # --- Convert to kPa ---
 DefineScalarExpression(
-    "Xstress",
-    "stress_xx/10"
+    "Xstrain",
+    "(strain_xx - 1)/10 + 1"
 )
 
 # --- Turn off axes, metadata, etc. ---
@@ -73,51 +73,51 @@ AnnotationAtts.backgroundColor = (255, 255, 255, 255)
 AnnotationAtts.foregroundColor = (0, 0, 0, 255)
 SetAnnotationAttributes(AnnotationAtts)
 
-# --- density plot attributes ---
-DenAtts = PseudocolorAttributes()
-DenAtts.minFlag = 1
-DenAtts.min = 1
-DenAtts.maxFlag = 1
-DenAtts.max = max_rel_density
-DenAtts.colorTableName = "magma"
-DenAtts.legendFlag = 1
-DenAtts.lightingFlag = 0
+# --- velmag plot attributes ---
+VelMagAtts = PseudocolorAttributes()
+VelMagAtts.minFlag = 1
+VelMagAtts.min = 0
+VelMagAtts.maxFlag = 1
+VelMagAtts.max = max_velmag
+VelMagAtts.colorTableName = "Default"
+VelMagAtts.legendFlag = 1
+VelMagAtts.lightingFlag = 0
 
-# --- Stress plot attributes ---
-StressAtts = PseudocolorAttributes()
-StressAtts.scaling = StressAtts.Linear
-StressAtts.minFlag = 1
-StressAtts.min = 0
-StressAtts.maxFlag = 1
-StressAtts.max = max_stress_thres
-StressAtts.colorTableName = "Default"
-StressAtts.opacityType = StressAtts.FullyOpaque
-StressAtts.legendFlag = 1
-StressAtts.lightingFlag = 0
+# --- Strain plot attributes ---
+StrainAtts = PseudocolorAttributes()
+StrainAtts.scaling = StrainAtts.Linear
+StrainAtts.minFlag = 1
+StrainAtts.min = min_strain_thres
+StrainAtts.maxFlag = 1
+StrainAtts.max = max_strain_thres
+StrainAtts.colorTableName = "Default"
+StrainAtts.opacityType = StrainAtts.FullyOpaque
+StrainAtts.legendFlag = 1
+StrainAtts.lightingFlag = 0
 
-# --- Stress threshold attributes ---
-StressThresh = ThresholdAttributes()
-StressThresh.outputMeshType = 0
-StressThresh.boundsInputType = 0
-StressThresh.listedVarNames = ("Xstress", "eta")
-StressThresh.zonePortions = (1, 1)
-StressThresh.lowerBounds = (-1e+37, 0.5)
-StressThresh.upperBounds = (1e+37, 1e+37)
-StressThresh.defaultVarName = "Xstress"
-StressThresh.defaultVarIsScalar = 1
-StressThresh.boundsRange = ("-1e+37:1e+37", "0.5:1e+37")
+# --- Strain threshold attributes ---
+StrainThresh = ThresholdAttributes()
+StrainThresh.outputMeshType = 0
+StrainThresh.boundsInputType = 0
+StrainThresh.listedVarNames = ("Xstrain", "eta")
+StrainThresh.zonePortions = (1, 1)
+StrainThresh.lowerBounds = (-1e+37, 0.5)
+StrainThresh.upperBounds = (1e+37, 1e+37)
+StrainThresh.defaultVarName = "Xstrain"
+StrainThresh.defaultVarIsScalar = 1
+StrainThresh.boundsRange = ("-1e+37:1e+37", "0.5:1e+37")
 
-# --- Stress threshold attributes ---
-DenThresh = ThresholdAttributes()
-DenThresh.outputMeshType = 0
-DenThresh.boundsInputType = 0
-DenThresh.listedVarNames = ("density", "eta")
-DenThresh.zonePortions = (1, 1)
-DenThresh.lowerBounds = (-1e37, -1e37)
-DenThresh.upperBounds = (max_rel_density, 0.5)
-DenThresh.defaultVarName = "density"
-DenThresh.defaultVarIsScalar = 1
-DenThresh.boundsRange = (f"{max_rel_density}:1e+37", "-s1e+37:0.5")
+# --- Velamg threshold attributes ---
+VelMagThresh = ThresholdAttributes()
+VelMagThresh.outputMeshType = 0
+VelMagThresh.boundsInputType = 0
+VelMagThresh.listedVarNames = ("velocity_magnitude", "eta")
+VelMagThresh.zonePortions = (1, 1)
+VelMagThresh.lowerBounds = (-1e37, -1e37)
+VelMagThresh.upperBounds = (1e+37, 0.5)
+VelMagThresh.defaultVarName = "velocity_magnitude"
+VelMagThresh.defaultVarIsScalar = 1
+VelMagThresh.boundsRange = ("1e+37:1e+37", "-1e+37:0.5")
 
 print("Beginning frame-by-frame export...")
 
@@ -131,18 +131,18 @@ for state in range(start_state, end_state, step_interval):
     DeleteAllPlots()
 
     # === 1. Draw relative gas density where eta < 0.5 ===
-    AddPlot("Pseudocolor", "density")
+    AddPlot("Pseudocolor", "velocity_magnitude")
     AddOperator("Threshold")
-    SetOperatorOptions(DenThresh)
-    SetPlotOptions(DenAtts)
+    SetOperatorOptions(VelMagThresh)
+    SetPlotOptions(VelMagAtts)
 
     # Draw Legend
     LegendPlotAtts = PseudocolorAttributes()
     LegendPlotAtts.minFlag = 1
-    LegendPlotAtts.min = 1
+    LegendPlotAtts.min = 0
     LegendPlotAtts.maxFlag = 1
-    LegendPlotAtts.max = max_rel_density
-    LegendPlotAtts.colorTableName = "magma"
+    LegendPlotAtts.max = max_velmag
+    LegendPlotAtts.colorTableName = "Default"
     LegendPlotAtts.legendFlag = 1  # Show the legend
     LegendPlotAtts.lightingFlag = 0
     SetPlotOptions(LegendPlotAtts)
@@ -161,19 +161,19 @@ for state in range(start_state, end_state, step_interval):
     legend.drawMinMax = 0
 
     DrawPlots()
-    # === 2. Draw X direction stress wehere eta > 0.5 ===
-    AddPlot("Pseudocolor", "Xstress")
-    SetPlotOptions(StressAtts)
+    # === 2. Draw X direction strain wehere eta > 0.5 ===
+    AddPlot("Pseudocolor", "Xstrain")
+    SetPlotOptions(StrainAtts)
     AddOperator("Threshold")
-    SetOperatorOptions(StressThresh)
+    SetOperatorOptions(StrainThresh)
 
     # Draw Legend
     LegendPlotAtts = PseudocolorAttributes()
     LegendPlotAtts.minFlag = 1
-    LegendPlotAtts.min = 0
+    LegendPlotAtts.min = min_strain_thres
     LegendPlotAtts.maxFlag = 1
-    LegendPlotAtts.max = max_stress_thres
-    LegendPlotAtts.colorTableName = "Default"
+    LegendPlotAtts.max = max_strain_thres
+    LegendPlotAtts.colorTableName = "bluehot"
     LegendPlotAtts.legendFlag = 1  # Show the legend
     LegendPlotAtts.lightingFlag = 0
     SetPlotOptions(LegendPlotAtts)
@@ -197,7 +197,7 @@ for state in range(start_state, end_state, step_interval):
     SaveWindowAtts = SaveWindowAttributes()
     SaveWindowAtts.outputToCurrentDirectory = 0
     SaveWindowAtts.outputDirectory = output_dir
-    SaveWindowAtts.fileName = f"rel_density_stressXX_fig_frame_{state:04d}"
+    SaveWindowAtts.fileName = f"velamg_strainxx_{state:04d}"
     SaveWindowAtts.family = 0
     SaveWindowAtts.format = SaveWindowAtts.PNG
     SaveWindowAtts.width = 1080
