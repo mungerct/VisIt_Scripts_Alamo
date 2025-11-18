@@ -119,6 +119,8 @@ The `/10` is to make the units be in kilopascals
 - **Visibility**: Only where `eta > 0.5`
 - **Purpose**: Shows inital phi (AP/HTPB) distribution of material
 
+
+
 ### Layer 2: Von Mises Stress
 - **Variable**: `stress_von_mesis` (custom expression)
 - **Color scheme**: Default VisIt colormap
@@ -126,7 +128,6 @@ The `/10` is to make the units be in kilopascals
 - **Visibility**: Only where `stress` > 12.5 AND `eta` > 0.5
 - **Purpose**: Highlights regions of high mechanical stress
 
-```
 
 ## Troubleshooting
 
@@ -146,7 +147,7 @@ The `/10` is to make the units be in kilopascals
 Caleb Munger
 </details>
 
-# VisIt Single Frame Phi Visualization Script (initial_phi.py)
+# VisIt Stress Images for .gif Script (high_stress_gif_images.py)
 <details>
 
 ## Overview
