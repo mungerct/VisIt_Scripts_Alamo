@@ -141,8 +141,180 @@ The `/10` is to make the units be in kilopascals
 **Blank or unexpected visualization**
 - Adjust threshold values if your data range differs
 - Verify that `eta > 0.5` regions exist in your simulation
-</details>
 
 ## Author
+Caleb Munger
+</details>
 
-[Caleb Munger]
+# VisIt Single Frame Phi Visualization Script (initial_phi.py)
+<details>
+
+## Overview
+
+This script creates a publication-quality visualization of the phase field (phi) variable at a specific timestep. It's designed for creating initial condition snapshots or single-frame visualizations with a customized legend.
+
+## Requirements
+
+- VisIt visualization software
+- Simulation output file: `celloutput.visit`
+- Python (bundled with VisIt)
+
+## Usage
+
+### Basic Usage
+
+Run from the directory containing `celloutput.visit`:
+
+```bash
+visit -cli -nowin -s phi_visualization_script.py
+```
+
+### Specify Custom Path
+
+Provide the path to the directory containing your data:
+
+```bash
+visit -cli -nowin -s phi_visualization_script.py /path/to/simulation/data/
+```
+
+## Output
+
+The script creates a directory named after the parent folder of your database and saves a single PNG frame:
+
+```
+output.scp.../
+└── initial_phi.png
+```
+
+**Image specifications:**
+- Format: PNG
+- Resolution: 4000×4000 pixels (high-resolution)
+- Filename: `initial_phi.png`
+- Background: White
+- Legend: Displayed on right side
+
+## Configuration
+
+### Adjustable Parameters
+
+Edit these variables in the script to customize output:
+
+```python
+# Timestep selection
+state = 10                # Which timestep to visualize (default: 10)
+```
+
+### Legend Customization
+
+The script includes a customized legend with the following settings:
+
+```python
+legend.xScale = 1.0           # Horizontal scale
+legend.yScale = 1.5           # Vertical scale (50% taller)
+legend.orientation = VerticalRight  # Position on right side
+legend.position = (0.0, 0.9)  # Upper right corner
+legend.fontHeight = 0.06      # Font size
+legend.numberFormat = "%1.1f" # One decimal place
+legend.drawTitle = 0          # No title
+legend.drawMinMax = 0         # No min/max labels
+```
+
+### Image Resolution
+
+To change the output resolution, modify:
+
+```python
+SaveWindowAtts.width = 4000   # Image width in pixels
+SaveWindowAtts.height = 4000  # Image height in pixels
+```
+
+## Visualization Details
+
+### Phi Field Display
+- **Variable**: `phi`
+- **Color scheme**: Default VisIt colormap
+- **Range**: 0 to 1 (fixed)
+- **Legend**: Vertical, right-aligned with custom formatting
+- **Purpose**: Shows phase field distribution
+
+### Appearance Settings
+- **Background**: White
+- **Foreground**: Black (text/axes)
+- **Lighting**: Disabled (flat shading)
+- **Axes**: Hidden
+- **Metadata**: Hidden (no timestamp, database info)
+
+## Typical Workflow
+
+1. **Set the desired timestep** by editing `state = 10` in the script
+2. **Run the script** to generate the visualization
+3. **Repeat** for different timesteps if needed (change `state` value and output filename)
+
+## Common Modifications
+
+### Change Output Filename
+
+Modify the filename in the save section:
+
+```python
+SaveWindowAtts.fileName = f"phi_timestep_{state}"  # Include timestep in name
+```
+
+### Change Color Scheme
+
+Edit the color table:
+
+```python
+LegendPlotAtts.colorTableName = "hot"  # Try: hot, cool, bluehot, rainbow, etc.
+```
+
+### Adjust Value Range
+
+Modify the min/max values:
+
+```python
+LegendPlotAtts.min = 0.2    # New minimum
+LegendPlotAtts.max = 0.8    # New maximum
+```
+
+### Hide Legend
+
+Disable the legend display:
+
+```python
+LegendPlotAtts.legendFlag = 0  # Set to 0 to hide
+```
+
+## Troubleshooting
+
+**Error: "Could not find celloutput.visit"**
+- Ensure the database file exists in the specified directory
+- Check that the path is correct when using command-line arguments
+
+**Blank visualization**
+- Verify that your database contains the `phi` variable
+- Check that the specified `state` (timestep) exists in your data
+- Try `state = 0` to visualize the first timestep
+
+**Legend not appearing**
+- Ensure `legendFlag = 1` in the `LegendPlotAtts`
+- Check that the legend position is within bounds (0.0-1.0 range)
+
+**Low resolution output**
+- Increase `width` and `height` values in `SaveWindowAtts`
+- Note: Very large values may require more memory
+
+## Batch Processing Multiple Timesteps
+
+To create images for multiple timesteps, wrap the visualization code in a loop:
+
+```python
+for state in range(0, 100, 10):  # Every 10th timestep from 0-100
+    SetTimeSliderState(state)
+    # ... visualization code ...
+    SaveWindowAtts.fileName = f"phi_frame_{state:04d}"
+    SaveWindow()
+```
+
+## Author
+Caleb Munger
