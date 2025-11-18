@@ -147,7 +147,7 @@ The `/10` is to make the units be in kilopascals
 Caleb Munger
 </details>
 
-# VisIt Stress Images for .gif Script (high_stress_gif_images.py)
+# VisIt Single Frame Phi Visualization Script (initial_phi.py)
 <details>
 
 ## Overview
