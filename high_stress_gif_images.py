@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
-VisIt visualization script for exporting one image per time step,
-drawing phi only where eta > 0.5, then overlaying stress_von_mises.
+# VisIt visualization script for exporting one image per time step,
+# drawing phi only where eta > 0.5, then overlaying stress_von_mises.
 """
 
 import sys
@@ -58,7 +58,7 @@ end_state = numStates
 step_interval = 1
 
 # --- Parameters ---
-min_stress_thres = 10.0
+min_stress_thres = 12.5
 max_stress_thres = 25
 
 # --- Turn off axes, metadata, etc. ---

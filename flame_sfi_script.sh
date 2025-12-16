@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Usage: ./run_all.sh /path/to/input_directory
+# Usage: ./flame_sfi_script.sh /path/to/input_directory
 INPUT_DIR="$1"
 
 # Check if input directory is provided
