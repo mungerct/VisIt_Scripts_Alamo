@@ -45,9 +45,9 @@ if not os.path.exists(output_dir):
 # -----------------------------------------------------------------------------
 
 num_states     = TimeSliderGetNStates()
-step_interval = 1
+step_interval = 3
 
-num_levels = 6
+num_levels = 3
 min_temp   = 1000
 max_temp   = 2000
 # end_state = num_states
@@ -220,7 +220,7 @@ legend.numberFormat   = "%1.1f"
 SaveAtts = SaveWindowAttributes()
 SaveAtts.outputToCurrentDirectory = 0
 SaveAtts.outputDirectory          = output_dir
-SaveAtts.fileName                 = "temp_isovolume_eta_gt_0p5"
+SaveAtts.fileName                 = "temp_isovolume_all_time"
 SaveAtts.family                   = 0
 SaveAtts.format                   = SaveAtts.PNG
 SaveAtts.width                    = 4000
