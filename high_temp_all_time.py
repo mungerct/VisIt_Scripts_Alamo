@@ -1,15 +1,18 @@
 #!/usr/bin/env python
 """
 VisIt visualization script for overlaying temperature plots across all time steps
-Creates a composite view of temperature evolution with threshold filters
+Creates a composite view of temperature evolution using TWO isovolume filters
 """
 
 import sys
 import os
+import time
 
 default_db = "celloutput.visit"
 
-# If user supplied a path
+# ------------------------------------------------------------
+# Database handling
+# ------------------------------------------------------------
 if len(sys.argv) > 1:
     db_path = sys.argv[1]
     if not db_path.endswith(default_db):
@@ -17,7 +20,6 @@ if len(sys.argv) > 1:
 else:
     db_path = os.path.join(os.getcwd(), default_db)
 
-# Normalize path
 db_path = os.path.abspath(db_path)
 
 if not os.path.exists(db_path):
@@ -28,10 +30,11 @@ if not os.path.exists(db_path):
 print(f"Opening database: {db_path}")
 OpenDatabase(db_path, 0)
 
-# Create output folder based on last directory of the input path
+# ------------------------------------------------------------
+# Output directory
+# ------------------------------------------------------------
 parent_dir = os.path.dirname(db_path)
 folder_name = os.path.basename(parent_dir)
-
 output_dir = os.path.join(os.getcwd(), folder_name)
 
 if not os.path.exists(output_dir):
@@ -40,25 +43,30 @@ if not os.path.exists(output_dir):
 else:
     print(f"Saving frames in existing directory: {output_dir}")
 
-# Temperature variable – assume it's named "temperature" in the database
+# ------------------------------------------------------------
+# Variables
+# ------------------------------------------------------------
 temperature_var = "temp"
+eta_var = "eta"
 
-# Get number of time steps
 numStates = TimeSliderGetNStates()
 print(f"Found {numStates} time steps")
 
-# Optional: Sample every Nth timestep to reduce processing time
-step_interval = 1
+step_interval = 50
 start_state = 0
 end_state = numStates
 
-# Temperature levels and thresholds
-num_levels = 3  # Number of temperature levels
-min_temp_thres = 1250  # Minimum temperature threshold (adjust to your data)
-max_temp_thres = 1750  # Maximum temperature threshold
-invert_phi = 0  # Boolean to invert phi colormap
+# ------------------------------------------------------------
+# Temperature levels
+# ------------------------------------------------------------
+num_levels = 3
+min_temp_thres = 1000
+max_temp_thres = 1750
+invert_phi = 0
 
-# Configure annotation settings
+# ------------------------------------------------------------
+# Annotation settings
+# ------------------------------------------------------------
 AnnotationAtts = AnnotationAttributes()
 AnnotationAtts.axes2D.visible = 0
 AnnotationAtts.userInfoFlag = 0
@@ -69,13 +77,15 @@ AnnotationAtts.backgroundColor = (255, 255, 255, 255)
 AnnotationAtts.foregroundColor = (0, 0, 0, 255)
 SetAnnotationAttributes(AnnotationAtts)
 
-# Draw phi plot from timestep 50 as background
+# ------------------------------------------------------------
+# Background eta plot (frozen in time)
+# ------------------------------------------------------------
 print("Drawing eta plot from timestep 1")
 SetTimeSliderState(1)
-AddPlot("Pseudocolor", "eta", 1, 1)
+
+AddPlot("Pseudocolor", eta_var, 1, 1)
 SetPlotFollowsTime(0)
 
-# Configure phi plot with black and white colormap
 PhiAtts = PseudocolorAttributes()
 PhiAtts.minFlag = 1
 PhiAtts.min = 0
@@ -87,9 +97,11 @@ PhiAtts.legendFlag = 0
 PhiAtts.lightingFlag = 0
 SetPlotOptions(PhiAtts)
 
-print("Phi plot from timestep 50 configured")
-
-# Configure plot attributes for temperature
+print("Eta background plot configured")
+DrawPlots()
+# ------------------------------------------------------------
+# Temperature plot attributes
+# ------------------------------------------------------------
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear
 PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData
@@ -97,51 +109,64 @@ PseudocolorAtts.minFlag = 1
 PseudocolorAtts.min = min_temp_thres
 PseudocolorAtts.maxFlag = 1
 PseudocolorAtts.max = max_temp_thres
-PseudocolorAtts.colorTableName = "hot"  # Better for temperature
+PseudocolorAtts.colorTableName = "hot"
 PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque
 PseudocolorAtts.legendFlag = 0
 PseudocolorAtts.lightingFlag = 0
 
+# ------------------------------------------------------------
 # Generate temperature levels
+# ------------------------------------------------------------
 if num_levels > 1:
     step_size = (max_temp_thres - min_temp_thres) / (num_levels - 1)
     temp_levels = [min_temp_thres + i * step_size for i in range(num_levels)]
 else:
     temp_levels = [min_temp_thres]
 
-# Loop over temperature levels and time steps
+# ------------------------------------------------------------
+# Loop over temperature levels and timesteps
+# ------------------------------------------------------------
 for level in temp_levels:
     print(f"Processing temperature level {level:.2f}")
-    
-    ThresholdAtts = ThresholdAttributes()
-    ThresholdAtts.outputMeshType = 0
-    ThresholdAtts.boundsInputType = 0
-    ThresholdAtts.listedVarNames = (temperature_var, "eta")
-    ThresholdAtts.zonePortions = (1, 1)
-    ThresholdAtts.lowerBounds = (level, 0.8)
-    ThresholdAtts.upperBounds = (1e+37, 1e+37)
-    ThresholdAtts.defaultVarName = temperature_var
-    ThresholdAtts.defaultVarIsScalar = 1
-    ThresholdAtts.boundsRange = (f"{level}:1e+37", "0.8:1e+37")
 
     for state in range(start_state, end_state, step_interval):
-        print(f"Setting up time step {state + 1}/{numStates} at temperature level {level:.2f}")
-        
+        print(f"  Time step {state + 1}/{numStates}")
         SetTimeSliderState(state)
-        
+
         AddPlot("Pseudocolor", temperature_var, 1, 0)
         SetPlotOptions(PseudocolorAtts)
-        
-        AddOperator("Threshold")
-        SetOperatorOptions(ThresholdAtts)
-        
+
+        # ----------------------------------------------------
+        # Isovolume 2: eta >= 0.5
+        # ----------------------------------------------------
+        AddOperator("Isovolume")
+        IsoEtaAtts = IsovolumeAttributes()
+        IsoEtaAtts.variable = eta_var
+        IsoEtaAtts.lbound = 0.5
+        IsoEtaAtts.ubound = 1e37
+        # IsoEtaAtts.outputMeshType = IsoEtaAtts.InputZones
+        SetOperatorOptions(IsoEtaAtts, 0)
+
+        # ----------------------------------------------------
+        # Isovolume 1: temperature >= level
+        # ----------------------------------------------------
+        AddOperator("Isovolume")
+        IsoTempAtts = IsovolumeAttributes()
+        IsoTempAtts.variable = temperature_var
+        IsoTempAtts.lbound = level
+        IsoTempAtts.ubound = 1e37
+        # IsoTempAtts.outputMeshType = IsoTempAtts.InputZones
+        SetOperatorOptions(IsoTempAtts, 1)
+
         SetActivePlots(GetNumPlots() - 1)
         SetPlotFollowsTime(0)
 
 print("All time steps configured, drawing all plots...")
 DrawPlots()
 
-# Save the composite plot
+# ------------------------------------------------------------
+# Save window settings
+# ------------------------------------------------------------
 SaveWindowAtts = SaveWindowAttributes()
 SaveWindowAtts.outputToCurrentDirectory = 0
 SaveWindowAtts.outputDirectory = output_dir
@@ -154,9 +179,12 @@ SaveWindowAtts.screenCapture = 0
 SaveWindowAtts.resConstraint = SaveWindowAtts.NoConstraint
 SetSaveWindowAttributes(SaveWindowAtts)
 
-# Add one invisible plot just to show a single legend
+# ------------------------------------------------------------
+# Legend (single invisible plot)
+# ------------------------------------------------------------
 print("Adding legend...")
 AddPlot("Pseudocolor", temperature_var, 1, 1)
+
 LegendPlotAtts = PseudocolorAttributes()
 LegendPlotAtts.minFlag = 1
 LegendPlotAtts.min = min_temp_thres
@@ -167,9 +195,12 @@ LegendPlotAtts.opacity = 0
 LegendPlotAtts.legendFlag = 1
 LegendPlotAtts.lightingFlag = 0
 SetPlotOptions(LegendPlotAtts)
+
 DrawPlots()
 
-legend = GetAnnotationObject(GetPlotList().GetPlots(GetNumPlots() - 1).plotName)
+legend = GetAnnotationObject(
+    GetPlotList().GetPlots(GetNumPlots() - 1).plotName
+)
 legend.xScale = 1.0
 legend.yScale = 2.0
 legend.orientation = legend.VerticalRight
