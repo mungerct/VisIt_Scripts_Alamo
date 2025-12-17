@@ -48,14 +48,14 @@ numStates = TimeSliderGetNStates()
 print(f"Found {numStates} time steps")
 
 # Optional: Sample every Nth timestep to reduce processing time
-step_interval = 10
+step_interval = 1
 start_state = 0
 end_state = numStates
 
 # Temperature levels and thresholds
 num_levels = 3  # Number of temperature levels
-min_temp_thres = 1000.0  # Minimum temperature threshold (adjust to your data)
-max_temp_thres = 2000.0  # Maximum temperature threshold
+min_temp_thres = 1250  # Minimum temperature threshold (adjust to your data)
+max_temp_thres = 1750  # Maximum temperature threshold
 invert_phi = 0  # Boolean to invert phi colormap
 
 # Configure annotation settings
@@ -70,7 +70,7 @@ AnnotationAtts.foregroundColor = (0, 0, 0, 255)
 SetAnnotationAttributes(AnnotationAtts)
 
 # Draw phi plot from timestep 50 as background
-print("Drawing phi plot from timestep 1")
+print("Drawing eta plot from timestep 1")
 SetTimeSliderState(1)
 AddPlot("Pseudocolor", "eta", 1, 1)
 SetPlotFollowsTime(0)
@@ -146,7 +146,7 @@ SaveWindowAtts = SaveWindowAttributes()
 SaveWindowAtts.outputToCurrentDirectory = 0
 SaveWindowAtts.outputDirectory = output_dir
 SaveWindowAtts.fileName = "temperature_all_timesteps"
-SaveWindowAtts.family = 1
+SaveWindowAtts.family = 0
 SaveWindowAtts.format = SaveWindowAtts.PNG
 SaveWindowAtts.width = 4000
 SaveWindowAtts.height = 4000
