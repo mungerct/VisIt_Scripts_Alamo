@@ -51,16 +51,16 @@ eta_var = "eta"
 numStates = TimeSliderGetNStates()
 print(f"Found {numStates} time steps")
 
-step_interval = 50
+step_interval = 2
 start_state = 0
-end_state = numStates
+end_state = min(numStates, 100)
 
 # ------------------------------------------------------------
 # Temperature levels
 # ------------------------------------------------------------
-num_levels = 3
-min_temp_thres = 1000
-max_temp_thres = 1750
+num_levels = 5
+min_temp_thres = 1300
+max_temp_thres = 1500
 invert_phi = 0
 
 # ------------------------------------------------------------
@@ -125,11 +125,24 @@ else:
 # ------------------------------------------------------------
 # Loop over temperature levels and timesteps
 # ------------------------------------------------------------
+
+def progress_bar(i, total, width=40):
+    frac = (i + 1) / float(total)
+    filled = int(width * frac)
+    bar = "#" * filled + "-" * (width - filled)
+    sys.stdout.write(
+        f"\r  Time steps: [{bar}] {i + 1}/{total} ({frac*100:5.1f}%)"
+    )
+    sys.stdout.flush()
+
+    if i + 1 == total:
+        print()  # newline at end
+
 for level in temp_levels:
-    print(f"Processing temperature level {level:.2f}")
+    print(f"\nProcessing temperature level {level:.2f}")
 
     for state in range(start_state, end_state, step_interval):
-        print(f"  Time step {state + 1}/{numStates}")
+        progress_bar(state, end_state)
         SetTimeSliderState(state)
 
         AddPlot("Pseudocolor", temperature_var, 1, 0)
