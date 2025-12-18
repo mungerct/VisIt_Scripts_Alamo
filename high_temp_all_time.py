@@ -6,7 +6,6 @@ Creates a composite view of temperature evolution using TWO isovolume filters
 
 import sys
 import os
-import time
 
 default_db = "celloutput.visit"
 
