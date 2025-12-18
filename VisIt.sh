@@ -13,4 +13,4 @@
 module load visit/3.4.1-py311-openmpi4-gns5n4x
 
 # Run Visit in parallel
-visit -cli -nowin -np 36 -s high_temp_all_time.py /home/brunnels/mungerct/alamo/output.scpthermalIAstate.old.nova_small_flame_eps/
+visit -cli -nowin -np 36 -s high_temp_all_time.py /work/brunnels/mungerct/alamo/output.scpthermalIAstate.old.nova_small_flame_eps/
