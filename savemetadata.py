@@ -1,8 +1,42 @@
 #!/usr/bin/env python
 import subprocess
 import os
+import shutil
 
-def save_git_hash(metadata_path="metadata"):
+def save_metadata_with_git(params, output_dir, original_metadata_path=None):
+    """
+    Save metadata parameters and Git hash to a file in the output directory.
+    Also copies the original metadata file from the database if provided.
+    
+    Args:
+        params (dict): Dictionary of metadata parameters. Must include 'image name'.
+        output_dir (str): Directory where output files are saved.
+        original_metadata_path (str, optional): Path to the original metadata file to copy.
+    """
+    # Ensure output directory exists
+    os.makedirs(output_dir, exist_ok=True)
+
+    # Step 1: Copy original metadata file if provided
+    if original_metadata_path and os.path.exists(original_metadata_path):
+        shutil.copy2(original_metadata_path, output_dir)
+        print(f"Copied original metadata file to: {output_dir}")
+
+    # Step 2: Build metadata filename based on latest image
+    latest_name = params.get("image name")
+    if not latest_name:
+        raise ValueError("'image name' must be present in the parameters dictionary.")
+
+    base_name, _ = os.path.splitext(latest_name)
+    metadata_filename = f"metadata_{base_name}"
+    metadata_path = os.path.join(output_dir, metadata_filename)
+
+    # Step 3: Write parameters to the metadata file
+    with open(metadata_path, "a", encoding="utf-8") as f:
+        f.write("\n--- Parameters ---\n")
+        for key, value in params.items():
+            f.write(f"{key}: {value}\n")
+
+    # Step 4: Append Git hash
     def get_git_hash():
         try:
             return subprocess.check_output(
@@ -13,40 +47,7 @@ def save_git_hash(metadata_path="metadata"):
             return "not a git repo"
 
     with open(metadata_path, "a", encoding="utf-8") as f:
-        f.write("\n\nvisit script metadata:")
-        f.write(f"\nGit hash: {get_git_hash()}\n")
+        f.write("\n--- Visit Script Metadata ---\n")
+        f.write(f"Git hash: {get_git_hash()}\n")
 
-
-def save_metadata_params(params, metadata_dir):
-    """
-    Append key-value pairs from a dictionary to a metadata file.
-    The metadata filename is modified to include the 'image name' value from the dictionary.
-    
-    Args:
-        params (dict): Dictionary of key-value pairs to save. Must include 'image name'.
-        metadata_dir (str): Directory to save the metadata file (use the output directory).
-    """
-    # Ensure the directory exists
-    os.makedirs(metadata_dir, exist_ok=True)
-
-    # Get latest_name from dictionary
-    latest_name = params.get("image name")
-    if not latest_name:
-        raise ValueError("'image name' must be present in the dictionary to name the metadata file.")
-
-    # Build metadata filename
-    base_name, _ = os.path.splitext(latest_name)
-    metadata_filename = f"metadata_{base_name}"
-    metadata_path = os.path.join(metadata_dir, metadata_filename)
-
-    # Write dictionary to metadata file
-    with open(metadata_path, "a", encoding="utf-8") as f:
-        f.write("\n--- Parameters ---\n")
-        for key, value in params.items():
-            f.write(f"{key}: {value}\n")
-    
-def main():
-    save_git_hash()
-
-if __name__ == "__main__":
-    main()
+    print(f"Metadata and Git hash saved to: {metadata_path}")

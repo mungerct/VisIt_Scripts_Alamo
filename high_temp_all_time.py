@@ -8,7 +8,7 @@ import sys
 import os
 import shutil
 import glob
-from savemetadata import save_git_hash, save_metadata_params
+from savemetadata import save_metadata_with_git
 
 default_db = "celloutput.visit"
 
@@ -268,7 +268,5 @@ metadata_parameters = {
     "image name": latest_name
 }
 
-save_git_hash(metadata_path=os.path.join(output_dir, "metadata"))
-save_metadata_params(metadata_parameters, output_dir)
-
+save_metadata_with_git(metadata_parameters, output_dir, os.path.join(parent_dir, "metadata"))
 sys.exit(0)
