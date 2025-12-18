@@ -66,14 +66,14 @@ eta_var = "eta"
 numStates = TimeSliderGetNStates()
 print(f"Found {numStates} time steps")
 
-step_interval = 50
+step_interval = 1
 start_state = 0
 end_state = min(numStates, 100)
 
 # ------------------------------------------------------------
 # Temperature levels
 # ------------------------------------------------------------
-num_levels = 2
+num_levels = 5
 min_temp_thres = 1300
 max_temp_thres = 1500
 invert_phi = 0
@@ -142,15 +142,15 @@ else:
 # ------------------------------------------------------------
 
 def progress_bar(i, total, width=40):
-    frac = (i + 1) / float(total)
+    frac = (i) / float(total)
     filled = int(width * frac)
     bar = "#" * filled + "-" * (width - filled)
     sys.stdout.write(
-        f"\r  Time steps: [{bar}] {i + 1}/{total} ({frac*100:5.1f}%)"
+        f"\r  Time steps: [{bar}] {i}/{total} ({frac*100:5.1f}%)"
     )
     sys.stdout.flush()
 
-    if i + 1 == total:
+    if i == total:
         print()  # newline at end
 
 for level in temp_levels:
