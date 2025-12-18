@@ -6,6 +6,9 @@ Creates a composite view of temperature evolution using TWO isovolume filters
 
 import sys
 import os
+import shutil
+import glob
+from savemetadata import save_git_hash, save_metadata_params
 
 default_db = "celloutput.visit"
 
@@ -43,6 +46,18 @@ else:
     print(f"Saving frames in existing directory: {output_dir}")
 
 # ------------------------------------------------------------
+# Copy metadata file
+# ------------------------------------------------------------
+metadata_src = os.path.join(parent_dir, "metadata")
+metadata_dst = os.path.join(output_dir, "metadata")
+
+if os.path.exists(metadata_src):
+    shutil.copy2(metadata_src, metadata_dst)
+    print(f"Copied metadata to: {metadata_dst}")
+else:
+    print("WARNING: metadata file not found in database folder")
+
+# ------------------------------------------------------------
 # Variables
 # ------------------------------------------------------------
 temperature_var = "temp"
@@ -51,14 +66,14 @@ eta_var = "eta"
 numStates = TimeSliderGetNStates()
 print(f"Found {numStates} time steps")
 
-step_interval = 2
+step_interval = 50
 start_state = 0
 end_state = min(numStates, 100)
 
 # ------------------------------------------------------------
 # Temperature levels
 # ------------------------------------------------------------
-num_levels = 5
+num_levels = 2
 min_temp_thres = 1300
 max_temp_thres = 1500
 invert_phi = 0
@@ -183,7 +198,7 @@ SaveWindowAtts = SaveWindowAttributes()
 SaveWindowAtts.outputToCurrentDirectory = 0
 SaveWindowAtts.outputDirectory = output_dir
 SaveWindowAtts.fileName = "temperature_all_timesteps"
-SaveWindowAtts.family = 0
+SaveWindowAtts.family = 1
 SaveWindowAtts.format = SaveWindowAtts.PNG
 SaveWindowAtts.width = 4000
 SaveWindowAtts.height = 4000
@@ -225,4 +240,35 @@ legend.numberFormat = "%1.1f"
 SaveWindow()
 
 print("Image saved successfully!")
+
+def most_recent_file(directory, pattern="*"):
+    files = glob.glob(os.path.join(directory, pattern))
+    if not files:
+        return None
+    return max(files, key=os.path.getctime)
+
+latest_file = most_recent_file(
+    SaveWindowAtts.outputDirectory,
+    f"{SaveWindowAtts.fileName}*"
+)
+
+if latest_file:
+    latest_name = os.path.basename(latest_file)
+
+metadata_parameters = {
+    "visit_scripts filename": os.path.basename(__file__),
+    "step_interval": step_interval,
+    "state step number": start_state,
+    "end step number": end_state,
+    "number of temperature levels": num_levels,
+    "minimum temperature": min_temp_thres,
+    "maximum temperature": max_temp_thres,
+    "initial phi/eta variable name": eta_var,
+    "invert initial phi/eta": invert_phi,
+    "image name": latest_name
+}
+
+save_git_hash(metadata_path=os.path.join(output_dir, "metadata"))
+save_metadata_params(metadata_parameters, output_dir)
+
 sys.exit(0)
