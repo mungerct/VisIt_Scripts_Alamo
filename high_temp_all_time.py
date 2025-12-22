@@ -68,15 +68,15 @@ eta_var = "eta"
 numStates = TimeSliderGetNStates()
 print(f"Found {numStates} time steps")
 
-step_interval = 1
+step_interval = 5
 start_state = 0
 end_state = min(numStates, 100)
 
 # ------------------------------------------------------------
 # Temperature levels
 # ------------------------------------------------------------
-num_levels = 5
-min_temp_thres = 1300
+num_levels = 3
+min_temp_thres = 500
 max_temp_thres = 1500
 invert_phi = 0
 
@@ -223,7 +223,6 @@ for level in temp_levels:
 
         # Draw and save each timestep
         DrawPlots()
-        SaveWindowAtts.fileName = f"temperature_level{level:.0f}_timestep{state:04d}"
         SetSaveWindowAttributes(SaveWindowAtts)
         SaveWindow()
 
