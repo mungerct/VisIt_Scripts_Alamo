@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 """
-VisIt visualization script for overlaying temperature plots across all time steps
-Creates a composite view of temperature evolution using TWO isovolume filters
+VisIt visualization script:
+- Saves initial eta/phi field
+- Saves legend separately
+- Saves temperature plots per timestep and level individually
 """
 
 import sys
@@ -79,27 +81,36 @@ max_temp_thres = 1500
 invert_phi = 0
 
 # ------------------------------------------------------------
-# Annotation settings
+# SaveWindow settings
+# ------------------------------------------------------------
+SaveWindowAtts = SaveWindowAttributes()
+SaveWindowAtts.outputToCurrentDirectory = 0
+SaveWindowAtts.outputDirectory = output_dir
+SaveWindowAtts.family = 1
+SaveWindowAtts.format = SaveWindowAtts.PNG
+SaveWindowAtts.width = 1080
+SaveWindowAtts.height = 1080
+SaveWindowAtts.screenCapture = 0
+SaveWindowAtts.resConstraint = SaveWindowAtts.NoConstraint
+
+# ------------------------------------------------------------
+# General annotation settings (hide axes, legend, borders)
 # ------------------------------------------------------------
 AnnotationAtts = AnnotationAttributes()
 AnnotationAtts.axes2D.visible = 0
 AnnotationAtts.userInfoFlag = 0
 AnnotationAtts.databaseInfoFlag = 0
 AnnotationAtts.timeInfoFlag = 0
-AnnotationAtts.legendInfoFlag = 1
+AnnotationAtts.legendInfoFlag = 0
 AnnotationAtts.backgroundColor = (255, 255, 255, 255)
 AnnotationAtts.foregroundColor = (0, 0, 0, 255)
 SetAnnotationAttributes(AnnotationAtts)
 
 # ------------------------------------------------------------
-# Background eta plot (frozen in time)
+# Save initial eta/phi field
 # ------------------------------------------------------------
-print("Drawing eta plot from timestep 1")
 SetTimeSliderState(1)
-
 AddPlot("Pseudocolor", eta_var, 1, 1)
-SetPlotFollowsTime(0)
-
 PhiAtts = PseudocolorAttributes()
 PhiAtts.minFlag = 1
 PhiAtts.min = 0
@@ -108,11 +119,35 @@ PhiAtts.max = 1
 PhiAtts.colorTableName = "gray"
 PhiAtts.invertColorTable = invert_phi
 PhiAtts.legendFlag = 0
-PhiAtts.lightingFlag = 0
 SetPlotOptions(PhiAtts)
-
-print("Eta background plot configured")
 DrawPlots()
+
+SaveWindowAtts.fileName = "eta_phi_field"
+SetSaveWindowAttributes(SaveWindowAtts)
+SaveWindow()
+DeleteActivePlots()
+
+# ------------------------------------------------------------
+# Save legend separately
+# ------------------------------------------------------------
+AddPlot("Pseudocolor", temperature_var, 1, 1)
+LegendAtts = PseudocolorAttributes()
+LegendAtts.minFlag = 1
+LegendAtts.min = min_temp_thres
+LegendAtts.maxFlag = 1
+LegendAtts.max = max_temp_thres
+LegendAtts.colorTableName = "hot"
+LegendAtts.opacity = 0          # invisible plot
+LegendAtts.legendFlag = 1       # show legend
+LegendAtts.lightingFlag = 0
+SetPlotOptions(LegendAtts)
+DrawPlots()
+
+SaveWindowAtts.fileName = "legend_only"
+SetSaveWindowAttributes(SaveWindowAtts)
+SaveWindow()
+DeleteActivePlots()
+
 # ------------------------------------------------------------
 # Temperature plot attributes
 # ------------------------------------------------------------
@@ -138,21 +173,20 @@ else:
     temp_levels = [min_temp_thres]
 
 # ------------------------------------------------------------
-# Loop over temperature levels and timesteps
+# Progress bar function
 # ------------------------------------------------------------
-
 def progress_bar(i, total, width=40):
-    frac = (i) / float(total)
+    frac = i / float(total)
     filled = int(width * frac)
     bar = "#" * filled + "-" * (width - filled)
-    sys.stdout.write(
-        f"\r  Time steps: [{bar}] {i}/{total} ({frac*100:5.1f}%)"
-    )
+    sys.stdout.write(f"\r  Time steps: [{bar}] {i}/{total} ({frac*100:5.1f}%)")
     sys.stdout.flush()
-
     if i == total:
-        print()  # newline at end
+        print()
 
+# ------------------------------------------------------------
+# Loop over temperature levels and timesteps (no eta background)
+# ------------------------------------------------------------
 for level in temp_levels:
     print(f"\nProcessing temperature level {level:.2f}")
 
@@ -160,87 +194,42 @@ for level in temp_levels:
         progress_bar(state, end_state)
         SetTimeSliderState(state)
 
+        # Remove previous temperature plots
+        for i in range(GetNumPlots() - 1, 0, -1):
+            DeleteActivePlots()
+
+        # Add temperature plot only
         AddPlot("Pseudocolor", temperature_var, 1, 0)
         SetPlotOptions(PseudocolorAtts)
 
-        # ----------------------------------------------------
         # Isovolume 2: eta >= 0.5
-        # ----------------------------------------------------
         AddOperator("Isovolume")
         IsoEtaAtts = IsovolumeAttributes()
         IsoEtaAtts.variable = eta_var
         IsoEtaAtts.lbound = 0.5
         IsoEtaAtts.ubound = 1e37
-        # IsoEtaAtts.outputMeshType = IsoEtaAtts.InputZones
         SetOperatorOptions(IsoEtaAtts, 0)
 
-        # ----------------------------------------------------
         # Isovolume 1: temperature >= level
-        # ----------------------------------------------------
         AddOperator("Isovolume")
         IsoTempAtts = IsovolumeAttributes()
         IsoTempAtts.variable = temperature_var
         IsoTempAtts.lbound = level
         IsoTempAtts.ubound = 1e37
-        # IsoTempAtts.outputMeshType = IsoTempAtts.InputZones
         SetOperatorOptions(IsoTempAtts, 1)
 
         SetActivePlots(GetNumPlots() - 1)
         SetPlotFollowsTime(0)
 
-print("All time steps configured, drawing all plots...")
-DrawPlots()
+        # Draw and save each timestep
+        DrawPlots()
+        SaveWindowAtts.fileName = f"temperature_level{level:.0f}_timestep{state:04d}"
+        SetSaveWindowAttributes(SaveWindowAtts)
+        SaveWindow()
 
 # ------------------------------------------------------------
-# Save window settings
+# Save metadata
 # ------------------------------------------------------------
-SaveWindowAtts = SaveWindowAttributes()
-SaveWindowAtts.outputToCurrentDirectory = 0
-SaveWindowAtts.outputDirectory = output_dir
-SaveWindowAtts.fileName = "temperature_all_timesteps"
-SaveWindowAtts.family = 1
-SaveWindowAtts.format = SaveWindowAtts.PNG
-SaveWindowAtts.width = 4000
-SaveWindowAtts.height = 4000
-SaveWindowAtts.screenCapture = 0
-SaveWindowAtts.resConstraint = SaveWindowAtts.NoConstraint
-SetSaveWindowAttributes(SaveWindowAtts)
-
-# ------------------------------------------------------------
-# Legend (single invisible plot)
-# ------------------------------------------------------------
-print("Adding legend...")
-AddPlot("Pseudocolor", temperature_var, 1, 1)
-
-LegendPlotAtts = PseudocolorAttributes()
-LegendPlotAtts.minFlag = 1
-LegendPlotAtts.min = min_temp_thres
-LegendPlotAtts.maxFlag = 1
-LegendPlotAtts.max = max_temp_thres
-LegendPlotAtts.colorTableName = "hot"
-LegendPlotAtts.opacity = 0
-LegendPlotAtts.legendFlag = 1
-LegendPlotAtts.lightingFlag = 0
-SetPlotOptions(LegendPlotAtts)
-
-DrawPlots()
-
-legend = GetAnnotationObject(
-    GetPlotList().GetPlots(GetNumPlots() - 1).plotName
-)
-legend.xScale = 1.0
-legend.yScale = 2.0
-legend.orientation = legend.VerticalRight
-legend.managePosition = 0
-legend.position = (0.0, 0.9)
-legend.fontHeight = 0.03
-legend.drawTitle = 0
-legend.numberFormat = "%1.1f"
-
-SaveWindow()
-
-print("Image saved successfully!")
-
 def most_recent_file(directory, pattern="*"):
     files = glob.glob(os.path.join(directory, pattern))
     if not files:
