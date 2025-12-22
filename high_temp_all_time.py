@@ -223,6 +223,7 @@ for level in temp_levels:
 
         # Draw and save each timestep
         DrawPlots()
+        SaveWindowAtts.fileName = "temp"
         SetSaveWindowAttributes(SaveWindowAtts)
         SaveWindow()
 
