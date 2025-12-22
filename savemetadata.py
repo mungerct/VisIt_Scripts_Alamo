@@ -17,9 +17,14 @@ def save_metadata_with_git(params, output_dir, original_metadata_path=None):
     os.makedirs(output_dir, exist_ok=True)
 
     # Step 1: Copy original metadata file if provided
+
+    print(original_metadata_path)
+    print(output_dir)
+
     if original_metadata_path and os.path.exists(original_metadata_path):
-        shutil.copy2(original_metadata_path, output_dir)
-        print(f"Copied original metadata file to: {output_dir}")
+        if os.path.abspath(os.path.dirname(original_metadata_path)) != os.path.abspath(output_dir):
+            shutil.copy2(original_metadata_path, output_dir)
+            print(f"Copied original metadata file to: {output_dir}")
 
     # Step 2: Build metadata filename based on latest image
     latest_name = params.get("image name")

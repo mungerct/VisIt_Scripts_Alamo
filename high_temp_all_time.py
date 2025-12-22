@@ -52,8 +52,9 @@ metadata_src = os.path.join(parent_dir, "metadata")
 metadata_dst = os.path.join(output_dir, "metadata")
 
 if os.path.exists(metadata_src):
-    shutil.copy2(metadata_src, metadata_dst)
-    print(f"Copied metadata to: {metadata_dst}")
+    if os.path.abspath(metadata_src) != os.path.abspath(metadata_dst):
+        shutil.copy2(metadata_src, metadata_dst)
+        print(f"Copied metadata to: {metadata_dst}")
 else:
     print("WARNING: metadata file not found in database folder")
 
@@ -66,15 +67,15 @@ eta_var = "eta"
 numStates = TimeSliderGetNStates()
 print(f"Found {numStates} time steps")
 
-step_interval = 1
+step_interval = 2
 start_state = 0
 end_state = min(numStates, 100)
 
 # ------------------------------------------------------------
 # Temperature levels
 # ------------------------------------------------------------
-num_levels = 5
-min_temp_thres = 1300
+num_levels = 3
+min_temp_thres = 1100
 max_temp_thres = 1500
 invert_phi = 0
 
@@ -157,7 +158,7 @@ for level in temp_levels:
     print(f"\nProcessing temperature level {level:.2f}")
 
     for state in range(start_state, end_state, step_interval):
-        progress_bar(state, end_state)
+        progress_bar(state, end_state - 1)
         SetTimeSliderState(state)
 
         AddPlot("Pseudocolor", temperature_var, 1, 0)
