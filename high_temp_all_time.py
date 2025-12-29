@@ -12,6 +12,9 @@ import shutil
 import glob
 from savemetadata import save_metadata_with_git
 
+SuppressMessages(2)  # Suppress warnings
+SuppressQueryOutputOn()  # Suppress query output
+
 default_db = "celloutput.visit"
 
 # ------------------------------------------------------------
