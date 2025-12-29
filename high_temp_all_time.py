@@ -106,9 +106,6 @@ AnnotationAtts.backgroundColor = (255, 255, 255, 255)
 AnnotationAtts.foregroundColor = (0, 0, 0, 255)
 SetAnnotationAttributes(AnnotationAtts)
 
-# ------------------------------------------------------------
-# Save legend separately
-# ------------------------------------------------------------
 AddPlot("Pseudocolor", temperature_var)
 SetTimeSliderState(1)
 
@@ -125,7 +122,9 @@ LegendPlotAtts.legendFlag = 1
 LegendPlotAtts.lightingFlag = 0
 SetPlotOptions(LegendPlotAtts)
 
-# Now configure the legend appearance
+# Draw the plot FIRST so the legend object exists
+DrawPlots()
+
 legend = GetAnnotationObject(
     GetPlotList().GetPlots(GetNumPlots() - 1).plotName
 )
@@ -137,7 +136,6 @@ legend.position = (0.05, 0.1)
 legend.fontHeight = 0.03
 legend.drawTitle = 0
 legend.numberFormat = "%1.1f"
-SetPlotOptions(LegendPlotAtts)
 
 # # Hide everything except the legend
 # AnnotationAtts = AnnotationAttributes()
@@ -155,6 +153,8 @@ SaveWindowAtts.fileName = "legend_only_DELETE_ME"
 SetSaveWindowAttributes(SaveWindowAtts)
 SaveWindow()
 DeleteActivePlots()
+
+print("Legend saved successfully!")
 
 # ------------------------------------------------------------
 # Save initial eta/phi field
