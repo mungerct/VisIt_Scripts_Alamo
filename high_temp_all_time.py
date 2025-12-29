@@ -107,30 +107,10 @@ AnnotationAtts.foregroundColor = (0, 0, 0, 255)
 SetAnnotationAttributes(AnnotationAtts)
 
 # ------------------------------------------------------------
-# Save initial eta/phi field
-# ------------------------------------------------------------
-SetTimeSliderState(1)
-AddPlot("Pseudocolor", eta_var, 1, 1)
-PhiAtts = PseudocolorAttributes()
-PhiAtts.minFlag = 1
-PhiAtts.min = 0
-PhiAtts.maxFlag = 1
-PhiAtts.max = 1
-PhiAtts.colorTableName = "gray"
-PhiAtts.invertColorTable = invert_phi
-PhiAtts.legendFlag = 0
-SetPlotOptions(PhiAtts)
-DrawPlots()
-
-SaveWindowAtts.fileName = "initial_field_DELETE_ME"
-SetSaveWindowAttributes(SaveWindowAtts)
-SaveWindow()
-DeleteActivePlots()
-
-# ------------------------------------------------------------
 # Save legend separately
 # ------------------------------------------------------------
-AddPlot("Pseudocolor", temperature_var, 1, 0)
+AddPlot("Pseudocolor", temperature_var)
+SetTimeSliderState(1)
 
 LegendPlotAtts = PseudocolorAttributes()
 LegendPlotAtts.scaling = LegendPlotAtts.Linear
@@ -144,8 +124,6 @@ LegendPlotAtts.opacityType = LegendPlotAtts.FullyOpaque
 LegendPlotAtts.legendFlag = 1
 LegendPlotAtts.lightingFlag = 0
 SetPlotOptions(LegendPlotAtts)
-
-DrawPlots()
 
 # Now configure the legend appearance
 legend = GetAnnotationObject(
@@ -174,6 +152,27 @@ SetPlotOptions(LegendPlotAtts)
 DrawPlots()
 
 SaveWindowAtts.fileName = "legend_only_DELETE_ME"
+SetSaveWindowAttributes(SaveWindowAtts)
+SaveWindow()
+DeleteActivePlots()
+
+# ------------------------------------------------------------
+# Save initial eta/phi field
+# ------------------------------------------------------------
+SetTimeSliderState(1)
+AddPlot("Pseudocolor", eta_var, 1, 1)
+PhiAtts = PseudocolorAttributes()
+PhiAtts.minFlag = 1
+PhiAtts.min = 0
+PhiAtts.maxFlag = 1
+PhiAtts.max = 1
+PhiAtts.colorTableName = "gray"
+PhiAtts.invertColorTable = invert_phi
+PhiAtts.legendFlag = 0
+SetPlotOptions(PhiAtts)
+DrawPlots()
+
+SaveWindowAtts.fileName = "initial_field_DELETE_ME"
 SetSaveWindowAttributes(SaveWindowAtts)
 SaveWindow()
 DeleteActivePlots()
