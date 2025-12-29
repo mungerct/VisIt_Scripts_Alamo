@@ -68,14 +68,14 @@ eta_var = "eta"
 numStates = TimeSliderGetNStates()
 print(f"Found {numStates} time steps")
 
-step_interval = 20
+step_interval = 1
 start_state = 0
 end_state = min(numStates, 100)
 
 # ------------------------------------------------------------
 # Temperature levels
 # ------------------------------------------------------------
-num_levels = 3
+num_levels = 1
 min_temp_thres = 400
 max_temp_thres = 1000
 invert_phi = 0
@@ -136,7 +136,7 @@ legend.xScale = 1.0
 legend.yScale = 2.0
 legend.orientation = legend.VerticalRight
 legend.managePosition = 0
-legend.position = (0.05, 0.1)
+legend.position = (0.05, 0.8)
 legend.fontHeight = 0.03
 legend.drawTitle = 0
 legend.numberFormat = "%1.1f"
@@ -149,6 +149,13 @@ AnnotationAtts.databaseInfoFlag = 0
 AnnotationAtts.timeInfoFlag = 0
 AnnotationAtts.legendInfoFlag = 1  # Keep legend visible
 SetAnnotationAttributes(AnnotationAtts)
+
+AddOperator("Isovolume")
+IsoEtaAtts = IsovolumeAttributes()
+IsoEtaAtts.variable = eta_var
+IsoEtaAtts.lbound = 1.1
+IsoEtaAtts.ubound = 1e37
+SetOperatorOptions(IsoEtaAtts, 0)
 
 # Redraw with updated settings
 DrawPlots()
