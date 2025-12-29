@@ -76,7 +76,7 @@ end_state = min(numStates, 100)
 # Temperature levels
 # ------------------------------------------------------------
 num_levels = 1
-min_temp_thres = 400
+min_temp_thres = 500
 max_temp_thres = 1000
 invert_phi = 0
 
@@ -120,7 +120,7 @@ LegendPlotAtts.minFlag = 1
 LegendPlotAtts.min = min_temp_thres
 LegendPlotAtts.maxFlag = 1
 LegendPlotAtts.max = max_temp_thres
-LegendPlotAtts.colorTableName = "hot"
+LegendPlotAtts.colorTableName = "plasma"
 LegendPlotAtts.opacityType = LegendPlotAtts.FullyOpaque
 LegendPlotAtts.legendFlag = 1
 LegendPlotAtts.lightingFlag = 0
@@ -200,7 +200,8 @@ PseudocolorAtts.minFlag = 1
 PseudocolorAtts.min = min_temp_thres
 PseudocolorAtts.maxFlag = 1
 PseudocolorAtts.max = max_temp_thres
-PseudocolorAtts.colorTableName = "hot"
+PseudocolorAtts.colorTableName = "grey"
+PseudocolorAtts.invertColorTable = 1
 PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque
 PseudocolorAtts.legendFlag = 0
 PseudocolorAtts.lightingFlag = 0
