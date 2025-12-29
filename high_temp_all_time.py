@@ -143,6 +143,7 @@ LegendPlotAtts.colorTableName = "hot"
 LegendPlotAtts.opacityType = LegendPlotAtts.FullyOpaque
 LegendPlotAtts.legendFlag = 1
 LegendPlotAtts.lightingFlag = 0
+SetPlotOptions(LegendPlotAtts)
 
 # Isovolume 2: eta >= 0.5
 AddOperator("Isovolume")
@@ -164,6 +165,10 @@ legend.position = (0.05, 0.1)  # Adjust position as needed
 legend.fontHeight = 0.03
 legend.drawTitle = 0
 legend.numberFormat = "%1.1f"
+SetPlotOptions(LegendPlotAtts)
+
+SetActivePlots(GetNumPlots() - 1)
+SetPlotFollowsTime(0)
 
 DrawPlots()
 
