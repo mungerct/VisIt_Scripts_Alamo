@@ -145,15 +145,9 @@ LegendPlotAtts.legendFlag = 1
 LegendPlotAtts.lightingFlag = 0
 SetPlotOptions(LegendPlotAtts)
 
-# Isovolume 2: eta >= 0.5
-AddOperator("Isovolume")
-IsoEtaAtts = IsovolumeAttributes()
-IsoEtaAtts.variable = eta_var
-IsoEtaAtts.lbound = 1.1
-IsoEtaAtts.ubound = 1e37
-SetOperatorOptions(IsoEtaAtts, 0)
+DrawPlots()
 
-# Get the legend annotation object
+# Now configure the legend appearance
 legend = GetAnnotationObject(
     GetPlotList().GetPlots(GetNumPlots() - 1).plotName
 )
@@ -161,12 +155,22 @@ legend.xScale = 1.0
 legend.yScale = 2.0
 legend.orientation = legend.VerticalRight
 legend.managePosition = 0
-legend.position = (0.05, 0.1)  # Adjust position as needed
+legend.position = (0.05, 0.1)
 legend.fontHeight = 0.03
 legend.drawTitle = 0
 legend.numberFormat = "%1.1f"
 SetPlotOptions(LegendPlotAtts)
 
+# # Hide everything except the legend
+# AnnotationAtts = AnnotationAttributes()
+# AnnotationAtts.axes2D.visible = 0
+# AnnotationAtts.userInfoFlag = 0
+# AnnotationAtts.databaseInfoFlag = 0
+# AnnotationAtts.timeInfoFlag = 0
+# AnnotationAtts.legendInfoFlag = 1  # Keep legend visible
+# SetAnnotationAttributes(AnnotationAtts)
+
+# Redraw with updated settings
 DrawPlots()
 
 SaveWindowAtts.fileName = "legend_only_DELETE_ME"
@@ -174,7 +178,7 @@ SetSaveWindowAttributes(SaveWindowAtts)
 SaveWindow()
 DeleteActivePlots()
 
-print("Image saved successfully!")
+print("Legend saved successfully!")
 
 # ------------------------------------------------------------
 # Temperature plot attributes
