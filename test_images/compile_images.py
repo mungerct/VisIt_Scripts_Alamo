@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 basename = "temp_field_DELETE_ME"
 extension = ".png"
 start = 0
+legend = Image.open("legend_only_DELETE_ME0000.png").convert("RGBA")
 
 # Open first image to initialize result
 filename = f"{basename}{start:04d}{extension}"
@@ -50,5 +51,21 @@ result[mask] = plasma_rgb[mask]
 # Convert to image
 result_img = Image.fromarray(result)
 
-# Show / save
+# Create mask: True where legend is NOT white
+legend_arr = np.array(legend)
+# Sum RGB channels; white = 255+255+255 = 765
+mask = np.sum(legend_arr[:, :, :3], axis=2) < 765
+
+# Convert mask to 8-bit alpha channel (0=transparent, 255=opaque)
+mask_img = Image.fromarray((mask * 255).astype(np.uint8))
+
+# Position: top-right corner
+x = 0
+y = 0
+
+# Paste using mask
+result_img.paste(legend, (x, y), mask_img)
+
+# Save result
+result_img.save("finished_image.png")
 result_img.show()
