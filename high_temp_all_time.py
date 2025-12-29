@@ -101,7 +101,7 @@ AnnotationAtts.axes2D.visible = 0
 AnnotationAtts.userInfoFlag = 0
 AnnotationAtts.databaseInfoFlag = 0
 AnnotationAtts.timeInfoFlag = 0
-AnnotationAtts.legendInfoFlag = 0
+AnnotationAtts.legendInfoFlag = 1
 AnnotationAtts.backgroundColor = (255, 255, 255, 255)
 AnnotationAtts.foregroundColor = (0, 0, 0, 255)
 SetAnnotationAttributes(AnnotationAtts)
