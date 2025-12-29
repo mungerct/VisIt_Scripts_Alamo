@@ -130,7 +130,7 @@ DeleteActivePlots()
 # ------------------------------------------------------------
 # Save legend separately
 # ------------------------------------------------------------
-AddPlot("Pseudocolor", temperature_var, 1, 1)
+AddPlot("Pseudocolor", temperature_var, 1, 0)
 
 LegendPlotAtts = PseudocolorAttributes()
 LegendPlotAtts.scaling = LegendPlotAtts.Linear
