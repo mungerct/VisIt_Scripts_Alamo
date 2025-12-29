@@ -122,7 +122,7 @@ PhiAtts.legendFlag = 0
 SetPlotOptions(PhiAtts)
 DrawPlots()
 
-SaveWindowAtts.fileName = "eta_phi_field"
+SaveWindowAtts.fileName = "initial_field_DELETE_ME"
 SetSaveWindowAttributes(SaveWindowAtts)
 SaveWindow()
 DeleteActivePlots()
@@ -143,7 +143,7 @@ LegendAtts.lightingFlag = 0
 SetPlotOptions(LegendAtts)
 DrawPlots()
 
-SaveWindowAtts.fileName = "legend_only"
+SaveWindowAtts.fileName = "legend_only_DELETE_ME"
 SetSaveWindowAttributes(SaveWindowAtts)
 SaveWindow()
 DeleteActivePlots()
@@ -223,7 +223,7 @@ for level in temp_levels:
 
         # Draw and save each timestep
         DrawPlots()
-        SaveWindowAtts.fileName = "temp"
+        SaveWindowAtts.fileName = "temp_field_DELETE_ME"
         SetSaveWindowAttributes(SaveWindowAtts)
         SaveWindow()
 
