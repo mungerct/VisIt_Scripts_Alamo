@@ -68,7 +68,7 @@ eta_var = "eta"
 numStates = TimeSliderGetNStates()
 print(f"Found {numStates} time steps")
 
-step_interval = 5
+step_interval = 10
 start_state = 0
 end_state = min(numStates, 100)
 
@@ -76,8 +76,8 @@ end_state = min(numStates, 100)
 # Temperature levels
 # ------------------------------------------------------------
 num_levels = 3
-min_temp_thres = 500
-max_temp_thres = 1500
+min_temp_thres = 400
+max_temp_thres = 1000
 invert_phi = 0
 
 # ------------------------------------------------------------
@@ -131,22 +131,37 @@ DeleteActivePlots()
 # Save legend separately
 # ------------------------------------------------------------
 AddPlot("Pseudocolor", temperature_var, 1, 1)
-LegendAtts = PseudocolorAttributes()
-LegendAtts.minFlag = 1
-LegendAtts.min = min_temp_thres
-LegendAtts.maxFlag = 1
-LegendAtts.max = max_temp_thres
-LegendAtts.colorTableName = "hot"
-LegendAtts.opacity = 0          # invisible plot
-LegendAtts.legendFlag = 1       # show legend
-LegendAtts.lightingFlag = 0
-SetPlotOptions(LegendAtts)
+
+LegendPlotAtts = PseudocolorAttributes()
+LegendPlotAtts.minFlag = 1
+LegendPlotAtts.min = min_temp_thres
+LegendPlotAtts.maxFlag = 1
+LegendPlotAtts.max = max_temp_thres
+LegendPlotAtts.colorTableName = "hot"
+LegendPlotAtts.opacity = 0
+LegendPlotAtts.legendFlag = 1
+LegendPlotAtts.lightingFlag = 0
+SetPlotOptions(LegendPlotAtts)
+
 DrawPlots()
+
+legend = GetAnnotationObject(
+    GetPlotList().GetPlots(GetNumPlots() - 1).plotName
+)
+legend.xScale = 1.0
+legend.yScale = 2.0
+legend.orientation = legend.VerticalRight
+legend.managePosition = 0
+legend.position = (0.0, 0.9)
+legend.fontHeight = 0.03
+legend.drawTitle = 0
+legend.numberFormat = "%1.1f"
 
 SaveWindowAtts.fileName = "legend_only_DELETE_ME"
 SetSaveWindowAttributes(SaveWindowAtts)
 SaveWindow()
-DeleteActivePlots()
+
+print("Image saved successfully!")
 
 # ------------------------------------------------------------
 # Temperature plot attributes
