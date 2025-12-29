@@ -123,19 +123,19 @@ LegendPlotAtts.lightingFlag = 0
 SetPlotOptions(LegendPlotAtts)
 
 # Draw the plot FIRST so the legend object exists
-DrawPlots()
+# DrawPlots()
 
-legend = GetAnnotationObject(
-    GetPlotList().GetPlots(GetNumPlots() - 1).plotName
-)
-legend.xScale = 1.0
-legend.yScale = 2.0
-legend.orientation = legend.VerticalRight
-legend.managePosition = 0
-legend.position = (0.05, 0.1)
-legend.fontHeight = 0.03
-legend.drawTitle = 0
-legend.numberFormat = "%1.1f"
+# legend = GetAnnotationObject(
+#     GetPlotList().GetPlots(GetNumPlots() - 1).plotName
+# )
+# legend.xScale = 1.0
+# legend.yScale = 2.0
+# legend.orientation = legend.VerticalRight
+# legend.managePosition = 0
+# legend.position = (0.05, 0.1)
+# legend.fontHeight = 0.03
+# legend.drawTitle = 0
+# legend.numberFormat = "%1.1f"
 
 # # Hide everything except the legend
 # AnnotationAtts = AnnotationAttributes()
