@@ -133,18 +133,24 @@ DeleteActivePlots()
 AddPlot("Pseudocolor", temperature_var, 1, 1)
 
 LegendPlotAtts = PseudocolorAttributes()
+LegendPlotAtts.scaling = LegendPlotAtts.Linear
+LegendPlotAtts.limitsMode = LegendPlotAtts.OriginalData
 LegendPlotAtts.minFlag = 1
 LegendPlotAtts.min = min_temp_thres
 LegendPlotAtts.maxFlag = 1
 LegendPlotAtts.max = max_temp_thres
 LegendPlotAtts.colorTableName = "hot"
-# Don't set opacity to 0 - keep it at 1 so legend is visible
-LegendPlotAtts.opacity = 1
+LegendPlotAtts.opacityType = LegendPlotAtts.FullyOpaque
 LegendPlotAtts.legendFlag = 1
 LegendPlotAtts.lightingFlag = 0
-SetPlotOptions(LegendPlotAtts)
 
-DrawPlots()
+# Isovolume 2: eta >= 0.5
+AddOperator("Isovolume")
+IsoEtaAtts = IsovolumeAttributes()
+IsoEtaAtts.variable = eta_var
+IsoEtaAtts.lbound = 1.1
+IsoEtaAtts.ubound = 1e37
+SetOperatorOptions(IsoEtaAtts, 0)
 
 # Get the legend annotation object
 legend = GetAnnotationObject(
@@ -158,28 +164,6 @@ legend.position = (0.05, 0.1)  # Adjust position as needed
 legend.fontHeight = 0.03
 legend.drawTitle = 0
 legend.numberFormat = "%1.1f"
-
-# Hide the actual plot mesh/data, keep only annotations
-AnnotationAtts = AnnotationAttributes()
-AnnotationAtts.axes2D.visible = 0
-AnnotationAtts.axes2D.xAxis.title.visible = 0
-AnnotationAtts.axes2D.yAxis.title.visible = 0
-AnnotationAtts.axes2D.xAxis.label.visible = 0
-AnnotationAtts.axes2D.yAxis.label.visible = 0
-AnnotationAtts.userInfoFlag = 0
-AnnotationAtts.databaseInfoFlag = 0
-AnnotationAtts.timeInfoFlag = 0
-AnnotationAtts.legendInfoFlag = 1  # Keep legend visible
-AnnotationAtts.axes2D.autoSetTicks = 0
-AnnotationAtts.axes2D.xAxis.grid = 0
-AnnotationAtts.axes2D.yAxis.grid = 0
-SetAnnotationAttributes(AnnotationAtts)
-
-# Set view to show minimal plot area
-View2DAtts = View2DAttributes()
-View2DAtts.windowCoords = (0, 0.1, 0, 0.1)  # Minimal window
-View2DAtts.viewportCoords = (0.0, 1.0, 0.0, 1.0)
-SetView2D(View2DAtts)
 
 DrawPlots()
 
