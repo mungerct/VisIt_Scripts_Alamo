@@ -68,7 +68,7 @@ eta_var = "eta"
 numStates = TimeSliderGetNStates()
 print(f"Found {numStates} time steps")
 
-step_interval = 10
+step_interval = 20
 start_state = 0
 end_state = min(numStates, 100)
 
@@ -166,9 +166,6 @@ legend.fontHeight = 0.03
 legend.drawTitle = 0
 legend.numberFormat = "%1.1f"
 SetPlotOptions(LegendPlotAtts)
-
-SetActivePlots(GetNumPlots() - 1)
-SetPlotFollowsTime(0)
 
 DrawPlots()
 
