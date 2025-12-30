@@ -3,10 +3,9 @@ import subprocess
 import os
 import shutil
 
-def save_metadata_with_git(params, output_dir, original_metadata_path=None):
+def save_metadata_with_git(params, output_dir):
     """
     Save metadata parameters and Git hash to a file in the output directory.
-    Also copies the original metadata file from the database if provided.
     
     Args:
         params (dict): Dictionary of metadata parameters. Must include 'image name'.
@@ -16,27 +15,22 @@ def save_metadata_with_git(params, output_dir, original_metadata_path=None):
     # Ensure output directory exists
     os.makedirs(output_dir, exist_ok=True)
 
-    # Step 1: Copy original metadata file if provided
-    if original_metadata_path and os.path.exists(original_metadata_path):
-        shutil.copy2(original_metadata_path, output_dir)
-        print(f"Copied original metadata file to: {output_dir}")
+    # Step 1: Build metadata filename based on latest image
+    filename_name = params.get("image name")
+    if not filename_name:
+        raise ValueError("'image file name' must be present in the parameters dictionary.")
 
-    # Step 2: Build metadata filename based on latest image
-    latest_name = params.get("image name")
-    if not latest_name:
-        raise ValueError("'image name' must be present in the parameters dictionary.")
-
-    base_name, _ = os.path.splitext(latest_name)
+    base_name, _ = os.path.splitext(filename_name)
     metadata_filename = f"metadata_{base_name}"
     metadata_path = os.path.join(output_dir, metadata_filename)
 
-    # Step 3: Write parameters to the metadata file
+    # Step 2: Write parameters to the metadata file
     with open(metadata_path, "a", encoding="utf-8") as f:
         f.write("\n--- Parameters ---\n")
         for key, value in params.items():
             f.write(f"{key}: {value}\n")
 
-    # Step 4: Append Git hash
+    # Step 3: Append Git hash
     def get_git_hash():
         try:
             return subprocess.check_output(

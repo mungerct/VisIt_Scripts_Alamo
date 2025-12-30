@@ -156,7 +156,7 @@ SetSaveWindowAttributes(SaveWindowAtts)
 SaveWindow()
 DeleteActivePlots()
 
-print("Legend saved successfully!")
+print("Legend saved")
 
 # ------------------------------------------------------------
 # Save initial eta/phi field
@@ -179,7 +179,7 @@ SetSaveWindowAttributes(SaveWindowAtts)
 SaveWindow()
 DeleteActivePlots()
 
-print("Legend saved successfully!")
+print("Inital Field Saved")
 
 # ------------------------------------------------------------
 # Temperature plot attributes
@@ -222,7 +222,7 @@ def progress_bar(i, total, width=40):
 # Loop over temperature levels and timesteps (no eta background)
 # ------------------------------------------------------------
 for level in temp_levels:
-    print(f"\nProcessing temperature level {level:.2f}")
+    print(f"\nSaving Time Steps:")
 
     for state in range(start_state, end_state, step_interval):
         progress_bar(state, end_state)
@@ -264,16 +264,6 @@ for level in temp_levels:
 # ------------------------------------------------------------
 # Save metadata
 # ------------------------------------------------------------
-# def most_recent_file(directory, pattern="*"):
-#     files = glob.glob(os.path.join(directory, pattern))
-#     if not files:
-#         return None
-#     return max(files, key=os.path.getctime)
-
-# latest_file = most_recent_file(
-#     SaveWindowAtts.outputDirectory,
-#     f"{SaveWindowAtts.fileName}*"
-# )
 
 metadata_parameters = {
     "visit_scripts filename": os.path.basename(__file__),
@@ -288,5 +278,5 @@ metadata_parameters = {
     "image name": "file_name_test"
 }
 
-save_metadata_with_git(metadata_parameters, output_dir, os.path.join(parent_dir, "metadata"))
+save_metadata_with_git(metadata_parameters, output_dir)
 sys.exit(0)

@@ -3,6 +3,7 @@ from PIL import Image
 import numpy as np
 import os
 import matplotlib.pyplot as plt
+import sys
 
 def paste_image(background, overlay, position):
     """Paste overlay onto background at the given position using overlay's alpha channel as mask."""
@@ -14,6 +15,17 @@ def paste_image(background, overlay, position):
 
     background.paste(overlay, (x, y), mask_img)
     return background
+
+def progress_bar(i, total, width=40):
+    frac = i / float(total)
+    filled = int(width * frac)
+    bar = "#" * filled + "-" * (width - filled)
+    sys.stdout.write(
+        f"\r  Pasting Images: [{bar}] {i}/{total} ({frac*100:5.1f}%)"
+    )
+    sys.stdout.flush()
+    if i == total:
+        print()
 
 basename = "temp_field_DELETE_ME"
 extension = ".png"
@@ -28,19 +40,28 @@ result_arr = np.array(result_img)
 
 i = start + 1
 
+# Collect all existing image filenames first
+filenames = []
+i = 0
 while True:
     filename = f"{basename}{i:04d}{extension}"
-
     if not os.path.exists(filename):
         break
+    filenames.append(filename)
+    i += 1
 
+total = len(filenames)
+
+# Process images with progress bar
+for idx, filename in enumerate(filenames, start=1):
     img = Image.open(filename).convert("L")
     arr = np.array(img)
 
     # Keep darker pixels
     result_arr = np.minimum(result_arr, arr)
 
-    i += 1
+    # Update progress bar
+    progress_bar(idx, total)
 
 # Create mask: True where pixel is NOT white
 mask = result_arr < 255
