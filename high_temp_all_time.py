@@ -50,18 +50,6 @@ if not os.path.exists(output_dir):
 else:
     print(f"Saving frames in existing directory: {output_dir}")
 
-# # ------------------------------------------------------------
-# # Copy metadata file
-# # ------------------------------------------------------------
-# metadata_src = os.path.join(parent_dir, "metadata")
-# metadata_dst = os.path.join(output_dir, "metadata")
-
-# if os.path.exists(metadata_src):
-#     shutil.copy2(metadata_src, metadata_dst)
-#     print(f"Copied metadata to: {metadata_dst}")
-# else:
-#     print("WARNING: metadata file not found in database folder")
-
 # ------------------------------------------------------------
 # Variables
 # ------------------------------------------------------------
@@ -79,8 +67,8 @@ end_state = min(numStates, 100)
 # Temperature levels
 # ------------------------------------------------------------
 num_levels = 1
-min_temp_thres = 500
-max_temp_thres = 1000
+min_temp_thres = 1200
+max_temp_thres = 2000
 invert_phi = 0
 
 # ------------------------------------------------------------
@@ -129,7 +117,7 @@ LegendPlotAtts.legendFlag = 1
 LegendPlotAtts.lightingFlag = 0
 SetPlotOptions(LegendPlotAtts)
 
-# Draw the plot FIRST so the legend object exists
+# Draw the plot first so the legend object exists
 DrawPlots()
 
 legend = GetAnnotationObject(
@@ -276,19 +264,16 @@ for level in temp_levels:
 # ------------------------------------------------------------
 # Save metadata
 # ------------------------------------------------------------
-def most_recent_file(directory, pattern="*"):
-    files = glob.glob(os.path.join(directory, pattern))
-    if not files:
-        return None
-    return max(files, key=os.path.getctime)
+# def most_recent_file(directory, pattern="*"):
+#     files = glob.glob(os.path.join(directory, pattern))
+#     if not files:
+#         return None
+#     return max(files, key=os.path.getctime)
 
-latest_file = most_recent_file(
-    SaveWindowAtts.outputDirectory,
-    f"{SaveWindowAtts.fileName}*"
-)
-
-if latest_file:
-    latest_name = os.path.basename(latest_file)
+# latest_file = most_recent_file(
+#     SaveWindowAtts.outputDirectory,
+#     f"{SaveWindowAtts.fileName}*"
+# )
 
 metadata_parameters = {
     "visit_scripts filename": os.path.basename(__file__),
@@ -300,7 +285,7 @@ metadata_parameters = {
     "maximum temperature": max_temp_thres,
     "initial phi/eta variable name": eta_var,
     "invert initial phi/eta": invert_phi,
-    "image name": latest_name
+    "image name": "file_name_test"
 }
 
 save_metadata_with_git(metadata_parameters, output_dir, os.path.join(parent_dir, "metadata"))
