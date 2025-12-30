@@ -61,7 +61,8 @@ print(f"Found {numStates} time steps")
 
 step_interval = 10
 start_state = 0
-end_state = min(numStates, 100)
+end_state = 100
+end_state = min(numStates, end_state)
 
 # ------------------------------------------------------------
 # Temperature levels

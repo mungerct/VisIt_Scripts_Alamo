@@ -21,7 +21,7 @@ def save_metadata_with_git(params, output_dir):
         raise ValueError("'image file name' must be present in the parameters dictionary.")
 
     base_name, _ = os.path.splitext(filename_name)
-    metadata_filename = f"metadata_{base_name}"
+    metadata_filename = f"{base_name}_metadata.txt"
     metadata_path = os.path.join(output_dir, metadata_filename)
 
     # Step 2: Write parameters to the metadata file
