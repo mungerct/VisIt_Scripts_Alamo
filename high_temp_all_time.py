@@ -10,7 +10,7 @@ import sys
 import os
 import shutil
 import glob
-from scripts import save_metadata_with_git, compile_images_func
+from scripts import save_metadata_with_git
 
 SuppressMessages(2)  # Suppress warnings
 SuppressQueryOutputOn()  # Suppress query output
