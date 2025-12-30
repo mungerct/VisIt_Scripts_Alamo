@@ -10,7 +10,7 @@ import sys
 import os
 import shutil
 import glob
-from .scripts.savemetadata import save_metadata_with_git
+from scripts.savemetadata import save_metadata_with_git
 
 SuppressMessages(2)  # Suppress warnings
 SuppressQueryOutputOn()  # Suppress query output
