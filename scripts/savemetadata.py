@@ -18,7 +18,7 @@ def save_metadata_with_git(params, output_dir):
     # Step 1: Build metadata filename based on latest image
     filename_name = params.get("image name")
     if not filename_name:
-        raise ValueError("'image file name' must be present in the parameters dictionary.")
+        raise ValueError("\n'image file name' must be present in the parameters dictionary.")
 
     base_name, _ = os.path.splitext(filename_name)
     metadata_filename = f"{base_name}_metadata.txt"
@@ -44,4 +44,4 @@ def save_metadata_with_git(params, output_dir):
         f.write("\n--- Visit Script Metadata ---\n")
         f.write(f"Git hash: {get_git_hash()}\n")
 
-    print(f"Metadata and Git hash saved to: {metadata_path}")
+    print(f"\nMetadata and Git hash saved to: {metadata_path}")

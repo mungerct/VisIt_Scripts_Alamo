@@ -27,82 +27,67 @@ def progress_bar(i, total, width=40):
     if i == total:
         print()
 
-basename = "temp_field_DELETE_ME"
-extension = ".png"
-start = 0
-legend = Image.open("legend_only_DELETE_ME0000.png").convert("RGBA")
-initial_field = Image.open("initial_field_DELETE_ME0000.png").convert("RGBA")
+def compile_images_func(filename="result_img.png"):
 
-# Open first image to initialize result
-filename = f"{basename}{start:04d}{extension}"
-result_img = Image.open(filename).convert("L")
-result_arr = np.array(result_img)
+    basename = "temp_field_DELETE_ME"
+    extension = ".png"
+    start = 0
+    legend = Image.open("legend_only_DELETE_ME0000.png").convert("RGBA")
+    initial_field = Image.open("initial_field_DELETE_ME0000.png").convert("RGBA")
 
-i = start + 1
+    # Open first image to initialize result
+    filename = f"{basename}{start:04d}{extension}"
+    result_img = Image.open(filename).convert("L")
+    result_arr = np.array(result_img)
 
-# Collect all existing image filenames first
-filenames = []
-i = 0
-while True:
-    filename = f"{basename}{i:04d}{extension}"
-    if not os.path.exists(filename):
-        break
-    filenames.append(filename)
-    i += 1
+    i = start + 1
 
-total = len(filenames)
+    # Collect all existing image filenames first
+    filenames = []
+    i = 0
+    while True:
+        filename = f"{basename}{i:04d}{extension}"
+        if not os.path.exists(filename):
+            break
+        filenames.append(filename)
+        i += 1
 
-# Process images with progress bar
-for idx, filename in enumerate(filenames, start=1):
-    img = Image.open(filename).convert("L")
-    arr = np.array(img)
+    total = len(filenames)
 
-    # Keep darker pixels
-    result_arr = np.minimum(result_arr, arr)
+    # Process images with progress bar
+    for idx, filename in enumerate(filenames, start=1):
+        img = Image.open(filename).convert("L")
+        arr = np.array(img)
 
-    # Update progress bar
-    progress_bar(idx, total)
+        # Keep darker pixels
+        result_arr = np.minimum(result_arr, arr)
 
-# Create mask: True where pixel is NOT white
-mask = result_arr < 255
+        # Update progress bar
+        progress_bar(idx, total)
 
-# Normalize grayscale for colormap
-norm = result_arr / 255.0
+    # Create mask: True where pixel is NOT white
+    mask = result_arr < 255
 
-# Apply plasma colormap
-plasma = plt.cm.plasma(norm)[:, :, :3]  # RGB only
+    # Normalize grayscale for colormap
+    norm = result_arr / 255.0
 
-# Convert to uint8
-plasma_rgb = (plasma * 255).astype(np.uint8)
+    # Apply plasma colormap
+    plasma = plt.cm.plasma(norm)[:, :, :3]  # RGB only
 
-# Start with a white RGB image
-result = np.ones((*result_arr.shape, 3), dtype=np.uint8) * 255
+    # Convert to uint8
+    plasma_rgb = (plasma * 255).astype(np.uint8)
 
-# Replace only non-white pixels
-result[mask] = plasma_rgb[mask]
+    # Start with a white RGB image
+    result = np.ones((*result_arr.shape, 3), dtype=np.uint8) * 255
 
-# Convert to image
-result_img = Image.fromarray(result)
+    # Replace only non-white pixels
+    result[mask] = plasma_rgb[mask]
 
-# # Create mask: True where legend is NOT white
-# legend_arr = np.array(legend)
-# # Sum RGB channels; white = 255+255+255 = 765
-# mask = np.sum(legend_arr[:, :, :3], axis=2) < 765
+    # Convert to image
+    result_img = Image.fromarray(result)
 
-# # Convert mask to 8-bit alpha channel (0=transparent, 255=opaque)
-# mask_img = Image.fromarray((mask * 255).astype(np.uint8))
+    result_img = paste_image(result_img, legend, (0, 0))
+    result_img = paste_image(result_img, initial_field, (0, 0))
 
-# # Position: top-right corner
-# x = 0
-# y = 0
-
-# # Paste using mask
-# result_img.paste(legend, (x, y), mask_img)
-
-# Save result
-
-result_img = paste_image(result_img, legend, (0, 0))
-result_img = paste_image(result_img, initial_field, (0, 0))
-
-result_img.save("finished_image.png")
-result_img.show()
+    result_img.save(filename)
+    result_img.show()
