@@ -59,7 +59,7 @@ eta_var = "eta"
 numStates = TimeSliderGetNStates()
 print(f"Found {numStates} time steps")
 
-step_interval = 1
+step_interval = 10
 start_state = 0
 end_state = min(numStates, 100)
 
