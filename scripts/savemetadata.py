@@ -1,9 +1,8 @@
 #!/usr/bin/env python
-import subprocess
-import os
-import shutil
 
 def save_metadata_with_git(params, output_dir):
+    import subprocess
+    import os
     """
     Save metadata parameters and Git hash to a file in the output directory.
     

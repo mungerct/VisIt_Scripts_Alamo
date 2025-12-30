@@ -1,11 +1,8 @@
 #!/usr/bin/env python
-from PIL import Image
-import numpy as np
-import os
-import matplotlib.pyplot as plt
-import sys
 
 def paste_image(background, overlay, position):
+    from PIL import Image
+    import numpy as np
     """Paste overlay onto background at the given position using overlay's alpha channel as mask."""
     x, y = position
 
@@ -17,6 +14,7 @@ def paste_image(background, overlay, position):
     return background
 
 def progress_bar(i, total, width=40):
+    import sys
     frac = i / float(total)
     filled = int(width * frac)
     bar = "#" * filled + "-" * (width - filled)
@@ -28,6 +26,10 @@ def progress_bar(i, total, width=40):
         print()
 
 def compile_images_func(filename="result_img.png"):
+    from PIL import Image
+    import numpy as np
+    import os
+    import matplotlib.pyplot as plt
 
     basename = "temp_field_DELETE_ME"
     extension = ".png"
