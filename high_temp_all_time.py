@@ -49,18 +49,6 @@ else:
     print(f"Saving frames in existing directory: {output_dir}")
 
 # ------------------------------------------------------------
-(??)# Copy metadata file
-(??)# ------------------------------------------------------------
-(??)metadata_src = os.path.join(parent_dir, "metadata")
-(??)metadata_dst = os.path.join(output_dir, "metadata")
-(??)
-(??)if os.path.exists(metadata_src):
-(??)    shutil.copy2(metadata_src, metadata_dst)
-(??)    print(f"Copied metadata to: {metadata_dst}")
-(??)else:
-(??)    print("WARNING: metadata file not found in database folder")
-(??)
-(??)# ------------------------------------------------------------
 # Variables
 # ------------------------------------------------------------
 temperature_var = "temp"
