@@ -49,8 +49,7 @@ def compile_images_func(
         arr = np.array(img)
         result_arr = np.minimum(result_arr, arr)
         # update progress bar
-        frac = idx / total
-        print(f"\rProcessing {idx}/{total} ({frac*100:.1f}%)", end="")
+        progress_bar(idx, total, width=40)
     print()
 
     # Apply colormap
