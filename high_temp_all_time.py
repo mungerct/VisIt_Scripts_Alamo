@@ -9,6 +9,7 @@ VisIt visualization script:
 import sys
 import os
 from scripts.savemetadata import save_metadata_with_git
+from scripts.compile_images import progress_bar
 
 SuppressMessages(2)  # Suppress warnings
 SuppressQueryOutputOn()  # Suppress query output
@@ -208,14 +209,6 @@ else:
 # ------------------------------------------------------------
 # Progress bar function
 # ------------------------------------------------------------
-def progress_bar(i, total, width=40):
-    frac = i / float(total - 1)
-    filled = int(width * frac)
-    bar = "#" * filled + "-" * (width - filled)
-    sys.stdout.write(f"\r  Time steps: [{bar}] {i}/{total} ({frac*100:5.1f}%)")
-    sys.stdout.flush()
-    if i == total:
-        print()
 
 # ------------------------------------------------------------
 # Loop over temperature levels and timesteps (no eta background)
@@ -224,7 +217,7 @@ for level in temp_levels:
     print(f"\nSaving Time Steps:")
 
     for state in range(start_state, end_state, step_interval):
-        progress_bar(state, end_state)
+        progress_bar(state, end_state - 1)
         SetTimeSliderState(state)
 
         # Remove previous temperature plots
