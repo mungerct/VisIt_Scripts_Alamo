@@ -28,4 +28,7 @@ conda activate "${CONDA_ENV}"
 echo "Compiling Images ${DATA_DIR}..."
 python "${POST_SCRIPT}" "${DATA_DIR}"
 
+conda deactivate
+conda deactivate
+
 echo "All steps completed successfully."
