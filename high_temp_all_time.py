@@ -209,7 +209,7 @@ else:
 # Progress bar function
 # ------------------------------------------------------------
 def progress_bar(i, total, width=40):
-    frac = i / float(total)
+    frac = i / float(total - 1)
     filled = int(width * frac)
     bar = "#" * filled + "-" * (width - filled)
     sys.stdout.write(f"\r  Time steps: [{bar}] {i}/{total} ({frac*100:5.1f}%)")

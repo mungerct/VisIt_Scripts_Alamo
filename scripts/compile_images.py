@@ -68,7 +68,7 @@ def compile_images_func(
 
     # Save result
     result_img.save(os.path.join(cwd, output_file))
-    result_img.show()
+    # result_img.show()
 
 
 def paste_image(background, overlay, position):
