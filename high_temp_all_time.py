@@ -217,7 +217,7 @@ for level in temp_levels:
     print(f"\nSaving Time Steps:")
 
     for state in range(start_state, end_state, step_interval):
-        progress_bar(state, end_state - 1)
+        progress_bar(state + 1, end_state)
         SetTimeSliderState(state)
 
         # Remove previous temperature plots
