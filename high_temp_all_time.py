@@ -10,22 +10,23 @@ import sys
 import os
 from scripts.savemetadata import save_metadata_with_git
 from scripts.compile_images import progress_bar
+from scripts.input_processing import get_parameters, read_input_file
 
 SuppressMessages(2)  # Suppress warnings
 SuppressQueryOutputOn()  # Suppress query output
 
-default_db = "celloutput.visit"
+# ------------------------------------------------------------
+# Read input file
+# ------------------------------------------------------------
+input_file = sys.argv[1] if len(sys.argv) > 1 else None
+params = get_parameters(input_file)
 
 # ------------------------------------------------------------
 # Database handling
 # ------------------------------------------------------------
-if len(sys.argv) > 1:
-    db_path = sys.argv[1]
-    if not db_path.endswith(default_db):
-        db_path = os.path.join(db_path, default_db)
-else:
-    db_path = os.path.join(os.getcwd(), default_db)
-
+default_db = "celloutput.visit"
+db_root = params["db_path"]
+db_path = os.path.join(db_root, default_db)
 db_path = os.path.abspath(db_path)
 
 if not os.path.exists(db_path):
@@ -53,7 +54,7 @@ else:
 # Variables
 # ------------------------------------------------------------
 temperature_var = "temp"
-eta_var = "eta"
+background_var = "eta"
 
 numStates = TimeSliderGetNStates()
 print(f"Found {numStates} time steps")
@@ -143,7 +144,7 @@ SetAnnotationAttributes(AnnotationAtts)
 
 AddOperator("Isovolume")
 IsoEtaAtts = IsovolumeAttributes()
-IsoEtaAtts.variable = eta_var
+IsoEtaAtts.variable = background_var
 IsoEtaAtts.lbound = 1.1
 IsoEtaAtts.ubound = 1e37
 SetOperatorOptions(IsoEtaAtts, 0)
@@ -162,7 +163,7 @@ print("Legend saved")
 # Save initial eta/phi field
 # ------------------------------------------------------------
 SetTimeSliderState(1)
-AddPlot("Pseudocolor", eta_var, 1, 1)
+AddPlot("Pseudocolor", background_var, 1, 1)
 PhiAtts = PseudocolorAttributes()
 PhiAtts.minFlag = 1
 PhiAtts.min = 0
@@ -231,7 +232,7 @@ for level in temp_levels:
         # Isovolume 2: eta >= 0.5
         AddOperator("Isovolume")
         IsoEtaAtts = IsovolumeAttributes()
-        IsoEtaAtts.variable = eta_var
+        IsoEtaAtts.variable = background_var
         IsoEtaAtts.lbound = 0.5
         IsoEtaAtts.ubound = 1e37
         SetOperatorOptions(IsoEtaAtts, 0)
@@ -265,7 +266,7 @@ metadata_parameters = {
     "number of temperature levels": num_levels,
     "minimum temperature": min_temp_thres,
     "maximum temperature": max_temp_thres,
-    "initial phi/eta variable name": eta_var,
+    "initial phi/eta variable name": background_var,
     "invert initial phi/eta": invert_phi,
     "image name": "file_name_test"
 }
