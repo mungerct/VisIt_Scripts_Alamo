@@ -24,7 +24,7 @@ def save_metadata_with_git(params, output_dir):
     metadata_path = os.path.join(metadata_filename)
 
     # Step 2: Write parameters to the metadata file
-    with open(metadata_path, "a", encoding="utf-8") as f:
+    with open(metadata_path, "w", encoding="utf-8") as f:
         f.write("\n--- Parameters ---\n")
         for key, value in params.items():
             f.write(f"{key}: {value}\n")
