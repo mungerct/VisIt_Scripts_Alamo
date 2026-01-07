@@ -40,15 +40,15 @@ OpenDatabase(db_path, 0)
 # ------------------------------------------------------------
 # Output directory
 # ------------------------------------------------------------
-parent_dir = os.path.dirname(db_path)
-folder_name = os.path.basename(parent_dir)
-output_dir = os.path.join(os.getcwd(), folder_name)
+# parent_dir = os.path.dirname(db_path)
+# folder_name = os.path.basename(parent_dir)
+# output_dir = os.path.join(os.getcwd(), folder_name)
 
-if not os.path.exists(output_dir):
-    os.makedirs(output_dir)
-    print(f"Created output directory: {output_dir}")
-else:
-    print(f"Saving frames in existing directory: {output_dir}")
+# if not os.path.exists(output_dir):
+#     os.makedirs(output_dir)
+#     print(f"Created output directory: {output_dir}")
+# else:
+#     print(f"Saving frames in existing directory: {output_dir}")
 
 # ------------------------------------------------------------
 # Variables
@@ -271,5 +271,5 @@ metadata_parameters = {
     "image name": "file_name_test"
 }
 
-save_metadata_with_git(metadata_parameters, output_dir)
+save_metadata_with_git(metadata_parameters, ".")
 sys.exit(0)
