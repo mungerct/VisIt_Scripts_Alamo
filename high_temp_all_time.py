@@ -230,11 +230,11 @@ for state in range(start_state, end_state, step_interval):
     IsoEtaAtts.ubound = 1e37
     SetOperatorOptions(IsoEtaAtts, 0)
 
-    # Isovolume 1: temperature >= level
+    # Isovolume 1: temperature >= min_temp_thres
     AddOperator("Isovolume")
     IsoTempAtts = IsovolumeAttributes()
     IsoTempAtts.variable = temperature_var
-    IsoTempAtts.lbound = level
+    IsoTempAtts.lbound = min_temp_thres
     IsoTempAtts.ubound = 1e37
     SetOperatorOptions(IsoTempAtts, 1)
 
