@@ -31,6 +31,6 @@ compile_images_func(
     extension=".png",
     legend_file="legend_only_DELETE_ME0000.png",
     initial_field_file="initial_field_DELETE_ME0000.png",
-    output_file="result_img.png"
+    output_file=params["file.output_filename"] + ".png"
 )
 delete_delete_me_files()
