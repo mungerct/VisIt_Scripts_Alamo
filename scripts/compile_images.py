@@ -55,11 +55,11 @@ def compile_images_func(
     # Apply colormap
     mask = result_arr < 255
     norm = result_arr / 255.0
-    plasma = plt.cm.plasma(norm)[:, :, :3]
-    plasma_rgb = (plasma * 255).astype(np.uint8)
+    colormap = plt.cm.plasma(norm)[:, :, :3]
+    colormap_rgb = (colormap * 255).astype(np.uint8)
 
     result = np.ones((*result_arr.shape, 3), dtype=np.uint8) * 255
-    result[mask] = plasma_rgb[mask]
+    result[mask] = colormap_rgb[mask]
     result_img = Image.fromarray(result)
 
     result_img = paste_image(result_img, legend, position=(0, 0))

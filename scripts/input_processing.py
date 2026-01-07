@@ -148,5 +148,21 @@ def get_parameters(input_file=None):
         if key not in DEFAULTS:
             print(f"WARNING: Unknown input key '{key}'")
 
+    cmap = params["plotting.main_plotting_var.colormap"].lower()
+    if cmap not in ALLOWED_COLORMAPS:
+        raise ValueError(
+            f"Invalid colormap '{params['plotting.main_plotting_var.colormap']}'.\n"
+            f"Allowed colormaps are:\n"
+            f"{sorted(ALLOWED_COLORMAPS)}"
+        )
+    
+    cmap = params["plotting.background_var.colormap"].lower()
+    if cmap not in ALLOWED_COLORMAPS:
+        raise ValueError(
+            f"Invalid colormap '{params['plotting.background_var.colormap']}'.\n"
+            f"Allowed colormaps are:\n"
+            f"{sorted(ALLOWED_COLORMAPS)}"
+        )
+
     params.update(inputs)
     return params
