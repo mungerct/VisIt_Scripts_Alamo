@@ -51,6 +51,7 @@ start_state = params["step.start"]
 if params["step.end"] == -1:
     end_state = numStates
     print(f"Found {numStates} time steps")
+    params["step.end"] = numStates
 else:
     end_state = params["step.end"]
     print(f"Using {numStates} time steps")
