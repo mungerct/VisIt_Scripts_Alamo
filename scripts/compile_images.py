@@ -15,6 +15,7 @@ def compile_images_func(
     from PIL import Image
     import numpy as np
     import matplotlib.pyplot as plt
+    from colormaps import hot
 
     # Use current working directory (which you changed to the image folder)
     cwd = os.getcwd()

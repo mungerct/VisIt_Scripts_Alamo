@@ -57,6 +57,7 @@ ALLOWED_COLORMAPS = {
     "YlOrBr",
     "YlOrRd",
     "turbo",
+    "hot",
 }
 
 # -----------------------------
