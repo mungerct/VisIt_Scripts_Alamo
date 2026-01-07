@@ -45,14 +45,14 @@ background_var = params["background_var"]
 
 numStates = TimeSliderGetNStates()
 
-step_interval = params["step_interval"]
-start_state = params["start_state"]
+step_interval = params["step.interval"]
+start_state = params["step.start"]
 
-if params["end_state"] == -1:
+if params["step.end"] == -1:
     end_state = numStates
     print(f"Found {numStates} time steps")
 else:
-    end_state = params["end_state"]
+    end_state = params["step.end"]
     print(f"Using {numStates} time steps")
     if end_state > numStates:
         print(f"Warning: end_state {end_state} exceeds available states {numStates}, using {numStates} instead")
@@ -62,9 +62,9 @@ else:
 # Temperature levels
 # ------------------------------------------------------------
 num_levels = 1
-min_temp_thres = 1200
-max_temp_thres = 2000
-invert_phi = 0
+min_var = params["var.min"]
+max_var = params["var.max"]
+invert_phi = params["invert_phi"]
 
 # ------------------------------------------------------------
 # SaveWindow settings
@@ -102,9 +102,9 @@ LegendPlotAtts = PseudocolorAttributes()
 LegendPlotAtts.scaling = LegendPlotAtts.Linear
 LegendPlotAtts.limitsMode = LegendPlotAtts.OriginalData
 LegendPlotAtts.minFlag = 1
-LegendPlotAtts.min = min_temp_thres
+LegendPlotAtts.min = min_var
 LegendPlotAtts.maxFlag = 1
-LegendPlotAtts.max = max_temp_thres
+LegendPlotAtts.max = max_var
 LegendPlotAtts.colorTableName = "plasma"
 LegendPlotAtts.opacityType = LegendPlotAtts.FullyOpaque
 LegendPlotAtts.legendFlag = 1
@@ -182,9 +182,9 @@ PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear
 PseudocolorAtts.limitsMode = PseudocolorAtts.OriginalData
 PseudocolorAtts.minFlag = 1
-PseudocolorAtts.min = min_temp_thres
+PseudocolorAtts.min = min_var
 PseudocolorAtts.maxFlag = 1
-PseudocolorAtts.max = max_temp_thres
+PseudocolorAtts.max = max_var
 PseudocolorAtts.colorTableName = "gray"
 PseudocolorAtts.invertColorTable = 1
 PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque
@@ -217,11 +217,11 @@ for state in range(start_state, end_state, step_interval):
     IsoEtaAtts.ubound = 1e37
     SetOperatorOptions(IsoEtaAtts, 0)
 
-    # Isovolume 1: temperature >= min_temp_thres
+    # Isovolume 1: temperature >= min_var
     AddOperator("Isovolume")
     IsoTempAtts = IsovolumeAttributes()
     IsoTempAtts.variable = plotting_var
-    IsoTempAtts.lbound = min_temp_thres
+    IsoTempAtts.lbound = min_var
     IsoTempAtts.ubound = 1e37
     SetOperatorOptions(IsoTempAtts, 1)
 
@@ -244,8 +244,8 @@ metadata_parameters = {
     "state step number": start_state,
     "end step number": end_state,
     "number of temperature levels": num_levels,
-    "minimum temperature": min_temp_thres,
-    "maximum temperature": max_temp_thres,
+    "minimum temperature": min_var,
+    "maximum temperature": max_var,
     "initial phi/eta variable name": background_var,
     "invert initial phi/eta": invert_phi,
     "image name": "file_name_test"

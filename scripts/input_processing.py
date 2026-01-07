@@ -29,14 +29,14 @@ DEFAULTS = {
     "default_db": "celloutput.visit",
     "output_filename": "high_var_all_time",
 
-    # Time control
-    "step_interval": 1,
-    "start_state": 0, 
-    "end_state": -1, # -1 means all available timesteps
+    # Step control
+    "step.interval": 1,
+    "step.start": 0, 
+    "step.end": -1, # -1 means all available timesteps
 
-    # Temperature
-    "min_temp_thres": 1200,
-    "max_temp_thres": 2000,
+    # Variable control
+    "var.min": 1200,
+    "var.max": 2000,
 
     # Variables
     "main_plotting_var": "temp",
