@@ -10,7 +10,7 @@ import sys
 import os
 from scripts.savemetadata import save_metadata_with_git
 from scripts.compile_images import progress_bar
-from scripts.input_processing import get_parameters, read_input_file
+from scripts.input_processing import get_parameters
 
 SuppressMessages(2)  # Suppress warnings
 SuppressQueryOutputOn()  # Suppress query output

@@ -12,7 +12,7 @@ def save_metadata_with_git(params, output_dir):
         original_metadata_path (str, optional): Path to the original metadata file to copy.
     """
     # Ensure output directory exists
-    os.makedirs(output_dir, exist_ok=True)
+    # os.makedirs(output_dir, exist_ok=True)
 
     # Step 1: Build metadata filename based on latest image
     filename_name = params.get("image name")
