@@ -24,8 +24,8 @@ params = get_parameters(input_file)
 # ------------------------------------------------------------
 # Database handling
 # ------------------------------------------------------------
-default_db = "celloutput.visit"
-db_root = params["db_path"]
+default_db = params["file.default_db"]
+db_root = params["file.db_path"]
 db_path = os.path.join(db_root, default_db)
 db_path = os.path.abspath(db_path)
 
@@ -40,8 +40,8 @@ OpenDatabase(db_path, 0)
 # ------------------------------------------------------------
 # Variables
 # ------------------------------------------------------------
-plotting_var = params["main_plotting_var"]
-background_var = params["background_var"]
+plotting_var = params["plotting.main_plotting_var"]
+background_var = params["plotting.background_var"]
 
 numStates = TimeSliderGetNStates()
 
@@ -64,7 +64,7 @@ else:
 num_levels = 1
 min_var = params["var.min"]
 max_var = params["var.max"]
-invert_phi = params["invert_phi"]
+invert_phi = params["plotting.invert_background_var"]
 
 # ------------------------------------------------------------
 # SaveWindow settings

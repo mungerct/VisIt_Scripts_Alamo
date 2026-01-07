@@ -25,9 +25,9 @@ def delete_delete_me_files(directory="."):
 # -----------------------------
 DEFAULTS = {
     # Database
-    "db_path": os.getcwd(),
-    "default_db": "celloutput.visit",
-    "output_filename": "high_var_all_time",
+    "file.db_path": os.getcwd(),
+    "file.default_db": "celloutput.visit",
+    "file.output_filename": "high_var_all_time",
 
     # Step control
     "step.interval": 1,
@@ -35,13 +35,13 @@ DEFAULTS = {
     "step.end": -1, # -1 means all available timesteps
 
     # Variable control
-    "var.min": 1200,
+    "var.min": 0,
     "var.max": 2000,
 
-    # Variables
-    "main_plotting_var": "temp",
-    "background_var": "eta",
-    "invert_phi": 0,
+    # Plotting Variables
+    "plotting.main_plotting_var": "temp",
+    "plotting.background_var": "eta",
+    "plotting.invert_background_var": 0,
 }
 
 
