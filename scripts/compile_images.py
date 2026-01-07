@@ -60,8 +60,8 @@ def compile_images_func(
     mask = result_arr < 255
     norm = result_arr / 255.0
     cmap = get_colormap(colormap)
+    cmap = cmap.reversed()
     colormap_rgb = cmap(norm)[:, :, :3]
-    # colormap = plt.cm.get_cmap(colormap)(norm)[:, :, :3]
     colormap_rgb = (colormap_rgb * 255).astype(np.uint8)
 
     result = np.ones((*result_arr.shape, 3), dtype=np.uint8) * 255
