@@ -40,8 +40,8 @@ OpenDatabase(db_path, 0)
 # ------------------------------------------------------------
 # Variables
 # ------------------------------------------------------------
-temperature_var = "temp"
-background_var = "eta"
+temperature_var = params["temperature_var"]
+background_var = params["background_var"]
 
 numStates = TimeSliderGetNStates()
 print(f"Found {numStates} time steps")
