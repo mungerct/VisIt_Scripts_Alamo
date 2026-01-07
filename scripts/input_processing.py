@@ -42,6 +42,7 @@ DEFAULTS = {
     "plotting.main_plotting_var": "temp",
     "plotting.background_var": "eta",
     "plotting.invert_background_var": 0,
+    "plotting.colormap": "Plasma",
 }
 
 
