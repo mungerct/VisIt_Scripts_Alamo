@@ -38,19 +38,6 @@ print(f"Opening database: {db_path}")
 OpenDatabase(db_path, 0)
 
 # ------------------------------------------------------------
-# Output directory
-# ------------------------------------------------------------
-# parent_dir = os.path.dirname(db_path)
-# folder_name = os.path.basename(parent_dir)
-# output_dir = os.path.join(os.getcwd(), folder_name)
-
-# if not os.path.exists(output_dir):
-#     os.makedirs(output_dir)
-#     print(f"Created output directory: {output_dir}")
-# else:
-#     print(f"Saving frames in existing directory: {output_dir}")
-
-# ------------------------------------------------------------
 # Variables
 # ------------------------------------------------------------
 temperature_var = "temp"
@@ -77,7 +64,6 @@ invert_phi = 0
 # ------------------------------------------------------------
 SaveWindowAtts = SaveWindowAttributes()
 SaveWindowAtts.outputToCurrentDirectory = 1
-# SaveWindowAtts.outputDirectory = output_dir
 SaveWindowAtts.family = 1
 SaveWindowAtts.format = SaveWindowAtts.PNG
 SaveWindowAtts.width = 1080
