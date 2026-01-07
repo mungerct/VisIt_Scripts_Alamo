@@ -5,7 +5,8 @@ def compile_images_func(
     extension=".png",
     legend_file="legend_only_DELETE_ME0000.png",
     initial_field_file="initial_field_DELETE_ME0000.png",
-    output_file="result_img.png"
+    output_file="result_img.png",
+    colormap="plasma"
 ):
     """
     Compile a series of images into a single result image with colormap and overlays.
@@ -55,7 +56,7 @@ def compile_images_func(
     # Apply colormap
     mask = result_arr < 255
     norm = result_arr / 255.0
-    colormap = plt.cm.plasma(norm)[:, :, :3]
+    colormap = plt.cm.get_cmap(colormap)(norm)[:, :, :3]
     colormap_rgb = (colormap * 255).astype(np.uint8)
 
     result = np.ones((*result_arr.shape, 3), dtype=np.uint8) * 255
