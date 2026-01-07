@@ -44,12 +44,19 @@ temperature_var = params["temperature_var"]
 background_var = params["background_var"]
 
 numStates = TimeSliderGetNStates()
-print(f"Found {numStates} time steps")
 
-step_interval = 10
-start_state = 0
-end_state = 100
-end_state = min(numStates, end_state)
+step_interval = params["step_interval"]
+start_state = params["start_state"]
+
+if params["end_state"] == -1:
+    end_state = numStates
+    print(f"Found {numStates} time steps")
+else:
+    end_state = params["end_state"]
+    print(f"Using {numStates} time steps")
+    if end_state > numStates:
+        print(f"Warning: end_state {end_state} exceeds available states {numStates}, using {numStates} instead")
+        end_state = min(numStates, end_state)
 
 # ------------------------------------------------------------
 # Temperature levels
