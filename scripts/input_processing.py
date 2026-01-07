@@ -35,7 +35,6 @@ DEFAULTS = {
     "end_state": -1, # -1 means all available timesteps
 
     # Temperature
-    "num_levels": 1,
     "min_temp_thres": 1200,
     "max_temp_thres": 2000,
 

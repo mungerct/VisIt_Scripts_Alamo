@@ -13,7 +13,7 @@ def save_metadata_with_git(params, output_dir):
     """
 
     # Step 1: Build metadata filename based on latest image
-    filename_name = params.get("image name")
+    filename_name = params.get("output_filename")
     if not filename_name:
         raise ValueError("\n'image file name' must be present in the parameters dictionary.")
 
