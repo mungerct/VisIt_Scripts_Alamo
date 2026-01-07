@@ -39,7 +39,7 @@ DEFAULTS = {
     "max_temp_thres": 2000,
 
     # Variables
-    "temperature_var": "temp",
+    "main_plotting_var": "temp",
     "background_var": "eta",
     "invert_phi": 0,
 }

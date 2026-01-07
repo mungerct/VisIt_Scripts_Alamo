@@ -40,7 +40,7 @@ OpenDatabase(db_path, 0)
 # ------------------------------------------------------------
 # Variables
 # ------------------------------------------------------------
-temperature_var = params["temperature_var"]
+plotting_var = params["main_plotting_var"]
 background_var = params["background_var"]
 
 numStates = TimeSliderGetNStates()
@@ -95,7 +95,7 @@ SetAnnotationAttributes(AnnotationAtts)
 # Save legend
 # ------------------------------------------------------------
 
-AddPlot("Pseudocolor", temperature_var)
+AddPlot("Pseudocolor", plotting_var)
 SetTimeSliderState(1)
 
 LegendPlotAtts = PseudocolorAttributes()
@@ -219,7 +219,7 @@ for state in range(start_state, end_state, step_interval):
         DeleteActivePlots()
 
     # Add temperature plot only
-    AddPlot("Pseudocolor", temperature_var, 1, 0)
+    AddPlot("Pseudocolor", plotting_var, 1, 0)
     SetPlotOptions(PseudocolorAtts)
 
     # Isovolume 2: eta >= 0.5
@@ -233,7 +233,7 @@ for state in range(start_state, end_state, step_interval):
     # Isovolume 1: temperature >= min_temp_thres
     AddOperator("Isovolume")
     IsoTempAtts = IsovolumeAttributes()
-    IsoTempAtts.variable = temperature_var
+    IsoTempAtts.variable = plotting_var
     IsoTempAtts.lbound = min_temp_thres
     IsoTempAtts.ubound = 1e37
     SetOperatorOptions(IsoTempAtts, 1)
