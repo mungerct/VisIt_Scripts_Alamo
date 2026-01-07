@@ -3,6 +3,7 @@
 def save_metadata_with_git(params, output_dir):
     import subprocess
     import os
+    from datetime import datetime
     """
     Save metadata parameters and Git hash to a file in the output directory.
     
@@ -40,5 +41,6 @@ def save_metadata_with_git(params, output_dir):
     with open(metadata_path, "a", encoding="utf-8") as f:
         f.write("\n--- Visit Script Metadata ---\n")
         f.write(f"Git hash: {get_git_hash()}\n")
-
+        f.write(f"Timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+        
     print(f"\nMetadata and Git hash saved to: {metadata_path}")
