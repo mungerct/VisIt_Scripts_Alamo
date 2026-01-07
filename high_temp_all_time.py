@@ -194,11 +194,11 @@ PseudocolorAtts.lightingFlag = 0
 # ------------------------------------------------------------
 # Generate temperature levels
 # ------------------------------------------------------------
-if num_levels > 1:
-    step_size = (max_temp_thres - min_temp_thres) / (num_levels - 1)
-    temp_levels = [min_temp_thres + i * step_size for i in range(num_levels)]
-else:
-    temp_levels = [min_temp_thres]
+# if num_levels > 1:
+#     step_size = (max_temp_thres - min_temp_thres) / (num_levels - 1)
+#     temp_levels = [min_temp_thres + i * step_size for i in range(num_levels)]
+# else:
+#     temp_levels = [min_temp_thres]
 
 # ------------------------------------------------------------
 # Progress bar function
@@ -207,45 +207,45 @@ else:
 # ------------------------------------------------------------
 # Loop over temperature levels and timesteps (no eta background)
 # ------------------------------------------------------------
-for level in temp_levels:
-    print(f"\nSaving Time Steps:")
 
-    for state in range(start_state, end_state, step_interval):
-        progress_bar(state + 1, end_state)
-        SetTimeSliderState(state)
+print(f"\nSaving Time Steps:")
 
-        # Remove previous temperature plots
-        for i in range(GetNumPlots() - 1, 0, -1):
-            DeleteActivePlots()
+for state in range(start_state, end_state, step_interval):
+    progress_bar(state + 1, end_state)
+    SetTimeSliderState(state)
 
-        # Add temperature plot only
-        AddPlot("Pseudocolor", temperature_var, 1, 0)
-        SetPlotOptions(PseudocolorAtts)
+    # Remove previous temperature plots
+    for i in range(GetNumPlots() - 1, 0, -1):
+        DeleteActivePlots()
 
-        # Isovolume 2: eta >= 0.5
-        AddOperator("Isovolume")
-        IsoEtaAtts = IsovolumeAttributes()
-        IsoEtaAtts.variable = background_var
-        IsoEtaAtts.lbound = 0.5
-        IsoEtaAtts.ubound = 1e37
-        SetOperatorOptions(IsoEtaAtts, 0)
+    # Add temperature plot only
+    AddPlot("Pseudocolor", temperature_var, 1, 0)
+    SetPlotOptions(PseudocolorAtts)
 
-        # Isovolume 1: temperature >= level
-        AddOperator("Isovolume")
-        IsoTempAtts = IsovolumeAttributes()
-        IsoTempAtts.variable = temperature_var
-        IsoTempAtts.lbound = level
-        IsoTempAtts.ubound = 1e37
-        SetOperatorOptions(IsoTempAtts, 1)
+    # Isovolume 2: eta >= 0.5
+    AddOperator("Isovolume")
+    IsoEtaAtts = IsovolumeAttributes()
+    IsoEtaAtts.variable = background_var
+    IsoEtaAtts.lbound = 0.5
+    IsoEtaAtts.ubound = 1e37
+    SetOperatorOptions(IsoEtaAtts, 0)
 
-        SetActivePlots(GetNumPlots() - 1)
-        SetPlotFollowsTime(0)
+    # Isovolume 1: temperature >= level
+    AddOperator("Isovolume")
+    IsoTempAtts = IsovolumeAttributes()
+    IsoTempAtts.variable = temperature_var
+    IsoTempAtts.lbound = level
+    IsoTempAtts.ubound = 1e37
+    SetOperatorOptions(IsoTempAtts, 1)
 
-        # Draw and save each timestep
-        DrawPlots()
-        SaveWindowAtts.fileName = "temp_field_DELETE_ME"
-        SetSaveWindowAttributes(SaveWindowAtts)
-        SaveWindow()
+    SetActivePlots(GetNumPlots() - 1)
+    SetPlotFollowsTime(0)
+
+    # Draw and save each timestep
+    DrawPlots()
+    SaveWindowAtts.fileName = "temp_field_DELETE_ME"
+    SetSaveWindowAttributes(SaveWindowAtts)
+    SaveWindow()
 
 # ------------------------------------------------------------
 # Save metadata
