@@ -148,6 +148,8 @@ def get_parameters(input_file=None):
         if key not in DEFAULTS:
             print(f"WARNING: Unknown input key '{key}'")
 
+    params.update(inputs)
+
     cmap = params["plotting.main_plotting_var.colormap"]
     if cmap not in ALLOWED_COLORMAPS:
         raise ValueError(
@@ -164,5 +166,4 @@ def get_parameters(input_file=None):
             f"{sorted(ALLOWED_COLORMAPS)}"
         )
 
-    params.update(inputs)
     return params
