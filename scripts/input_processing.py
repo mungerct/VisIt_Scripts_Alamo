@@ -27,6 +27,7 @@ DEFAULTS = {
     # Database
     "db_path": os.getcwd(),
     "default_db": "celloutput.visit",
+    "output_filename": "high_var_all_time",
 
     # Time control
     "step_interval": 1,

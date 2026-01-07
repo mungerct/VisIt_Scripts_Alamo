@@ -192,19 +192,6 @@ PseudocolorAtts.legendFlag = 0
 PseudocolorAtts.lightingFlag = 0
 
 # ------------------------------------------------------------
-# Generate temperature levels
-# ------------------------------------------------------------
-# if num_levels > 1:
-#     step_size = (max_temp_thres - min_temp_thres) / (num_levels - 1)
-#     temp_levels = [min_temp_thres + i * step_size for i in range(num_levels)]
-# else:
-#     temp_levels = [min_temp_thres]
-
-# ------------------------------------------------------------
-# Progress bar function
-# ------------------------------------------------------------
-
-# ------------------------------------------------------------
 # Loop over temperature levels and timesteps (no eta background)
 # ------------------------------------------------------------
 
@@ -264,5 +251,5 @@ metadata_parameters = {
     "image name": "file_name_test"
 }
 
-save_metadata_with_git(metadata_parameters, ".")
+save_metadata_with_git(params, ".")
 sys.exit(0)
