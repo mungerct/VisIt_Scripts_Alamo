@@ -238,18 +238,5 @@ for state in range(start_state, end_state, step_interval):
 # Save metadata
 # ------------------------------------------------------------
 
-metadata_parameters = {
-    "visit_scripts filename": os.path.basename(__file__),
-    "step_interval": step_interval,
-    "state step number": start_state,
-    "end step number": end_state,
-    "number of temperature levels": num_levels,
-    "minimum temperature": min_var,
-    "maximum temperature": max_var,
-    "initial phi/eta variable name": background_var,
-    "invert initial phi/eta": invert_phi,
-    "image name": "file_name_test"
-}
-
 save_metadata_with_git(params, ".")
 sys.exit(0)
