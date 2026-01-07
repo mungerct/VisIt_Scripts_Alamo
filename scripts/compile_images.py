@@ -53,6 +53,9 @@ def compile_images_func(
         progress_bar(idx, total, width=40)
     print()
 
+    temp_img = Image.fromarray(result)
+    temp_img.save("temp_min_image.png")
+
     # Apply colormap
     mask = result_arr < 255
     norm = result_arr / 255.0
