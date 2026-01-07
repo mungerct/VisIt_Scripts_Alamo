@@ -20,6 +20,45 @@ def delete_delete_me_files(directory="."):
                 deleted += 1
     return
 
+ALLOWED_COLORMAPS = {
+    "rainbow",
+    "viridis",
+    "plasma",
+    "gray",
+    "blues",
+    "magma",
+    "inferno",
+    "cividis",
+    "BuGn",
+    "Oranges",
+    "PuBu",
+    "GnBu",
+    "Greens",
+    "OrRd",
+    "PRGn",
+    "Dark2",
+    "Paired",
+    "PiYG",
+    "PuBu",
+    "PuBuGn",
+    "PuOr",
+    "PuRd",
+    "Purples",
+    "RdBu",
+    "RdGy",
+    "RdPu",
+    "RdYlBu",
+    "RdYlGn",
+    "Reds",
+    "Set1",
+    "Spectral",
+    "YlgGn",
+    "YlGnBu",
+    "YlOrBr",
+    "YlOrRd",
+    "turbo",
+}
+
 # -----------------------------
 # Default parameters
 # -----------------------------
@@ -42,7 +81,8 @@ DEFAULTS = {
     "plotting.main_plotting_var": "temp",
     "plotting.background_var": "eta",
     "plotting.invert_background_var": 0,
-    "plotting.colormap": "Plasma",
+    "plotting.main_plotting_var.colormap": "plasma",
+    "plotting.background_var.colormap": "gray",
 }
 
 

@@ -106,7 +106,7 @@ LegendPlotAtts.minFlag = 1
 LegendPlotAtts.min = min_var
 LegendPlotAtts.maxFlag = 1
 LegendPlotAtts.max = max_var
-LegendPlotAtts.colorTableName = params["plotting.colormap"]
+LegendPlotAtts.colorTableName = params["plotting.main_plotting_var.colormap"]
 LegendPlotAtts.opacityType = LegendPlotAtts.FullyOpaque
 LegendPlotAtts.legendFlag = 1
 LegendPlotAtts.lightingFlag = 0
@@ -163,7 +163,7 @@ PhiAtts.minFlag = 1
 PhiAtts.min = 0
 PhiAtts.maxFlag = 1
 PhiAtts.max = 1
-PhiAtts.colorTableName = "gray"
+PhiAtts.colorTableName = params["plotting.background_var.colormap"]
 PhiAtts.invertColorTable = invert_phi
 PhiAtts.legendFlag = 0
 SetPlotOptions(PhiAtts)
