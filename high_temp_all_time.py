@@ -76,8 +76,8 @@ invert_phi = 0
 # SaveWindow settings
 # ------------------------------------------------------------
 SaveWindowAtts = SaveWindowAttributes()
-SaveWindowAtts.outputToCurrentDirectory = 0
-SaveWindowAtts.outputDirectory = output_dir
+SaveWindowAtts.outputToCurrentDirectory = 1
+# SaveWindowAtts.outputDirectory = output_dir
 SaveWindowAtts.family = 1
 SaveWindowAtts.format = SaveWindowAtts.PNG
 SaveWindowAtts.width = 1080
