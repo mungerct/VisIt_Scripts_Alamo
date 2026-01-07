@@ -12,7 +12,7 @@ CONDA_ENV=image_processing
 
 # Check input
 if [ "$#" -ne 1 ]; then
-    echo "Usage: $0 <DATA_DIR>"
+    echo "Usage: $0 <input.txt>"
     exit 1
 fi
 
