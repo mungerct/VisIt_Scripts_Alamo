@@ -15,7 +15,6 @@ def compile_images_func(
     from PIL import Image
     import numpy as np
     import matplotlib.pyplot as plt
-    from .colormaps import hot
 
     # Use current working directory (which you changed to the image folder)
     cwd = os.getcwd()
@@ -57,7 +56,9 @@ def compile_images_func(
     # Apply colormap
     mask = result_arr < 255
     norm = result_arr / 255.0
-    colormap = plt.cm.get_cmap(colormap)(norm)[:, :, :3]
+    cmap = get_colormap(colormap)
+    colormap_rgb = cmap(norm)[:, :, :3]
+    # colormap = plt.cm.get_cmap(colormap)(norm)[:, :, :3]
     colormap_rgb = (colormap * 255).astype(np.uint8)
 
     result = np.ones((*result_arr.shape, 3), dtype=np.uint8) * 255
@@ -98,6 +99,30 @@ def progress_bar(i, total, width=40):
         print()
 
     return
+
+def hot(N=256):
+    from matplotlib.colors import LinearSegmentedColormap
+    colors = [
+        (0.0, 0.0, 1.0),
+        (0.0, 1.0, 1.0),
+        (0.0, 1.0, 0.0),
+        (1.0, 1.0, 0.0),
+        (1.0, 0.0, 0.0),
+    ]
+    return LinearSegmentedColormap.from_list(
+        "hot", colors, N=N
+    )
+
+CUSTOM_COLORMAPS = {
+    "hot": hot,
+}
+
+def get_colormap(name, N=256):
+    import matplotlib.pyplot as plt
+    if name in CUSTOM_COLORMAPS:
+        return CUSTOM_COLORMAPS[name](N)
+    else:
+        return plt.cm.get_cmap(name, N)
 
 if __name__ == "__main__":
     compile_images_func()
