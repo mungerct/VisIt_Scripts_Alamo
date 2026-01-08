@@ -79,10 +79,15 @@ DEFAULTS = {
     "var.max": 2000,
 
     # Plotting Variables
-    "plotting.main_plotting_var": "temp",
-    "plotting.background_var": "eta",
-    "plotting.invert_background_var": 0,
+    "plotting.main_plotting_var.name": "temp",
     "plotting.main_plotting_var.colormap": "plasma",
+    "plotting.main_plotting_var.define_scalar_expression.on": 0,
+    "plotting.main_plotting_var.define_scalar_expression.name": "expression_name",
+    "plotting.main_plotting_var.define_scalar_expression.expression": "expression_here",
+
+    "plotting.background_var.on": 1,
+    "plotting.background_var": "eta",
+    "plotting.background_var.invert": 0,
     "plotting.background_var.colormap": "gray",
 }
 

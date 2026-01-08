@@ -40,7 +40,15 @@ OpenDatabase(db_path, 0)
 # ------------------------------------------------------------
 # Variables
 # ------------------------------------------------------------
-plotting_var = params["plotting.main_plotting_var"]
+if params["plotting.main_plotting_var.define_scalar_expression.on"]:
+    DefineScalarExpression(
+        params["plotting.main_plotting_var.define_scalar_expression.name"],
+        params["plotting.main_plotting_var.define_scalar_expression.expression"]
+    )
+    plotting_var = params["plotting.main_plotting_var.define_scalar_expression.name"]
+else:
+    plotting_var = params["plotting.main_plotting_var.name"]
+   
 background_var = params["plotting.background_var"]
 
 numStates = TimeSliderGetNStates()
@@ -65,7 +73,7 @@ else:
 num_levels = 1
 min_var = params["var.min"]
 max_var = params["var.max"]
-invert_phi = params["plotting.invert_background_var"]
+invert_phi = params["plotting.background_var.invert"]
 
 # ------------------------------------------------------------
 # SaveWindow settings
@@ -156,25 +164,26 @@ print("Legend saved")
 # ------------------------------------------------------------
 # Save initial eta/phi field
 # ------------------------------------------------------------
-SetTimeSliderState(1)
-AddPlot("Pseudocolor", background_var, 1, 1)
-PhiAtts = PseudocolorAttributes()
-PhiAtts.minFlag = 1
-PhiAtts.min = 0
-PhiAtts.maxFlag = 1
-PhiAtts.max = 1
-PhiAtts.colorTableName = params["plotting.background_var.colormap"]
-PhiAtts.invertColorTable = invert_phi
-PhiAtts.legendFlag = 0
-SetPlotOptions(PhiAtts)
-DrawPlots()
+if params["plotting.background_var.on"]:
+    SetTimeSliderState(1)
+    AddPlot("Pseudocolor", background_var, 1, 1)
+    PhiAtts = PseudocolorAttributes()
+    PhiAtts.minFlag = 1
+    PhiAtts.min = 0
+    PhiAtts.maxFlag = 1
+    PhiAtts.max = 1
+    PhiAtts.colorTableName = params["plotting.background_var.colormap"]
+    PhiAtts.invertColorTable = invert_phi
+    PhiAtts.legendFlag = 0
+    SetPlotOptions(PhiAtts)
+    DrawPlots()
 
-SaveWindowAtts.fileName = "initial_field_DELETE_ME"
-SetSaveWindowAttributes(SaveWindowAtts)
-SaveWindow()
-DeleteActivePlots()
+    SaveWindowAtts.fileName = "initial_field_DELETE_ME"
+    SetSaveWindowAttributes(SaveWindowAtts)
+    SaveWindow()
+    DeleteActivePlots()
 
-print("Inital Field Saved")
+    print("Inital Field Saved")
 
 # ------------------------------------------------------------
 # Temperature plot attributes
