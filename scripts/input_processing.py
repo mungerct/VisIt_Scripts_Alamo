@@ -85,6 +85,9 @@ DEFAULTS = {
     "plotting.main_plotting_var.define_scalar_expression.name": "expression_name",
     "plotting.main_plotting_var.define_scalar_expression.expression": "expression_here",
 
+    "plotting.main_plotting_var.thresholding.on": 0,
+    "plotting.main_plotting_var.thresholding.var.name": "eta",
+
     "plotting.background_var.on": 1,
     "plotting.background_var": "eta",
     "plotting.background_var.invert": 0,

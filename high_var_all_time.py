@@ -48,13 +48,14 @@ if params["plotting.main_plotting_var.define_scalar_expression.on"]:
     plotting_var = params["plotting.main_plotting_var.define_scalar_expression.name"]
 else:
     plotting_var = params["plotting.main_plotting_var.name"]
-   
+
 background_var = params["plotting.background_var"]
 
 numStates = TimeSliderGetNStates()
 
 step_interval = params["step.interval"]
 start_state = params["step.start"]
+threhold_var = params["plotting.main_plotting_var.thresholding.var.name"]
 
 if params["step.end"] == -1:
     end_state = numStates
@@ -146,7 +147,7 @@ SetAnnotationAttributes(AnnotationAtts)
 
 AddOperator("Isovolume")
 IsoEtaAtts = IsovolumeAttributes()
-IsoEtaAtts.variable = background_var
+IsoEtaAtts.variable = threhold_var
 IsoEtaAtts.lbound = 1.1
 IsoEtaAtts.ubound = 1e37
 SetOperatorOptions(IsoEtaAtts, 0)
@@ -222,7 +223,7 @@ for state in range(start_state, end_state, step_interval):
     # Isovolume 2: eta >= 0.5
     AddOperator("Isovolume")
     IsoEtaAtts = IsovolumeAttributes()
-    IsoEtaAtts.variable = background_var
+    IsoEtaAtts.variable = threhold_var
     IsoEtaAtts.lbound = 0.5
     IsoEtaAtts.ubound = 1e37
     SetOperatorOptions(IsoEtaAtts, 0)
