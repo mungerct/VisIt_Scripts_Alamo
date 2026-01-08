@@ -132,7 +132,7 @@ def get_colormap(name, N=256):
 
 def latex_text_image(
     text,
-    fontsize=18,
+    fontsize=12,
     dpi=200,
     color="black",
 ):
@@ -161,45 +161,13 @@ def latex_text_image(
         format="png",
         dpi=dpi,
         bbox_inches="tight",
-        pad_inches=0.05,
+        pad_inches=0.01,
         transparent=True,
     )
     plt.close(fig)
 
     buf.seek(0)
     return Image.open(buf).convert("RGBA")
-
-def paste_legend_with_latex_title(
-    base_img,
-    legend_img,
-    title=r"$\mathrm{Legend}$",
-    padding=10,
-    fontsize=18,
-):
-    # Render LaTeX title
-    title_img = latex_text_image(
-        title,
-        fontsize=fontsize,
-    )
-
-    base_w, _ = base_img.size
-    legend_w, legend_h = legend_img.size
-    title_w, title_h = title_img.size
-
-    # Align center over legend
-    x = base_w - legend_w - padding
-    y = padding
-
-    title_x = x + (legend_w - title_w) // 2
-
-    base_img = paste_image(base_img, title_img, (title_x, y))
-    base_img = paste_image(
-        base_img,
-        legend_img,
-        (x, y + title_h + padding),
-    )
-
-    return base_img
 
 
 if __name__ == "__main__":
