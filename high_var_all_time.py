@@ -226,7 +226,7 @@ for state in range(start_state, end_state, step_interval):
     IsoEtaAtts.variable = "eta"
     IsoEtaAtts.lbound = 0.5
     IsoEtaAtts.ubound = 1e37
-    SetOperatorOptions(IsoEtaAtts, 0)
+    SetOperatorOptions(IsoEtaAtts, 1)
 
     # Isovolume 1: temperature >= min_var
     AddOperator("Isovolume")
@@ -234,7 +234,7 @@ for state in range(start_state, end_state, step_interval):
     IsoTempAtts.variable = plotting_var
     IsoTempAtts.lbound = min_var
     IsoTempAtts.ubound = 1e37
-    SetOperatorOptions(IsoTempAtts, 1)
+    SetOperatorOptions(IsoTempAtts, 0)
 
     SetActivePlots(GetNumPlots() - 1)
     SetPlotFollowsTime(0)
