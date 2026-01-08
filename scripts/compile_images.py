@@ -70,6 +70,10 @@ def compile_images_func(
         initial_field = Image.open(initial_field_path).convert("RGBA")
         result_img = paste_image(initial_field, result_img, position=(0, 0))
 
+    legend = latex_text_image(text=params["plotting.legend.name.text"])
+    
+    result_img = paste_image(result_img, legend, position=(0, 0))
+
     # Save result
     result_img.save(os.path.join(cwd, output_file))
     # result_img.show()
@@ -125,6 +129,78 @@ def get_colormap(name, N=256):
         return CUSTOM_COLORMAPS[name](N)
     else:
         return plt.cm.get_cmap(name, N)
+
+def latex_text_image(
+    text,
+    fontsize=18,
+    dpi=200,
+    color="black",
+):
+    import matplotlib.pyplot as plt
+    import numpy as np
+    from PIL import Image
+    from io import BytesIO
+
+    fig = plt.figure()
+    fig.patch.set_alpha(0)
+
+    # Render text
+    plt.text(
+        0.5, 0.5, text,
+        fontsize=fontsize,
+        color=color,
+        ha="center",
+        va="center",
+    )
+    plt.axis("off")
+
+    # Save to buffer
+    buf = BytesIO()
+    plt.savefig(
+        buf,
+        format="png",
+        dpi=dpi,
+        bbox_inches="tight",
+        pad_inches=0.05,
+        transparent=True,
+    )
+    plt.close(fig)
+
+    buf.seek(0)
+    return Image.open(buf).convert("RGBA")
+
+def paste_legend_with_latex_title(
+    base_img,
+    legend_img,
+    title=r"$\mathrm{Legend}$",
+    padding=10,
+    fontsize=18,
+):
+    # Render LaTeX title
+    title_img = latex_text_image(
+        title,
+        fontsize=fontsize,
+    )
+
+    base_w, _ = base_img.size
+    legend_w, legend_h = legend_img.size
+    title_w, title_h = title_img.size
+
+    # Align center over legend
+    x = base_w - legend_w - padding
+    y = padding
+
+    title_x = x + (legend_w - title_w) // 2
+
+    base_img = paste_image(base_img, title_img, (title_x, y))
+    base_img = paste_image(
+        base_img,
+        legend_img,
+        (x, y + title_h + padding),
+    )
+
+    return base_img
+
 
 if __name__ == "__main__":
     compile_images_func()
