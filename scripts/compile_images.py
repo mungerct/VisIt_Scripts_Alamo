@@ -66,7 +66,7 @@ def compile_images_func(
     result_img = Image.fromarray(result)
 
     result_img = paste_image(result_img, legend, position=(0, 0))
-    # result_img = paste_image(result_img, initial_field, position=(0, 0))
+    result_img = paste_image(initial_field, result_img, position=(0, 0))
 
     # Save result
     result_img.save(os.path.join(cwd, output_file))
