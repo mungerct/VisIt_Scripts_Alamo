@@ -6,7 +6,7 @@ def compile_images_func(
     legend_file="legend_only_DELETE_ME0000.png",
     initial_field_file="initial_field_DELETE_ME0000.png",
     output_file="result_img.png",
-    colormap="plasma"
+    params = None,
 ):
     """
     Compile a series of images into a single result image with colormap and overlays.
@@ -54,7 +54,7 @@ def compile_images_func(
     # Apply colormap
     mask = result_arr < 255
     norm = result_arr / 255.0
-    cmap = get_colormap(colormap)
+    cmap = get_colormap(params["plotting.main_plotting_var.colormap"])
     cmap = cmap.reversed()
     colormap_rgb = cmap(norm)[:, :, :3]
     colormap_rgb = (colormap_rgb * 255).astype(np.uint8)
@@ -65,7 +65,7 @@ def compile_images_func(
 
     result_img = paste_image(result_img, legend, position=(0, 0))
 
-    if os.path.join(cwd, initial_field_file):
+    if params["plotting.background_var.on"]:
         initial_field_path = os.path.join(cwd, initial_field_file)
         initial_field = Image.open(initial_field_path).convert("RGBA")
         result_img = paste_image(initial_field, result_img, position=(0, 0))
