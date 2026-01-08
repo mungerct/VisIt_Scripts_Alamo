@@ -70,7 +70,9 @@ def compile_images_func(
         initial_field = Image.open(initial_field_path).convert("RGBA")
         result_img = paste_image(initial_field, result_img, position=(0, 0))
 
-    legend = latex_text_image(text=params["plotting.legend.name.text"], dpi=params["plotting.legend.name.dpi"])
+    legend = latex_text_image(text=params["plotting.legend.name.text"], 
+                              dpi=params["plotting.legend.name.dpi"],
+                              fontsize=params["plotting.legend.name.fontsize"])
     
     result_img = paste_image(result_img, legend, 
                              position=(params["plotting.legend.name.position.x"], params["plotting.legend.name.position.y"]))

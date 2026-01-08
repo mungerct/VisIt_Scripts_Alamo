@@ -95,6 +95,7 @@ DEFAULTS = {
     "plotting.legend.name.position.x": 10,
     "plotting.legend.name.position.y": 10,
     "plotting.legend.name.dpi": 200,
+    "plotting.legend.name.fontsize": 12,
 }
 
 
