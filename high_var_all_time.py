@@ -49,7 +49,7 @@ if params["plotting.main_plotting_var.define_scalar_expression.on"]:
 else:
     plotting_var = params["plotting.main_plotting_var.name"]
 
-background_var = params["plotting.background_var"]
+background_var = params["plotting.background_var.name"]
 
 numStates = TimeSliderGetNStates()
 
@@ -72,8 +72,8 @@ else:
 # Temperature levels
 # ------------------------------------------------------------
 num_levels = 1
-min_var = params["var.min"]
-max_var = params["var.max"]
+min_var = params["plotting.main_plotting_var.min"]
+max_var = params["plotting.main_plotting_var.max"]
 invert_phi = params["plotting.background_var.invert"]
 
 # ------------------------------------------------------------
@@ -223,7 +223,7 @@ for state in range(start_state, end_state, step_interval):
     # Isovolume 2: eta >= 0.5
     AddOperator("Isovolume")
     IsoEtaAtts = IsovolumeAttributes()
-    IsoEtaAtts.variable = "eta"
+    IsoEtaAtts.variable = threhold_var
     IsoEtaAtts.lbound = 0.5
     IsoEtaAtts.ubound = 1e37
     SetOperatorOptions(IsoEtaAtts, 1)

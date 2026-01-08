@@ -74,22 +74,20 @@ DEFAULTS = {
     "step.start": 0, 
     "step.end": -1, # -1 means all available timesteps
 
-    # Variable control
-    "var.min": 0,
-    "var.max": 2000,
-
     # Plotting Variables
     "plotting.main_plotting_var.name": "temp",
     "plotting.main_plotting_var.colormap": "plasma",
     "plotting.main_plotting_var.define_scalar_expression.on": 0,
     "plotting.main_plotting_var.define_scalar_expression.name": "expression_name",
     "plotting.main_plotting_var.define_scalar_expression.expression": "expression_here",
+    "plotting.main_plotting_var.min": 0,
+    "plotting.main_plotting_var.max": 2000,
 
     "plotting.main_plotting_var.thresholding.on": 0,
     "plotting.main_plotting_var.thresholding.var.name": "eta",
 
     "plotting.background_var.on": 1,
-    "plotting.background_var": "eta",
+    "plotting.background_var.name": "eta",
     "plotting.background_var.invert": 0,
     "plotting.background_var.colormap": "gray",
 }
