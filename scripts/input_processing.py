@@ -90,9 +90,10 @@ DEFAULTS = {
     "plotting.background_var.name": "eta",
     "plotting.background_var.invert": 0,
     "plotting.background_var.colormap": "gray",
-
     "plotting.legend.name.on": 1,
-    "plotting.legend.name.text": "Good Legend"
+    "plotting.legend.name.text": "Good Legend",
+    "plotting.legend.name.position.x": 10,
+    "plotting.legend.name.position.y": 10,
 }
 
 

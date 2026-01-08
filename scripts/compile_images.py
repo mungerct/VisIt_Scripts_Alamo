@@ -72,7 +72,7 @@ def compile_images_func(
 
     legend = latex_text_image(text=params["plotting.legend.name.text"])
     
-    result_img = paste_image(result_img, legend, position=(0, 0))
+    result_img = paste_image(result_img, legend, position=(params["plotting.legend.name.position.x"], params["plotting.legend.name.position.y"]))
 
     # Save result
     result_img.save(os.path.join(cwd, output_file))
