@@ -90,12 +90,12 @@ DEFAULTS = {
     "plotting.background_var.name": "eta",
     "plotting.background_var.invert": 0,
     "plotting.background_var.colormap": "gray",
-    "plotting.legend.name.on": 1,
+    "plotting.legend.name.on": 0,
     "plotting.legend.name.text": "Good Legend",
-    "plotting.legend.name.position.x": 10,
-    "plotting.legend.name.position.y": 10,
-    "plotting.legend.name.dpi": 200,
-    "plotting.legend.name.fontsize": 12,
+    "plotting.legend.name.position.x": -1150,
+    "plotting.legend.name.position.y": -800,
+    "plotting.legend.name.dpi": 500,
+    "plotting.legend.name.fontsize": 8,
 }
 
 

@@ -70,11 +70,11 @@ def compile_images_func(
         initial_field = Image.open(initial_field_path).convert("RGBA")
         result_img = paste_image(initial_field, result_img, position=(0, 0))
 
-    legend = latex_text_image(text=params["plotting.legend.name.text"], 
+    if params["plotting.legend.name.on"]:
+        legend = latex_text_image(text=params["plotting.legend.name.text"], 
                               dpi=params["plotting.legend.name.dpi"],
                               fontsize=params["plotting.legend.name.fontsize"])
-    
-    result_img = paste_image(result_img, legend, 
+        result_img = paste_image(result_img, legend, 
                              position=(params["plotting.legend.name.position.x"], params["plotting.legend.name.position.y"]))
 
     # Save result
@@ -87,9 +87,6 @@ def paste_image(background, overlay, position):
     import numpy as np
     """Paste overlay onto background at the given position using overlay's alpha channel as mask."""
     x, y = position
-
-    # x = max(0, min(x, background.width - overlay.width))
-    # y = max(0, min(y, background.height - overlay.height))
 
     overlay_arr = np.array(overlay)
     mask = np.sum(overlay_arr[:, :, :3], axis=2) < 765
