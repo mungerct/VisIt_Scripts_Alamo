@@ -94,6 +94,7 @@ DEFAULTS = {
     "plotting.legend.name.text": "Good Legend",
     "plotting.legend.name.position.x": 10,
     "plotting.legend.name.position.y": 10,
+    "plotting.legend.name.dpi": 200,
 }
 
 

@@ -70,9 +70,10 @@ def compile_images_func(
         initial_field = Image.open(initial_field_path).convert("RGBA")
         result_img = paste_image(initial_field, result_img, position=(0, 0))
 
-    legend = latex_text_image(text=params["plotting.legend.name.text"])
+    legend = latex_text_image(text=params["plotting.legend.name.text"], dpi=params["plotting.legend.name.dpi"])
     
-    result_img = paste_image(result_img, legend, position=(params["plotting.legend.name.position.x"], params["plotting.legend.name.position.y"]))
+    result_img = paste_image(result_img, legend, 
+                             position=(params["plotting.legend.name.position.x"], params["plotting.legend.name.position.y"]))
 
     # Save result
     result_img.save(os.path.join(cwd, output_file))
@@ -133,7 +134,7 @@ def get_colormap(name, N=256):
 def latex_text_image(
     text,
     fontsize=12,
-    dpi=1000,
+    dpi=400,
     color="black",
 ):
     import matplotlib.pyplot as plt
