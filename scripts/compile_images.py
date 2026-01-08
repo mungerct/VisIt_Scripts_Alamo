@@ -88,8 +88,8 @@ def paste_image(background, overlay, position):
     """Paste overlay onto background at the given position using overlay's alpha channel as mask."""
     x, y = position
 
-    x = max(0, min(x, background.width - overlay.width))
-    y = max(0, min(y, background.height - overlay.height))
+    # x = max(0, min(x, background.width - overlay.width))
+    # y = max(0, min(y, background.height - overlay.height))
 
     overlay_arr = np.array(overlay)
     mask = np.sum(overlay_arr[:, :, :3], axis=2) < 765
