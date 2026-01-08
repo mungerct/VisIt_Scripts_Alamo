@@ -133,7 +133,7 @@ def get_colormap(name, N=256):
 def latex_text_image(
     text,
     fontsize=12,
-    dpi=1000,
+    dpi=400,
     color="black",
 ):
     import matplotlib.pyplot as plt
