@@ -223,7 +223,7 @@ for state in range(start_state, end_state, step_interval):
     # Isovolume 2: eta >= 0.5
     AddOperator("Isovolume")
     IsoEtaAtts = IsovolumeAttributes()
-    IsoEtaAtts.variable = threhold_var
+    IsoEtaAtts.variable = "eta"
     IsoEtaAtts.lbound = 0.5
     IsoEtaAtts.ubound = 1e37
     SetOperatorOptions(IsoEtaAtts, 0)
