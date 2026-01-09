@@ -138,11 +138,8 @@ print(f"\nSaving Time Steps:")
 
 for state in range(start_state, end_state, step_interval):
     progress_bar(state + 1, end_state)
+    DeleteAllPlots()
     SetTimeSliderState(state)
-
-    # Remove previous plots
-    for i in range(GetNumPlots() - 1, 0, -1):
-        DeleteActivePlots()
 
     # Add temperature plot only
     AddPlot("Pseudocolor", plotting_var, 1, 0)
@@ -188,8 +185,6 @@ for state in range(start_state, end_state, step_interval):
     SaveWindowAtts.fileName = "temp_field_DELETE_ME"
     SetSaveWindowAttributes(SaveWindowAtts)
     SaveWindow()
-
-    DeleteActivePlots()
 
 # ------------------------------------------------------------
 # Save metadata
