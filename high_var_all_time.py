@@ -75,6 +75,8 @@ num_levels = 1
 min_var = params["plotting.main_plotting_var.min"]
 max_var = params["plotting.main_plotting_var.max"]
 invert_phi = params["plotting.background_var.invert"]
+min_threhold = params["plotting.main_plotting_var.thresholding.var.min"]
+max_threhold = params["plotting.main_plotting_var.thresholding.var.max"]
 
 # ------------------------------------------------------------
 # SaveWindow settings
@@ -225,8 +227,8 @@ for state in range(start_state, end_state, step_interval):
     AddOperator("Isovolume")
     IsoEtaAtts = IsovolumeAttributes()
     IsoEtaAtts.variable = threhold_var
-    IsoEtaAtts.lbound = params["plotting.main_plotting_var.thresholding.var.min"]
-    IsoEtaAtts.ubound = params["plotting.main_plotting_var.thresholding.var.max"]
+    IsoEtaAtts.lbound = min_threhold
+    IsoEtaAtts.ubound = max_threhold
     SetOperatorOptions(IsoEtaAtts, 1)
 
     # Isovolume 1: temperature >= min_var
