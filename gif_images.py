@@ -91,29 +91,6 @@ SaveWindowAtts.screenCapture = 0
 SaveWindowAtts.resConstraint = SaveWindowAtts.NoConstraint
 
 # ------------------------------------------------------------
-# General annotation settings (hide axes, legend, borders)
-# ------------------------------------------------------------
-AnnotationAtts = AnnotationAttributes()
-AnnotationAtts.axes2D.visible = 0
-AnnotationAtts.userInfoFlag = 0
-AnnotationAtts.databaseInfoFlag = 0
-AnnotationAtts.timeInfoFlag = 0
-AnnotationAtts.legendInfoFlag = 1
-AnnotationAtts.backgroundColor = (255, 255, 255, 255)
-AnnotationAtts.foregroundColor = (0, 0, 0, 255)
-SetAnnotationAttributes(AnnotationAtts)
-
-# Redraw with updated settings
-DrawPlots()
-
-SaveWindowAtts.fileName = "legend_only_DELETE_ME"
-SetSaveWindowAttributes(SaveWindowAtts)
-SaveWindow()
-DeleteActivePlots()
-
-print("Legend saved")
-
-# ------------------------------------------------------------
 # Save initial eta/phi field
 # ------------------------------------------------------------
 if params["plotting.background_var.on"]:
@@ -138,7 +115,7 @@ if params["plotting.background_var.on"]:
     print("Inital Field Saved")
 
 # ------------------------------------------------------------
-# Temperature plot attributes
+# Plot attributes
 # ------------------------------------------------------------
 PseudocolorAtts = PseudocolorAttributes()
 PseudocolorAtts.scaling = PseudocolorAtts.Linear
@@ -150,7 +127,7 @@ PseudocolorAtts.max = max_var
 PseudocolorAtts.colorTableName = params["plotting.main_plotting_var.colormap"]
 PseudocolorAtts.invertColorTable = 1
 PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque
-PseudocolorAtts.legendFlag = 0
+PseudocolorAtts.legendFlag = 1
 PseudocolorAtts.lightingFlag = 0
 
 # ------------------------------------------------------------
@@ -163,7 +140,7 @@ for state in range(start_state, end_state, step_interval):
     progress_bar(state + 1, end_state)
     SetTimeSliderState(state)
 
-    # Remove previous temperature plots
+    # Remove previous plots
     for i in range(GetNumPlots() - 1, 0, -1):
         DeleteActivePlots()
 
@@ -211,6 +188,8 @@ for state in range(start_state, end_state, step_interval):
     SaveWindowAtts.fileName = "temp_field_DELETE_ME"
     SetSaveWindowAttributes(SaveWindowAtts)
     SaveWindow()
+
+    DeleteActivePlots()
 
 # ------------------------------------------------------------
 # Save metadata
