@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import sys
 import os
 from scripts.input_processing import delete_delete_me_files
