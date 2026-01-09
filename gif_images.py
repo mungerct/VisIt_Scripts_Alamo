@@ -91,30 +91,6 @@ SaveWindowAtts.screenCapture = 0
 SaveWindowAtts.resConstraint = SaveWindowAtts.NoConstraint
 
 # ------------------------------------------------------------
-# Save initial eta/phi field
-# ------------------------------------------------------------
-if params["plotting.background_var.on"]:
-    SetTimeSliderState(1)
-    AddPlot("Pseudocolor", background_var, 1, 1)
-    PhiAtts = PseudocolorAttributes()
-    PhiAtts.minFlag = 1
-    PhiAtts.min = 0
-    PhiAtts.maxFlag = 1
-    PhiAtts.max = 1
-    PhiAtts.colorTableName = params["plotting.background_var.colormap"]
-    PhiAtts.invertColorTable = invert_phi
-    PhiAtts.legendFlag = 0
-    SetPlotOptions(PhiAtts)
-    DrawPlots()
-
-    SaveWindowAtts.fileName = "initial_field_DELETE_ME"
-    SetSaveWindowAttributes(SaveWindowAtts)
-    SaveWindow()
-    DeleteActivePlots()
-
-    print("Inital Field Saved")
-
-# ------------------------------------------------------------
 # Plot attributes
 # ------------------------------------------------------------
 PseudocolorAtts = PseudocolorAttributes()
@@ -140,6 +116,20 @@ for state in range(start_state, end_state, step_interval):
     progress_bar(state + 1, end_state)
     DeleteAllPlots()
     SetTimeSliderState(state)
+
+    if params["plotting.background_var.on"]:
+        SetTimeSliderState(1)
+        AddPlot("Pseudocolor", background_var, 1, 1)
+        PhiAtts = PseudocolorAttributes()
+        PhiAtts.minFlag = 1
+        PhiAtts.min = 0
+        PhiAtts.maxFlag = 1
+        PhiAtts.max = 1
+        PhiAtts.colorTableName = params["plotting.background_var.colormap"]
+        PhiAtts.invertColorTable = invert_phi
+        PhiAtts.legendFlag = 0
+        SetPlotOptions(PhiAtts)
+        DrawPlots()
 
     # Add temperature plot only
     AddPlot("Pseudocolor", plotting_var, 1, 0)
