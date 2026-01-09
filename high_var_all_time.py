@@ -134,6 +134,7 @@ legend.managePosition = 0
 legend.position = (0.0, 0.8)
 legend.fontHeight = 0.03
 legend.drawTitle = 0
+legend.drawMinMax = 0
 legend.numberFormat = "%1.1f"
 
 # Hide everything except the legend
@@ -224,8 +225,8 @@ for state in range(start_state, end_state, step_interval):
     AddOperator("Isovolume")
     IsoEtaAtts = IsovolumeAttributes()
     IsoEtaAtts.variable = threhold_var
-    IsoEtaAtts.lbound = 0.5
-    IsoEtaAtts.ubound = 1e37
+    IsoEtaAtts.lbound = params["plotting.main_plotting_var.thresholding.var.min"]
+    IsoEtaAtts.ubound = params["plotting.main_plotting_var.thresholding.var.max"]
     SetOperatorOptions(IsoEtaAtts, 1)
 
     # Isovolume 1: temperature >= min_var

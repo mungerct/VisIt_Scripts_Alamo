@@ -85,6 +85,8 @@ DEFAULTS = {
 
     "plotting.main_plotting_var.thresholding.on": 0,
     "plotting.main_plotting_var.thresholding.var.name": "eta",
+    "plotting.main_plotting_var.thresholding.var.min": "0.0",
+    "plotting.main_plotting_var.thresholding.var.max": "1e37",
 
     "plotting.background_var.on": 1,
     "plotting.background_var.name": "eta",
