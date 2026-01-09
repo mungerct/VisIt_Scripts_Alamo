@@ -223,13 +223,14 @@ for state in range(start_state, end_state, step_interval):
     AddPlot("Pseudocolor", plotting_var, 1, 0)
     SetPlotOptions(PseudocolorAtts)
 
-    # Isovolume 2: eta >= 0.5
-    AddOperator("Isovolume")
-    IsoEtaAtts = IsovolumeAttributes()
-    IsoEtaAtts.variable = threhold_var
-    IsoEtaAtts.lbound = min_threhold
-    IsoEtaAtts.ubound = max_threhold
-    SetOperatorOptions(IsoEtaAtts, 1)
+    if params["plotting.main_plotting_var.thresholding.on"]:
+        # Isovolume 2: eta >= 0.5
+        AddOperator("Isovolume")
+        IsoEtaAtts = IsovolumeAttributes()
+        IsoEtaAtts.variable = threhold_var
+        IsoEtaAtts.lbound = min_threhold
+        IsoEtaAtts.ubound = max_threhold
+        SetOperatorOptions(IsoEtaAtts, 1)
 
     # Isovolume 1: temperature >= min_var
     AddOperator("Isovolume")
