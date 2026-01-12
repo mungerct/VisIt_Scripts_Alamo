@@ -28,6 +28,15 @@ def save_metadata_with_git(params, output_dir):
         for key, value in params.items():
             f.write(f"{key}: {value}\n")
 
+    with open(metadata_path, "w", encoding="utf-8") as f:
+        f.write("\n--- Parameters ---\n")
+        for key, value in params.items():
+            if params["plotting.main_plotting_var.define_scalar_expression.on"] == 0 and key in {"plotting.main_plotting_var.define_scalar_expression.on", 
+                                                                                                 "plotting.main_plotting_var.define_scalar_expression.name",
+                                                                                                 "plotting.main_plotting_var.define_scalar_expression.expression"}:
+                continue
+            f.write(f"{key}: {value}\n")
+
     # Step 3: Append Git hash
     def get_git_hash():
         try:
