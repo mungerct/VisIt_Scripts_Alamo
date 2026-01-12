@@ -5,8 +5,8 @@ set -e
 
 # -------- User-configurable variables --------
 NP=8
-VISIT_SCRIPT=~/research/visit_scripts/gif_images.py
-POST_SCRIPT=~/research/visit_scripts/gif_images_processing.py
+VISIT_SCRIPT=~/research/visit_scripts/src/gif_images.py
+POST_SCRIPT=~/research/visit_scripts/src/gif_images_processing.py
 CONDA_ENV=image_processing
 # --------------------------------------------
 
@@ -28,7 +28,6 @@ conda activate "${CONDA_ENV}"
 echo "Compiling Images ${DATA_DIR}..."
 python "${POST_SCRIPT}" "${DATA_DIR}"
 
-conda deactivate
 conda deactivate
 
 echo "All steps completed successfully."
