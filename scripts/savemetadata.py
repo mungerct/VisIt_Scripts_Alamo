@@ -35,7 +35,25 @@ def save_metadata_with_git(params, output_dir):
                                                                                                  "plotting.main_plotting_var.define_scalar_expression.name",
                                                                                                  "plotting.main_plotting_var.define_scalar_expression.expression"}:
                 continue
-            f.write(f"{key}: {value}\n")
+            elif params["plotting.main_plotting_var.thresholding.on"] == 0 and key in {"plotting.main_plotting_var.thresholding.on",
+                                                                                                 "plotting.main_plotting_var.thresholding.var.name",
+                                                                                                 "plotting.main_plotting_var.thresholding.var.min",
+                                                                                                 "plotting.main_plotting_var.thresholding.var.max"}:
+                continue
+            elif params["plotting.background_var.on"] == 0 and key in {"plotting.background_var.on",
+                                                                                                 "plotting.background_var.name",
+                                                                                                 "plotting.background_var.invert",
+                                                                                                 "plotting.background_var.colormap"}:
+                continue
+            elif params["plotting.legend.name.on"] == 0 and key in {"plotting.legend.name.on",
+                                                                                                 "plotting.legend.name.text",
+                                                                                                 "plotting.legend.name.position.x",
+                                                                                                 "plotting.legend.name.position.y",
+                                                                                                 "plotting.legend.name.dpi",
+                                                                                                 "plotting.legend.name.fontsize"}:
+                continue
+            else:
+                f.write(f"{key}: {value}\n")
 
     # Step 3: Append Git hash
     def get_git_hash():
