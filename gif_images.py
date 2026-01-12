@@ -115,7 +115,6 @@ print(f"\nSaving Time Steps:")
 for state in range(start_state, end_state, step_interval):
     progress_bar(state + 1, end_state)
     DeleteAllPlots()
-    SetTimeSliderState(state)
 
     if params["plotting.background_var.on"]:
         SetTimeSliderState(1)
@@ -132,6 +131,7 @@ for state in range(start_state, end_state, step_interval):
         DrawPlots()
 
     # Add temperature plot only
+    SetTimeSliderState(state)
     AddPlot("Pseudocolor", plotting_var, 1, 0)
     SetPlotOptions(PseudocolorAtts)
 
