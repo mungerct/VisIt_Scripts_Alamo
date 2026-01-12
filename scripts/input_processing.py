@@ -119,7 +119,9 @@ def read_input_file(fname):
                 continue
 
             if "=" not in line:
-                print(f"WARNING: Skipping malformed line: {line}")
+                RED = "\033[91m"
+                RESET = "\033[0m"
+                print(f"{RED}WARNING: Skipping malformed line: {line}{RESET}")
                 continue
 
             key, value = line.split("=", 1)
@@ -162,7 +164,9 @@ def get_parameters(input_file=None):
     # Warn on unknown keys
     for key in inputs:
         if key not in DEFAULTS:
-            print(f"WARNING: Unknown input key '{key}'")
+            RED = "\033[91m"
+            RESET = "\033[0m"
+            print(f"{RED}WARNING: Unknown input key '{key}'{RESET}")
 
     params.update(inputs)
 
