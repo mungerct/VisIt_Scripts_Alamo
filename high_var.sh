@@ -5,8 +5,8 @@ set -e
 
 # -------- User-configurable variables --------
 NP=8
-VISIT_SCRIPT=~/research/visit_scripts/high_var_all_time.py
-POST_SCRIPT=~/research/visit_scripts/high_var_processing.py
+VISIT_SCRIPT=~/research/visit_scripts/src/high_var_all_time.py
+POST_SCRIPT=~/research/visit_scripts/src/high_var_processing.py
 CONDA_ENV=image_processing
 # --------------------------------------------
 
