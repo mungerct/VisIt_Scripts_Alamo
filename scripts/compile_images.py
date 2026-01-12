@@ -78,7 +78,7 @@ def compile_images_func(
                              position=(params["plotting.legend.name.position.x"], params["plotting.legend.name.position.y"]))
 
     # Save result
-    result_img.save(os.path.join(cwd, output_file))
+    result_img.save(os.path.join(cwd, params["file.output_filename"] + ".png"))
     # result_img.show()
 
 
