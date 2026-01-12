@@ -135,14 +135,28 @@ for state in range(start_state, end_state, step_interval):
     AddPlot("Pseudocolor", plotting_var, 1, 0)
     SetPlotOptions(PseudocolorAtts)
 
-    if params["plotting.main_plotting_var.thresholding.on"]:
+    # if params["plotting.main_plotting_var.thresholding.on"]:
         # Isovolume 2: eta >= 0.5
-        AddOperator("Isovolume")
-        IsoEtaAtts = IsovolumeAttributes()
-        IsoEtaAtts.variable = threhold_var
-        IsoEtaAtts.lbound = min_threhold
-        IsoEtaAtts.ubound = max_threhold
-        SetOperatorOptions(IsoEtaAtts, 1)
+        # AddOperator("Isovolume")
+        # IsoEtaAtts = IsovolumeAttributes()
+        # IsoEtaAtts.variable = threhold_var
+        # IsoEtaAtts.lbound = min_threhold
+        # IsoEtaAtts.ubound = max_threhold
+        # SetOperatorOptions(IsoEtaAtts, 1)
+
+    DenThresh = ThresholdAttributes()
+    DenThresh.outputMeshType = 0
+    DenThresh.boundsInputType = 0
+    DenThresh.listedVarNames = ("eta")
+    DenThresh.zonePortions = (1, 1)
+    DenThresh.lowerBounds = (0.5)
+    DenThresh.upperBounds = (1.0)
+    DenThresh.defaultVarName = "eta"
+    DenThresh.defaultVarIsScalar = 1
+    DenThresh.boundsRange = ("0.5:1.0")
+
+    AddOperator("Threshold")
+    SetOperatorOptions(DenThresh)
 
     # Isovolume 1: temperature >= min_var
     AddOperator("Isovolume")
@@ -152,8 +166,6 @@ for state in range(start_state, end_state, step_interval):
     IsoTempAtts.ubound = 1e37
     SetOperatorOptions(IsoTempAtts, 0)
 
-    # SetActivePlots(GetNumPlots() - 1)
-    # SetPlotFollowsTime(0)
 
     DrawPlots()
 
