@@ -152,8 +152,8 @@ for state in range(start_state, end_state, step_interval):
     IsoTempAtts.ubound = 1e37
     SetOperatorOptions(IsoTempAtts, 0)
 
-    SetActivePlots(GetNumPlots() - 1)
-    SetPlotFollowsTime(0)
+    # SetActivePlots(GetNumPlots() - 1)
+    # SetPlotFollowsTime(0)
 
     DrawPlots()
 
