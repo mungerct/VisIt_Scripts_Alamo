@@ -182,12 +182,11 @@ for state in range(start_state, end_state, step_interval):
         ContourAtts.maxFlag = 0
         ContourAtts.lineWidth = params["plotting.contour.linewidth"]
         ContourAtts.colorType = ContourAtts.ColorBySingleColor
-        ContourAtts.singleColor = (0, 0, 0, 255)
+        ContourAtts.singleColor = params["plotting.contour.color"]
         ContourAtts.legendFlag = 0
-
-    SetPlotOptions(ContourAtts)
-    AddOperator("Threshold")
-    SetOperatorOptions(Thresh)
+        SetPlotOptions(ContourAtts)
+        AddOperator("Threshold")
+        SetOperatorOptions(Thresh)
 
     DrawPlots()
 
