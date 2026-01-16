@@ -52,6 +52,13 @@ def save_metadata_with_git(params, output_dir):
                                                                                                  "plotting.legend.name.dpi",
                                                                                                  "plotting.legend.name.fontsize"}:
                 continue
+            elif params["plotting.contour.on"] == 0 and key in {"plotting.contour.on",
+                                                                                                 "plotting.contour.var.name",
+                                                                                                 "plotting.contour.values",
+                                                                                                 "plotting.contour.linewidth",
+                                                                                                 "plotting.contour.color"}:
+                continue
+
             else:
                 f.write(f"{key}: {value}\n")
 
