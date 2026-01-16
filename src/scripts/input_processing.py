@@ -242,6 +242,9 @@ def parse_rgba(value_str):
     RED = "\033[91m"
     RESET = "\033[0m"
 
+    value_str = value_str.split("#")[0].strip()
+    value_str = value_str.strip("()")
+
     parts = value_str.split(",")
     if len(parts) != 4:
         print(f"{RED}WARNING: RGBA value must have 4 components, got {len(parts)}. Using default (0,0,0,255){RESET}")
