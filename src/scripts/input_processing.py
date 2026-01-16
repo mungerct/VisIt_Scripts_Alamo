@@ -92,6 +92,12 @@ DEFAULTS = {
     "plotting.background_var.name": "eta",
     "plotting.background_var.invert": 0,
     "plotting.background_var.colormap": "gray",
+
+    "plotting.contour.on": 0,
+    "plotting.contour.var.name": "phi",
+    "plotting.contour.values": 0.5,
+    "plotting.contour.linewidth": 2,
+    "plotting.contour.color": (0, 0, 0, 255),  # black
     
     "plotting.legend.name.on": 0,
     "plotting.legend.name.text": "Good Legend",
@@ -109,8 +115,16 @@ def read_input_file(fname):
     """
     Reads a simple key = value input file.
     Ignores empty lines and lines starting with #.
-    Auto-converts int, float, and bool values.
+    Auto-converts int, float, bool values.
+    Also converts comma-separated numbers into tuples for keys that need it.
     """
+    RED = "\033[91m"
+    RESET = "\033[0m"
+
+    # Keys that should be interpreted as tuple of floats
+    tuple_keys = {"plotting.contour.values"}
+    color_keys = {"plotting.contour.color"}
+
     params = {}
     with open(fname, "r") as f:
         for line in f:
@@ -119,8 +133,6 @@ def read_input_file(fname):
                 continue
 
             if "=" not in line:
-                RED = "\033[91m"
-                RESET = "\033[0m"
                 print(f"{RED}WARNING: Skipping malformed line: {line}{RESET}")
                 continue
 
@@ -128,7 +140,38 @@ def read_input_file(fname):
             key = key.strip()
             value = value.strip()
 
-            # Auto-convert types
+            # Handle tuple-like values for specific keys
+            if key in tuple_keys:
+                # Split by comma
+                if "," in value:
+                    parts = value.split(",")
+                    vals = []
+                    for p in parts:
+                        p = p.strip()
+                        try:
+                            vals.append(float(p))
+                        except ValueError:
+                            print(f"{RED}WARNING: Could not convert '{p}' to float for key '{key}'. Ignoring.{RESET}")
+                    if vals:
+                        params[key] = tuple(vals)
+                    else:
+                        print(f"{RED}WARNING: No valid numbers for key '{key}'. Using default (0.5){RESET}")
+                        params[key] = (0.5,)
+                else:
+                    # Single number
+                    try:
+                        params[key] = (float(value),)
+                    except ValueError:
+                        print(f"{RED}WARNING: Could not convert '{value}' to float for key '{key}'. Using default (0.5){RESET}")
+                        params[key] = (0.5,)
+                continue  # skip the rest of type conversion
+
+            # ... inside the line parsing loop
+            if key in color_keys:
+                params[key] = parse_rgba(value)
+                continue
+
+            # Auto-convert other types
             if value.lower() in ("true", "false"):
                 value = value.lower() == "true"
             else:
@@ -143,6 +186,7 @@ def read_input_file(fname):
             params[key] = value
 
     return params
+
 
 
 # -----------------------------
@@ -187,3 +231,31 @@ def get_parameters(input_file=None):
         )
 
     return params
+
+def parse_rgba(value_str):
+    """
+    Parse an RGBA color string like:
+        "255, 0, 128, 255"
+        "0,0,0,255"
+    Returns a tuple of 4 integers.
+    """
+    RED = "\033[91m"
+    RESET = "\033[0m"
+
+    parts = value_str.split(",")
+    if len(parts) != 4:
+        print(f"{RED}WARNING: RGBA value must have 4 components, got {len(parts)}. Using default (0,0,0,255){RESET}")
+        return (0, 0, 0, 255)
+
+    rgba = []
+    for p in parts:
+        try:
+            val = int(p.strip())
+            if not (0 <= val <= 255):
+                raise ValueError
+            rgba.append(val)
+        except ValueError:
+            print(f"{RED}WARNING: Invalid RGBA component '{p}'. Must be 0-255. Using 0.{RESET}")
+            rgba.append(0)
+
+    return tuple(rgba)
