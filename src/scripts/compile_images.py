@@ -5,7 +5,8 @@ def compile_images_func(
     extension=".png",
     legend_file="legend_only_DELETE_ME0000.png",
     initial_field_file="initial_field_DELETE_ME0000.png",
-    output_file="result_img.png"
+    output_file="result_img.png",
+    params = None,
 ):
     """
     Compile a series of images into a single result image with colormap and overlays.
@@ -19,11 +20,9 @@ def compile_images_func(
     cwd = os.getcwd()
 
     legend_path = os.path.join(cwd, legend_file)
-    initial_field_path = os.path.join(cwd, initial_field_file)
 
     # Open overlay images
     legend = Image.open(legend_path).convert("RGBA")
-    initial_field = Image.open(initial_field_path).convert("RGBA")
 
     # Collect all image filenames in cwd
     filenames = []
@@ -55,18 +54,31 @@ def compile_images_func(
     # Apply colormap
     mask = result_arr < 255
     norm = result_arr / 255.0
-    plasma = plt.cm.plasma(norm)[:, :, :3]
-    plasma_rgb = (plasma * 255).astype(np.uint8)
+    cmap = get_colormap(params["plotting.main_plotting_var.colormap"])
+    cmap = cmap.reversed()
+    colormap_rgb = cmap(norm)[:, :, :3]
+    colormap_rgb = (colormap_rgb * 255).astype(np.uint8)
 
     result = np.ones((*result_arr.shape, 3), dtype=np.uint8) * 255
-    result[mask] = plasma_rgb[mask]
+    result[mask] = colormap_rgb[mask]
     result_img = Image.fromarray(result)
 
     result_img = paste_image(result_img, legend, position=(0, 0))
-    result_img = paste_image(result_img, initial_field, position=(0, 0))
+
+    if params["plotting.background_var.on"]:
+        initial_field_path = os.path.join(cwd, initial_field_file)
+        initial_field = Image.open(initial_field_path).convert("RGBA")
+        result_img = paste_image(initial_field, result_img, position=(0, 0))
+
+    if params["plotting.legend.name.on"]:
+        legend = latex_text_image(text=params["plotting.legend.name.text"], 
+                              dpi=params["plotting.legend.name.dpi"],
+                              fontsize=params["plotting.legend.name.fontsize"])
+        result_img = paste_image(result_img, legend, 
+                             position=(params["plotting.legend.name.position.x"], params["plotting.legend.name.position.y"]))
 
     # Save result
-    result_img.save(os.path.join(cwd, output_file))
+    result_img.save(os.path.join(cwd, params["file.output_filename"] + ".png"))
     # result_img.show()
 
 
@@ -96,6 +108,70 @@ def progress_bar(i, total, width=40):
         print()
 
     return
+
+def hot(N=256):
+    from matplotlib.colors import LinearSegmentedColormap
+    colors = [
+        (0.0, 0.0, 1.0),
+        (0.0, 1.0, 1.0),
+        (0.0, 1.0, 0.0),
+        (1.0, 1.0, 0.0),
+        (1.0, 0.0, 0.0),
+    ]
+    return LinearSegmentedColormap.from_list(
+        "hot", colors, N=N
+    )
+
+CUSTOM_COLORMAPS = {
+    "hot": hot,
+}
+
+def get_colormap(name, N=256):
+    import matplotlib.pyplot as plt
+    if name in CUSTOM_COLORMAPS:
+        return CUSTOM_COLORMAPS[name](N)
+    else:
+        return plt.cm.get_cmap(name, N)
+
+def latex_text_image(
+    text,
+    fontsize=12,
+    dpi=400,
+    color="black",
+):
+    import matplotlib.pyplot as plt
+    import numpy as np
+    from PIL import Image
+    from io import BytesIO
+
+    fig = plt.figure()
+    fig.patch.set_alpha(0)
+
+    # Render text
+    plt.text(
+        0.5, 0.5, text,
+        fontsize=fontsize,
+        color=color,
+        ha="center",
+        va="center",
+    )
+    plt.axis("off")
+
+    # Save to buffer
+    buf = BytesIO()
+    plt.savefig(
+        buf,
+        format="png",
+        dpi=dpi,
+        bbox_inches="tight",
+        pad_inches=0.01,
+        transparent=True,
+    )
+    plt.close(fig)
+
+    buf.seek(0)
+    return Image.open(buf).convert("RGBA")
+
 
 if __name__ == "__main__":
     compile_images_func()

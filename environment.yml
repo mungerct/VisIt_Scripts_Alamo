@@ -1,0 +1,4 @@
+name: image_processing
+channels:
+  - defaults
+prefix: /home/caleb/anaconda3/envs/image_processing
