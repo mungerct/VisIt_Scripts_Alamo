@@ -180,6 +180,10 @@ for state in range(start_state, end_state, step_interval):
     ContourAtts.minFlag = 0
     ContourAtts.maxFlag = 0
     ContourAtts.lineWidth = 3
+    ContourAtts.colorType = ContourAtts.ColorBySingleColor
+    ContourAtts.singleColor = (0, 0, 0, 255)
+    ContourAtts.legendFlag = 0
+
     SetPlotOptions(ContourAtts)
     AddOperator("Threshold")
     SetOperatorOptions(Thresh)
