@@ -173,6 +173,17 @@ for state in range(start_state, end_state, step_interval):
     legend.drawMinMax = 0
     legend.numberFormat = "%1.1f"
 
+    AddPlot("Contour", "phi", 1, 1)
+    ContourAtts = ContourAttributes()
+    ContourAtts.contourMethod = ContourAtts.Value  # Explicitly set method
+    ContourAtts.contourValue = (0.5,)  # Must be a tuple with trailing comma
+    ContourAtts.minFlag = 0
+    ContourAtts.maxFlag = 0
+    ContourAtts.lineWidth = 3
+    SetPlotOptions(ContourAtts)
+    AddOperator("Threshold")
+    SetOperatorOptions(Thresh)
+
     DrawPlots()
 
     SaveWindowAtts.fileName = "temp_field_DELETE_ME"
