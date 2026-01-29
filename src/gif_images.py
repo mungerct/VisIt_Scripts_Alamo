@@ -85,8 +85,8 @@ SaveWindowAtts = SaveWindowAttributes()
 SaveWindowAtts.outputToCurrentDirectory = 1
 SaveWindowAtts.family = 1
 SaveWindowAtts.format = SaveWindowAtts.PNG
-SaveWindowAtts.width = 1080
-SaveWindowAtts.height = 1080
+SaveWindowAtts.width = params["file.width"]
+SaveWindowAtts.height = params["file.height"]
 SaveWindowAtts.screenCapture = 0
 SaveWindowAtts.resConstraint = SaveWindowAtts.NoConstraint
 

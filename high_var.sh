@@ -21,14 +21,13 @@ DATA_DIR="$1"
 echo "Running VisIt CLI script on ${DATA_DIR}..."
 visit -cli -np ${NP} -nowin -s "${VISIT_SCRIPT}" "${DATA_DIR}"
 
-echo "Activating conda environment: ${CONDA_ENV}"
-source "$(conda info --base)/etc/profile.d/conda.sh"
-conda activate "${CONDA_ENV}"
+# echo "Activating conda environment: ${CONDA_ENV}"
+# source "$(conda info --base)/etc/profile.d/conda.sh"
+# conda activate "${CONDA_ENV}"
 
 echo "Compiling Images ${DATA_DIR}..."
 python "${POST_SCRIPT}" "${DATA_DIR}"
 
-conda deactivate
 conda deactivate
 
 echo "All steps completed successfully."

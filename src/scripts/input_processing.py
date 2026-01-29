@@ -68,6 +68,8 @@ DEFAULTS = {
     "file.db_path": os.getcwd(),
     "file.default_db": "celloutput.visit",
     "file.output_filename": "high_var_all_time",
+    "file.width": 1080,
+    "file.height": 1080,
 
     # Step control
     "step.interval": 1,
@@ -83,22 +85,26 @@ DEFAULTS = {
     "plotting.main_plotting_var.min": 0,
     "plotting.main_plotting_var.max": 2000,
 
+    # Thresholding
     "plotting.main_plotting_var.thresholding.on": 0,
     "plotting.main_plotting_var.thresholding.var.name": "eta",
     "plotting.main_plotting_var.thresholding.var.min": 0.0,
     "plotting.main_plotting_var.thresholding.var.max": 1e37,
-
+    
+    # Background variable
     "plotting.background_var.on": 1,
     "plotting.background_var.name": "eta",
     "plotting.background_var.invert": 0,
     "plotting.background_var.colormap": "gray",
 
+    # Contours
     "plotting.contour.on": 0,
     "plotting.contour.var.name": "phi",
     "plotting.contour.values": 0.5,
     "plotting.contour.linewidth": 2,
     "plotting.contour.color": (0, 0, 0, 255),  # black
     
+    # Legend
     "plotting.legend.name.on": 0,
     "plotting.legend.name.text": "Good Legend",
     "plotting.legend.name.position.x": -1150,
