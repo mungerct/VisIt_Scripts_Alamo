@@ -92,7 +92,7 @@ DEFAULTS = {
     "plotting.main_plotting_var.thresholding.var.max": 1e37,
     
     # Background variable
-    "plotting.background_var.on": 1,
+    "plotting.background_var.on": 0,
     "plotting.background_var.name": "eta",
     "plotting.background_var.invert": 0,
     "plotting.background_var.colormap": "gray",

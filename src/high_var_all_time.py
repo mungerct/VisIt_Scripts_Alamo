@@ -189,6 +189,28 @@ if params["plotting.background_var.on"]:
 
     print("Inital Field Saved")
 
+if params["plotting.contour.on"]:
+    SetTimeSliderState(1)
+    AddPlot("Contour", params["plotting.contour.var.name"], 1, 1)
+    ContourAtts = ContourAttributes()
+    ContourAtts.contourMethod = ContourAtts.Value  # Explicitly set method
+    ContourAtts.contourValue = params["plotting.contour.values"]  # Must be a tuple with trailing comma
+    ContourAtts.minFlag = 0
+    ContourAtts.maxFlag = 0
+    ContourAtts.lineWidth = params["plotting.contour.linewidth"] # integer is required
+    ContourAtts.colorType = ContourAtts.ColorBySingleColor
+    ContourAtts.singleColor = params["plotting.contour.color"]
+    ContourAtts.legendFlag = 0
+    SetPlotOptions(ContourAtts)
+    DrawPlots()
+
+    SaveWindowAtts.fileName = "contour_field_DELETE_ME"
+    SetSaveWindowAttributes(SaveWindowAtts)
+    SaveWindow()
+    DeleteActivePlots()
+
+    print("Contour Saved")
+
 # ------------------------------------------------------------
 # Temperature plot attributes
 # ------------------------------------------------------------

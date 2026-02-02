@@ -5,6 +5,7 @@ def compile_images_func(
     extension=".png",
     legend_file="legend_only_DELETE_ME0000.png",
     initial_field_file="initial_field_DELETE_ME0000.png",
+    contour_field="contour_field_DELETE_ME0000.png",
     output_file="result_img.png",
     params = None,
 ):
@@ -72,10 +73,15 @@ def compile_images_func(
 
     if params["plotting.legend.name.on"]:
         legend = latex_text_image(text=params["plotting.legend.name.text"], 
-                              dpi=params["plotting.legend.name.dpi"],
-                              fontsize=params["plotting.legend.name.fontsize"])
+                            dpi=params["plotting.legend.name.dpi"],
+                            fontsize=params["plotting.legend.name.fontsize"])
         result_img = paste_image(result_img, legend, 
-                             position=(params["plotting.legend.name.position.x"], params["plotting.legend.name.position.y"]))
+                            position=(params["plotting.legend.name.position.x"], params["plotting.legend.name.position.y"]))
+
+    if params["plotting.contour.on"]:
+        contour_path = os.path.join(cwd, contour_field)
+        contour_field = Image.open(contour_path).convert("RGBA")
+        result_img = paste_image(result_img, contour_field, position=(0,0))
 
     # Save result
     result_img.save(os.path.join(cwd, params["file.output_filename"] + ".png"))
