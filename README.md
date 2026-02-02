@@ -1,6 +1,13 @@
+# High Variable Plotting
+
+This section describes the `high_var.sh` tool
+
+<details>
+
+
 # Configuration Defaults
 
-This document describes the default configuration values for the visualization toolbox.
+This section describes the default configuration values for the visualization toolbox.
 
 <details>
 <summary><h2>Configuration Details</h2></summary>
@@ -91,6 +98,8 @@ This document describes the default configuration values for the visualization t
 
 <details>
 <summary><h3>Legend</h3></summary>
+
+Only supported for `high_var.sh`
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
