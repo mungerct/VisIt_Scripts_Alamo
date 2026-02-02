@@ -5,7 +5,9 @@ This section describes the `high_var.sh` tool
 <details>
 <summary><h2>High Variable Plotting</h2></summary>
 
-![Alt text for the image](/examples/make_high_temp_plot_example/Make_High_Temp_Plot_Example.svg)
+This code produces a compiled image the highest variable over all timesteps, the example image below shows how temperature timesteps can be combined to visualize where the highest temperature in a given simulation is over all time. 
+
+![Make High Temp Plot Example](/examples/make_high_temp_plot_example/Make_High_Temp_Plot_Example.svg)
 
 </details>
 
