@@ -3,7 +3,9 @@
 This section describes the `high_var.sh` tool
 
 <details>
-<summary><h2>Overview</h2></summary>
+<summary><h2>High Variable Plotting</h2></summary>
+
+![Alt text for the image](/examples/make_high_temp_plot_example/Make_High_Temp_Plot_Example.svg)
 
 </details>
 
