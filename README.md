@@ -9,6 +9,8 @@ This code produces a compiled image the highest variable over all timesteps, the
 
 ![Make High Temp Plot Example](/examples/make_high_temp_plot_example/Make_High_Temp_Plot_Example.svg)
 
+The code saves images at all specified timesteps, and then overlays them and compares their values, the larger of the two values is kept so only the higher temperature is shown in the result.
+
 </details>
 
 # Configuration Defaults
@@ -119,7 +121,7 @@ Only supported for `high_var.sh`
 </details>
 
 <details>
-<summary><h2>Available Colormaps</h3></summary>
+<summary><h3>Available Colormaps</h3></summary>
 
 The following VisIt colormaps are supported for visualization:
 
