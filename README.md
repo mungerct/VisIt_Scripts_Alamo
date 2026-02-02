@@ -104,9 +104,9 @@ This document describes the default configuration values for the visualization t
 </details>
 
 <details>
-<summary><h2>Available Colormaps</h2></summary>
+<summary><h2>Available Colormaps</h3></summary>
 
-The following colormaps are supported for visualization:
+The following VisIt colormaps are supported for visualization:
 
 ### Sequential Colormaps
 - `viridis`
@@ -121,7 +121,7 @@ The following colormaps are supported for visualization:
 - `gray`
 
 ### Single Hue Sequential
-- `blues` / `Blues`
+- `blues`
 - `Greens`
 - `Oranges`
 - `Purples`
@@ -135,7 +135,7 @@ The following colormaps are supported for visualization:
 - `OrRd` (Orange-Red)
 - `PuRd` (Purple-Red)
 - `RdPu` (Red-Purple)
-- `YlGn` / `YlgGn` (Yellow-Green)
+- `YlGn` (Yellow-Green)
 - `YlGnBu` (Yellow-Green-Blue)
 - `YlOrBr` (Yellow-Orange-Brown)
 - `YlOrRd` (Yellow-Orange-Red)
