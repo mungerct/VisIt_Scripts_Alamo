@@ -3,7 +3,9 @@
 This section describes the `high_var.sh` tool
 
 <details>
+<summary><h2>Overview</h2></summary>
 
+</details>
 
 # Configuration Defaults
 
