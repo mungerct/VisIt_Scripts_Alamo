@@ -2,7 +2,11 @@
 
 This document describes the default configuration values for the visualization tool.
 
-## Database Settings
+<details>
+<summary><h2>Configuration Details</h2></summary>
+
+<details>
+<summary><h3>Database Settings</h3></summary>
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
@@ -12,7 +16,10 @@ This document describes the default configuration values for the visualization t
 | `file.width` | `1080` | Output image width in pixels |
 | `file.height` | `1080` | Output image height in pixels |
 
-## Step Control
+</details>
+
+<details>
+<summary><h3>Step Control</h3></summary>
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
@@ -20,7 +27,10 @@ This document describes the default configuration values for the visualization t
 | `step.start` | `0` | Starting timestep |
 | `step.end` | `-1` | Ending timestep (-1 = all available) |
 
-## Main Plotting Variable
+</details>
+
+<details>
+<summary><h3>Main Plotting Variable</h3></summary>
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
@@ -29,7 +39,8 @@ This document describes the default configuration values for the visualization t
 | `plotting.main_plotting_var.min` | `0` | Minimum value for color scale |
 | `plotting.main_plotting_var.max` | `2000` | Maximum value for color scale |
 
-### Scalar Expression (Optional)
+<details>
+<summary><h4>Scalar Expression (Optional)</h4></summary>
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
@@ -37,7 +48,10 @@ This document describes the default configuration values for the visualization t
 | `plotting.main_plotting_var.define_scalar_expression.name` | `"expression_name"` | Name for the expression |
 | `plotting.main_plotting_var.define_scalar_expression.expression` | `"expression_here"` | Mathematical expression definition |
 
-### Thresholding
+</details>
+
+<details>
+<summary><h4>Thresholding</h4></summary>
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
@@ -46,7 +60,12 @@ This document describes the default configuration values for the visualization t
 | `plotting.main_plotting_var.thresholding.var.min` | `0.0` | Minimum threshold value |
 | `plotting.main_plotting_var.thresholding.var.max` | `1e37` | Maximum threshold value |
 
-## Background Variable
+</details>
+
+</details>
+
+<details>
+<summary><h3>Background Variable</h3></summary>
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
@@ -55,7 +74,10 @@ This document describes the default configuration values for the visualization t
 | `plotting.background_var.invert` | `0` | Invert background colors (0=off, 1=on) |
 | `plotting.background_var.colormap` | `"gray"` | Background colormap |
 
-## Contours
+</details>
+
+<details>
+<summary><h3>Contours</h3></summary>
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
@@ -65,7 +87,10 @@ This document describes the default configuration values for the visualization t
 | `plotting.contour.linewidth` | `2` | Contour line width |
 | `plotting.contour.color` | `(0, 0, 0, 255)` | Contour color (RGBA) |
 
-## Legend
+</details>
+
+<details>
+<summary><h3>Legend</h3></summary>
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
@@ -75,6 +100,10 @@ This document describes the default configuration values for the visualization t
 | `plotting.legend.name.position.y` | `-800` | Legend Y position |
 | `plotting.legend.name.dpi` | `500` | Legend resolution (DPI) |
 | `plotting.legend.name.fontsize` | `8` | Legend font size |
+
+</details>
+
+</details>
 
 ## Notes
 
