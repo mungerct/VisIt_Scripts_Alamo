@@ -85,8 +85,8 @@ SaveWindowAtts = SaveWindowAttributes()
 SaveWindowAtts.outputToCurrentDirectory = 1
 SaveWindowAtts.family = 1
 SaveWindowAtts.format = SaveWindowAtts.PNG
-SaveWindowAtts.width = 1080
-SaveWindowAtts.height = 1080
+SaveWindowAtts.width = params["file.width"]
+SaveWindowAtts.height = params["file.height"]
 SaveWindowAtts.screenCapture = 0
 SaveWindowAtts.resConstraint = SaveWindowAtts.NoConstraint
 
@@ -188,6 +188,28 @@ if params["plotting.background_var.on"]:
     DeleteActivePlots()
 
     print("Inital Field Saved")
+
+if params["plotting.contour.on"]:
+    SetTimeSliderState(1)
+    AddPlot("Contour", params["plotting.contour.var.name"], 1, 1)
+    ContourAtts = ContourAttributes()
+    ContourAtts.contourMethod = ContourAtts.Value  # Explicitly set method
+    ContourAtts.contourValue = params["plotting.contour.values"]  # Must be a tuple with trailing comma
+    ContourAtts.minFlag = 0
+    ContourAtts.maxFlag = 0
+    ContourAtts.lineWidth = params["plotting.contour.linewidth"] # integer is required
+    ContourAtts.colorType = ContourAtts.ColorBySingleColor
+    ContourAtts.singleColor = params["plotting.contour.color"]
+    ContourAtts.legendFlag = 0
+    SetPlotOptions(ContourAtts)
+    DrawPlots()
+
+    SaveWindowAtts.fileName = "contour_field_DELETE_ME"
+    SetSaveWindowAttributes(SaveWindowAtts)
+    SaveWindow()
+    DeleteActivePlots()
+
+    print("Contour Saved")
 
 # ------------------------------------------------------------
 # Temperature plot attributes

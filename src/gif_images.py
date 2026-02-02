@@ -85,8 +85,8 @@ SaveWindowAtts = SaveWindowAttributes()
 SaveWindowAtts.outputToCurrentDirectory = 1
 SaveWindowAtts.family = 1
 SaveWindowAtts.format = SaveWindowAtts.PNG
-SaveWindowAtts.width = 1080
-SaveWindowAtts.height = 1080
+SaveWindowAtts.width = params["file.width"]
+SaveWindowAtts.height = params["file.height"]
 SaveWindowAtts.screenCapture = 0
 SaveWindowAtts.resConstraint = SaveWindowAtts.NoConstraint
 
@@ -173,6 +173,22 @@ for state in range(start_state, end_state, step_interval):
     legend.drawMinMax = 0
     legend.numberFormat = "%1.1f"
 
+    if params["plotting.contour.on"]:
+        AddPlot("Contour", params["plotting.contour.var.name"], 1, 1)
+        ContourAtts = ContourAttributes()
+        ContourAtts.contourMethod = ContourAtts.Value  # Explicitly set method
+        ContourAtts.contourValue = params["plotting.contour.values"]  # Must be a tuple with trailing comma
+        ContourAtts.minFlag = 0
+        ContourAtts.maxFlag = 0
+        ContourAtts.lineWidth = params["plotting.contour.linewidth"]
+        ContourAtts.colorType = ContourAtts.ColorBySingleColor
+        ContourAtts.singleColor = params["plotting.contour.color"]
+        ContourAtts.legendFlag = 0
+        SetPlotOptions(ContourAtts)
+
+        if params["plotting.main_plotting_var.thresholding.on"]:
+            AddOperator("Threshold")
+            SetOperatorOptions(Thresh)
     DrawPlots()
 
     SaveWindowAtts.fileName = "temp_field_DELETE_ME"

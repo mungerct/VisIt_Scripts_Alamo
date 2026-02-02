@@ -30,3 +30,4 @@ def images_to_gif(image_paths, output_path, fps=10, loop=0):
         loop=loop,
         optimize=True
     )
+    print(f"Saved GIF to {output_path} with {len(images)} frames at {fps} FPS")
