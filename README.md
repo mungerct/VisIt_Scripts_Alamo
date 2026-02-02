@@ -104,6 +104,7 @@ This document describes the default configuration values for the visualization t
 </details>
 
 <details>
+<summary><h3>Notes</h3></summary>
 
 ## Notes
 
