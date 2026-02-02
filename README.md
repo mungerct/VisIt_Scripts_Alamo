@@ -1,6 +1,6 @@
 # Configuration Defaults
 
-This document describes the default configuration values for the visualization tool.
+This document describes the default configuration values for the visualization toolbox.
 
 <details>
 <summary><h2>Configuration Details</h2></summary>
@@ -25,7 +25,7 @@ This document describes the default configuration values for the visualization t
 |-----------|---------|-------------|
 | `step.interval` | `1` | Interval between timesteps |
 | `step.start` | `0` | Starting timestep |
-| `step.end` | `-1` | Ending timestep (-1 = all available) |
+| `step.end` | `-1` | Ending timestep (-1 = all timesteps) |
 
 </details>
 
@@ -35,7 +35,7 @@ This document describes the default configuration values for the visualization t
 | Parameter | Default | Description |
 |-----------|---------|-------------|
 | `plotting.main_plotting_var.name` | `"temp"` | Variable to plot |
-| `plotting.main_plotting_var.colormap` | `"plasma"` | Colormap for visualization |
+| `plotting.main_plotting_var.colormap` | `"plasma"` | Colormap for visualization, see available colormaps section for support VisIt colormaps |
 | `plotting.main_plotting_var.min` | `0` | Minimum value for color scale |
 | `plotting.main_plotting_var.max` | `2000` | Maximum value for color scale |
 
@@ -100,6 +100,61 @@ This document describes the default configuration values for the visualization t
 | `plotting.legend.name.position.y` | `-800` | Legend Y position |
 | `plotting.legend.name.dpi` | `500` | Legend resolution (DPI) |
 | `plotting.legend.name.fontsize` | `8` | Legend font size |
+
+</details>
+
+<details>
+<summary><h2>Available Colormaps</h2></summary>
+
+The following colormaps are supported for visualization:
+
+### Sequential Colormaps
+- `viridis`
+- `plasma`
+- `magma`
+- `inferno`
+- `cividis`
+- `turbo`
+- `hot`
+
+### Grayscale
+- `gray`
+
+### Single Hue Sequential
+- `blues` / `Blues`
+- `Greens`
+- `Oranges`
+- `Purples`
+- `Reds`
+
+### Multi-Hue Sequential
+- `BuGn` (Blue-Green)
+- `GnBu` (Green-Blue)
+- `PuBu` (Purple-Blue)
+- `PuBuGn` (Purple-Blue-Green)
+- `OrRd` (Orange-Red)
+- `PuRd` (Purple-Red)
+- `RdPu` (Red-Purple)
+- `YlGn` / `YlgGn` (Yellow-Green)
+- `YlGnBu` (Yellow-Green-Blue)
+- `YlOrBr` (Yellow-Orange-Brown)
+- `YlOrRd` (Yellow-Orange-Red)
+
+### Diverging Colormaps
+- `PRGn` (Purple-Green)
+- `PiYG` (Pink-Yellow-Green)
+- `PuOr` (Purple-Orange)
+- `RdBu` (Red-Blue)
+- `RdGy` (Red-Gray)
+- `RdYlBu` (Red-Yellow-Blue)
+- `RdYlGn` (Red-Yellow-Green)
+- `Spectral`
+
+### Qualitative Colormaps
+- `rainbow`
+- `Dark2`
+- `Paired`
+- `Set1`
 
 </details>
 
