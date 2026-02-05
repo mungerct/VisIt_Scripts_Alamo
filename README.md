@@ -9,7 +9,41 @@ This code produces a compiled image the highest variable over all timesteps, the
 
 ![Make High Temp Plot Example](/examples/make_high_temp_plot_example/Make_High_Temp_Plot_Example.svg)
 
-The code saves images at all specified timesteps, and then overlays them and compares their values, the larger of the two values is kept so only the higher temperature is shown in the result.
+The code saves images at all specified timesteps, and then overlays them and compares their values, the larger of the two values is kept so only the higher temperature is shown in the result. The input file used to make the above image is provided below as an example.
+<details>
+<summary><h2>Sample Script</h2></summary>
+
+``` file.db_path: /research/papers/RegressionWithVoidsFullFeedback/results/arbitary_geometry_tests/output.arbitary_geo.phi_fake_grain
+file.default_db: celloutput.visit
+file.output_filename: make_high_temp_fig_composite
+step.interval: 10
+step.start: 20
+step.end: 51
+plotting.main_plotting_var.name: temp
+plotting.main_plotting_var.colormap: hot
+plotting.main_plotting_var.min: 700
+plotting.main_plotting_var.max: 1200
+plotting.main_plotting_var.thresholding.on: 1
+plotting.main_plotting_var.thresholding.var.name: eta
+plotting.main_plotting_var.thresholding.var.min: 0.5
+plotting.main_plotting_var.thresholding.var.max: 1e+37
+plotting.background_var.on: 1
+plotting.background_var.name: eta
+plotting.background_var.invert: 0
+plotting.background_var.colormap: gray
+plotting.legend.name.on: 1
+plotting.legend.name.text: Temp (K)
+plotting.legend.name.position.x: -1150
+plotting.legend.name.position.y: -800
+plotting.legend.name.dpi: 500
+plotting.legend.name.fontsize: 4
+```
+This file was run using the following command
+```
+~/path/to/VisIt_Scripts_Alamo/high_var.sh /path/to/input/file/input.txt
+```
+
+</details>
 
 </details>
 
