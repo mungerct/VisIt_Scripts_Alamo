@@ -112,8 +112,7 @@ DEFAULTS = {
     "plotting.legend.name.fontsize": 8,
 
     # Data Transfer (): Not meant as inputs, used to transfer data between scripts
-    "sim.time.start": 0,
-    "sim.time.end": 0,
+    "sim.time.arr": 0,
 
     # High variable comparsion mode
     "high_var.mode": "time"

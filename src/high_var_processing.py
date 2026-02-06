@@ -35,4 +35,4 @@ compile_images_func(
     params=params,
 )
 
-# delete_delete_me_files()
+delete_delete_me_files()

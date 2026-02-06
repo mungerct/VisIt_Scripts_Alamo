@@ -194,6 +194,7 @@ PseudocolorAtts.lightingFlag = 0
 # Loop over temperature levels and timesteps (no eta background)
 # ------------------------------------------------------------
 
+time_values = []
 print(f"\nSaving Time Steps:")
 
 for state in range(start_state, end_state, step_interval):
@@ -246,6 +247,11 @@ for state in range(start_state, end_state, step_interval):
 
     # Draw and save each timestep
     DrawPlots()
+
+    if params["high_var.mode"] == "time":
+        time = Query("Time")            # get the current simulation time
+        time_values.append(time)        # store it
+
     SaveWindowAtts.fileName = "temp_field_DELETE_ME"
     SetSaveWindowAttributes(SaveWindowAtts)
     SaveWindow()
@@ -254,18 +260,9 @@ for state in range(start_state, end_state, step_interval):
 # Save metadata
 # ------------------------------------------------------------
 
-# Create an empty list
-time_values = []
-
-# Loop over all time states
-for state in range(TimeSliderGetNStates()):
-    SetTimeSliderState(state)       # move to this state
-    time = Query("Time")            # get the current simulation time
-    time_values.append(time)        # store it
-
-# Now you have all times in an array
-print(time_values)
-
+if params["high_var.mode"] == "time":
+    time_values = [float(s.split()[-1][:-1]) for s in time_values]
+    params["sim.time.arr"] = time_values
 
 save_metadata_with_git(params, ".")
 sys.exit(0)
