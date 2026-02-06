@@ -200,11 +200,11 @@ for state in range(start_state, end_state, step_interval):
     progress_bar(state + 1, end_state)
     SetTimeSliderState(state)
 
-    # Remove previous plots
+    # Remove previous temperature plots
     for i in range(GetNumPlots() - 1, 0, -1):
         DeleteActivePlots()
 
-    # Add new plot
+    # Add temperature plot only
     AddPlot("Pseudocolor", plotting_var, 1, 0)
     SetPlotOptions(PseudocolorAtts)
 
@@ -217,32 +217,16 @@ for state in range(start_state, end_state, step_interval):
         IsoEtaAtts.ubound = max_threhold
         SetOperatorOptions(IsoEtaAtts, 1)
 
-    if params["high_var.mode"] == "space":
-        AddOperator("Isovolume")
-        IsoTempAtts = IsovolumeAttributes()
-        IsoTempAtts.variable = plotting_var
-        IsoTempAtts.lbound = min_var
-        IsoTempAtts.ubound = 1e37
-        SetOperatorOptions(IsoTempAtts, 0)
+    # Isovolume 1: temperature >= min_var
+    AddOperator("Isovolume")
+    IsoTempAtts = IsovolumeAttributes()
+    IsoTempAtts.variable = plotting_var
+    IsoTempAtts.lbound = min_var
+    IsoTempAtts.ubound = 1e37
+    SetOperatorOptions(IsoTempAtts, 0)
 
-    if params["high_var.mode"] == "time":
-        Thresh = ThresholdAttributes()
-        Thresh.outputMeshType = 0
-        Thresh.boundsInputType = 0
-        Thresh.listedVarNames = (threhold_var)
-        Thresh.zonePortions = (1, 1)
-        Thresh.lowerBounds = (min_threhold)
-        Thresh.upperBounds = (max_threhold)
-        Thresh.defaultVarName = threhold_var
-        Thresh.defaultVarIsScalar = 1
-        Thresh.boundsRange = (f"{min_threhold}", f"{max_threhold}")
-
-        AddOperator("Threshold")
-        SetOperatorOptions(Thresh, 0)
-
-    if params["high_var.mode"] == "space":
-        SetActivePlots(GetNumPlots() - 1)
-        SetPlotFollowsTime(0)
+    SetActivePlots(GetNumPlots() - 1)
+    SetPlotFollowsTime(0)
 
     # Draw and save each timestep
     DrawPlots()
@@ -253,19 +237,6 @@ for state in range(start_state, end_state, step_interval):
 # ------------------------------------------------------------
 # Save metadata
 # ------------------------------------------------------------
-
-# Create an empty list
-time_values = []
-
-# Loop over all time states
-for state in range(TimeSliderGetNStates()):
-    SetTimeSliderState(state)       # move to this state
-    time = Query("Time")            # get the current simulation time
-    time_values.append(time)        # store it
-
-# Now you have all times in an array
-print(time_values)
-
 
 save_metadata_with_git(params, ".")
 sys.exit(0)

@@ -33,31 +33,66 @@ def compile_images_func(
 
     if not filenames:
         raise FileNotFoundError(f"No images found matching {basename}*{extension} in {cwd}")
+    
+    if params["high_var.mode"] == "time":
+        total = len(filenames)
+        cmap = get_colormap(params["plotting.main_plotting_var.colormap"])  # first = yellow
+        norm_indices = np.linspace(0, 1, total)
 
-    # Open first image to initialize result
-    result_img = Image.open(filenames[0]).convert("L")
-    result_arr = np.array(result_img)
+        composite_arr = None  # to hold the growing composite
 
-    total = len(filenames)
-    for idx, filename in enumerate(filenames, start=1):
-        img = Image.open(filename).convert("L")
-        arr = np.array(img)
-        result_arr = np.minimum(result_arr, arr)
-        # update progress bar
-        progress_bar(idx, total, width=40)
-    print()
+        for idx, filename in enumerate(filenames):
+            # Load image in grayscale
+            img = Image.open(filename).convert("L")
+            arr = np.array(img)
 
-    # Apply colormap
-    mask = result_arr < 255
-    norm = result_arr / 255.0
-    cmap = get_colormap(params["plotting.main_plotting_var.colormap"])
-    cmap = cmap.reversed()
-    colormap_rgb = cmap(norm)[:, :, :3]
-    colormap_rgb = (colormap_rgb * 255).astype(np.uint8)
+            # Map current index to a color
+            color = cmap(norm_indices[idx])[:3]  # RGB values (0-1)
 
-    result = np.ones((*result_arr.shape, 3), dtype=np.uint8) * 255
-    result[mask] = colormap_rgb[mask]
-    result_img = Image.fromarray(result)
+            # Create RGB array for this image (non-white pixels get colormap color)
+            rgb_arr = np.ones((arr.shape[0], arr.shape[1], 3))  # start with white
+            mask = arr < 255
+            rgb_arr[mask] = color
+
+            # Initialize composite if first image
+            if composite_arr is None:
+                composite_arr = rgb_arr
+            else:
+                # Paste current image over composite, only where non-white
+                composite_arr[mask] = rgb_arr[mask]
+
+            composite_uint8 = (composite_arr * 255).astype(np.uint8)
+            result_img = Image.fromarray(composite_uint8)
+
+            progress_bar(idx + 1, total, width=40)
+
+        print("Done creating composite")
+
+    if params["high_var.mode"] == "space":
+        # Open first image to initialize result
+        result_img = Image.open(filenames[0]).convert("L")
+        result_arr = np.array(result_img)
+
+        total = len(filenames)
+        for idx, filename in enumerate(filenames, start=1):
+            img = Image.open(filename).convert("L")
+            arr = np.array(img)
+            result_arr = np.minimum(result_arr, arr)
+            # update progress bar
+            progress_bar(idx, total, width=40)
+        print()
+
+        # Apply colormap
+        mask = result_arr < 255
+        norm = result_arr / 255.0
+        cmap = get_colormap(params["plotting.main_plotting_var.colormap"])
+        cmap = cmap.reversed()
+        colormap_rgb = cmap(norm)[:, :, :3]
+        colormap_rgb = (colormap_rgb * 255).astype(np.uint8)
+
+        result = np.ones((*result_arr.shape, 3), dtype=np.uint8) * 255
+        result[mask] = colormap_rgb[mask]
+        result_img = Image.fromarray(result)
 
     if params["plotting.background_var.on"]:
         initial_field_path = os.path.join(cwd, initial_field_file)
@@ -182,8 +217,14 @@ def add_colorbar(fig, ax, params, cwd):
     """
 
     if params["plotting.legend.on"]:
-        vmin = params["plotting.main_plotting_var.min"]
-        vmax = params["plotting.main_plotting_var.max"]
+        if params["high_var.mode"] == "space":
+            vmin = params["plotting.main_plotting_var.min"]
+            vmax = params["plotting.main_plotting_var.max"]
+        
+        if params["high_var.mode"] == "time":
+            vmin = params["sim.time.start"]
+            vmax = params["sim.time.end"]
+
         cmap = get_colormap(params["plotting.main_plotting_var.colormap"])
         position = params["plotting.legend.position"]
 
