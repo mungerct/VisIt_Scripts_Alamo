@@ -105,11 +105,10 @@ DEFAULTS = {
     "plotting.contour.color": (0, 0, 0, 255),  # black
     
     # Legend
+    "plotting.legend.on": 0,
+    "plotting.legend.position": -1150,
     "plotting.legend.name.on": 0,
     "plotting.legend.name.text": "Good Legend",
-    "plotting.legend.name.position.x": -1150,
-    "plotting.legend.name.position.y": -800,
-    "plotting.legend.name.dpi": 500,
     "plotting.legend.name.fontsize": 8,
 }
 

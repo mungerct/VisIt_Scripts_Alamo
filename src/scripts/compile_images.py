@@ -89,23 +89,25 @@ def compile_images_func(
     # Convert PIL image → numpy array
     cropped_np = np.array(cropped)
 
-    vmin = params["plotting.main_plotting_var.min"]
-    vmax = params["plotting.main_plotting_var.max"]
-    cmap = get_colormap(params["plotting.main_plotting_var.colormap"])
-
     fig, ax = plt.subplots(figsize=(6, 6))
 
     ax.imshow(cropped_np)
     ax.axis("off")
 
-    # Create a ScalarMappable just for the colorbar
-    norm = mpl.colors.Normalize(vmin=vmin, vmax=vmax)
-    sm = mpl.cm.ScalarMappable(norm=norm, cmap=cmap)
-    sm.set_array([])  # required for older matplotlib versions
+    if params["plotting.legend.on"]:
+        vmin = params["plotting.main_plotting_var.min"]
+        vmax = params["plotting.main_plotting_var.max"]
+        cmap = get_colormap(params["plotting.main_plotting_var.colormap"])
+        # Create a ScalarMappable just for the colorbar
+        norm = mpl.colors.Normalize(vmin=vmin, vmax=vmax)
+        sm = mpl.cm.ScalarMappable(norm=norm, cmap=cmap)
+        sm.set_array([])  # required for older matplotlib versions
 
-    # Add colorbar to the side
-    cbar = fig.colorbar(sm, ax=ax, fraction=0.046, pad=0.04)
-    cbar.set_label("Value")  # optional
+        # Add colorbar to the side
+        cbar = fig.colorbar(sm, ax=ax, fraction=0.046, pad=0.04)
+        
+        if params["plotting.legend.name.on"]:
+            cbar.set_label("Value")  # optional
 
     fig.savefig(os.path.join(cwd, params["file.output_filename"] + ".png"), dpi=800, bbox_inches="tight", pad_inches=0)
 
