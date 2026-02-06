@@ -251,6 +251,15 @@ The following VisIt colormaps are supported for visualization:
 </details>
 
 <details>
+<summary><h3>High Var Mode</h3></summary>
+
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| `high_var.mode` | `time` | The 2 different modes for the `high_var.sh` script, see the high var section for details, the two options are `time` and `space` |
+
+</details>
+
+<details>
 <summary><h3>Notes</h3></summary>
 
 ## Notes
@@ -258,6 +267,7 @@ The following VisIt colormaps are supported for visualization:
 - Boolean parameters use `0` for off/disabled and `1` for on/enabled
 - Color values are specified as RGBA tuples with values 0-255
 - Use `-1` for `step.end` to process all available timesteps
+- The `sim.time.arr` variable will appear in the input file after `high_var.sh` is run in `time` mode. This is an input to the post processing script for the legend to get the time values correct, and is NOT a user specified input. This shows the simulation times of each of the frames for the composite image.
 
 </details>
 </details>
