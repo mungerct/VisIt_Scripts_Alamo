@@ -145,11 +145,10 @@ Only supported for `high_var.sh`
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
-| `plotting.legend.name.on` | `0` | Enable legend (0=off, 1=on) |
+| `plotting.legend.on` | `0` | Enable legend (0=off, 1=on) |
+| `plotting.legend.position` | `-1150` | Legend X position |
+| `plotting.legend.name.on` | `0` | Enable legend name/label (0=off, 1=on) |
 | `plotting.legend.name.text` | `"Good Legend"` | Legend text |
-| `plotting.legend.name.position.x` | `-1150` | Legend X position |
-| `plotting.legend.name.position.y` | `-800` | Legend Y position |
-| `plotting.legend.name.dpi` | `500` | Legend resolution (DPI) |
 | `plotting.legend.name.fontsize` | `8` | Legend font size |
 
 </details>
