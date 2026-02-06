@@ -146,7 +146,7 @@ Only supported for `high_var.sh`
 | Parameter | Default | Description |
 |-----------|---------|-------------|
 | `plotting.legend.on` | `0` | Enable legend (0=off, 1=on) |
-| `plotting.legend.position` | `-1150` | Legend X position |
+| `plotting.legend.position` | `left` | Legend X position (left/right/top/bottom)|
 | `plotting.legend.name.on` | `0` | Enable legend name/label (0=off, 1=on) |
 | `plotting.legend.name.text` | `"Good Legend"` | Legend text |
 | `plotting.legend.name.fontsize` | `8` | Legend font size |
