@@ -10,7 +10,7 @@ import sys
 import os
 from scripts.savemetadata import save_metadata_with_git
 from scripts.compile_images import progress_bar
-from scripts.input_processing import get_parameters
+from scripts.input_processing import get_parameters, write_time
 
 SuppressMessages(2)  # Suppress warnings
 SuppressQueryOutputOn()  # Suppress query output
@@ -263,6 +263,7 @@ for state in range(start_state, end_state, step_interval):
 if params["high_var.mode"] == "time":
     time_values = [float(s.split()[-1][:-1]) for s in time_values]
     params["sim.time.arr"] = time_values
+    write_time(input_file=input_file, time_arr=params["sim.time.arr"])
 
 save_metadata_with_git(params, ".")
 sys.exit(0)

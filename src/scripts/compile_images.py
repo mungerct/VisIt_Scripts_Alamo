@@ -222,8 +222,11 @@ def add_colorbar(fig, ax, params, cwd):
             vmax = params["plotting.main_plotting_var.max"]
         
         if params["high_var.mode"] == "time":
-            vmin = params["sim.time.arr"][0]
-            vmax = params["sim.time.arr"][-1]
+            # print(params["sim.time.arr"])
+
+            time_arr = [float(t) for t in params["sim.time.arr"].split(",")]
+            vmin = time_arr[0]
+            vmax = time_arr[-1]
 
         cmap = get_colormap(params["plotting.main_plotting_var.colormap"])
         position = params["plotting.legend.position"]

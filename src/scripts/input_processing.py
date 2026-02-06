@@ -243,6 +243,36 @@ def get_parameters(input_file=None):
 
     return params
 
+def write_time(input_file=None, time_arr=None):
+    import os
+
+    if input_file is None:
+        raise ValueError("input_file must be specified")
+    if time_arr is None:
+        raise ValueError("time_arr must be specified")
+    if not os.path.exists(input_file):
+        raise FileNotFoundError(f"Input file not found: {input_file}")
+
+    # Read the current file
+    with open(input_file, "r", encoding="utf-8") as f:
+        lines = f.readlines()
+
+    # Check if a line starts with "sim.time.arr" and replace it
+    found = False
+    for i, line in enumerate(lines):
+        if line.strip().startswith("sim.time.arr"):
+            lines[i] = "sim.time.arr = " + ",".join(str(t) for t in time_arr) + "\n"
+            found = True
+            break
+
+    # If not found, append at the end
+    if not found:
+        lines.append("sim.time.arr = " + ",".join(str(t) for t in time_arr) + "\n")
+
+    # Write back the whole file
+    with open(input_file, "w", encoding="utf-8") as f:
+        f.writelines(lines)
+
 def parse_rgba(value_str):
     """
     Parse an RGBA color string like:
