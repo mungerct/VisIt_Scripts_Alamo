@@ -16,7 +16,6 @@ def compile_images_func(
     from PIL import Image
     import numpy as np
     import matplotlib.pyplot as plt
-    import matplotlib as mpl
 
     # Use current working directory (which you changed to the image folder)
     cwd = os.getcwd()
@@ -70,34 +69,16 @@ def compile_images_func(
         contour_field = Image.open(contour_path).convert("RGBA")
         result_img = paste_image(result_img, contour_field, position=(0,0))
 
-    size_plot = Image.open("size_plot_DELETE_ME0000.png").convert("RGBA")
-
-    # Convert to numpy array
-    arr = np.array(size_plot)
-
-    # Create mask of non-white pixels (ignore alpha channel)
-    non_white_mask = np.any(arr[:, :, :3] != 255, axis=2)
-
-    # Get bounding box of non-white pixels
-    coords = np.column_stack(np.where(non_white_mask))
-    y_min, x_min = coords.min(axis=0)
-    y_max, x_max = coords.max(axis=0)
-
-    # Crop (note: PIL uses (left, upper, right, lower))
-    cropped = result_img.crop((x_min, y_min, x_max + 1, y_max + 1))
-
-    # Convert PIL image → numpy array
-    cropped_np = np.array(cropped)
-
     fig, ax = plt.subplots(figsize=(6, 6))
+
+    cropped_np = crop_image(result_img)
 
     ax.imshow(cropped_np)
     ax.axis("off")
 
     fig = add_colorbar(fig, ax, params, cwd)
-    fig.show()
-    input("Press Enter to continue...")
-
+    # fig.show()
+    # input("Press Enter to continue...")
 
     fig.savefig(os.path.join(cwd, params["file.output_filename"] + ".png"), dpi=800, bbox_inches="tight", pad_inches=0)
 
@@ -246,7 +227,30 @@ def add_colorbar(fig, ax, params, cwd):
             )
 
         return fig
-    
+
+def crop_image(img):
+    from PIL import Image
+    import numpy as np
+    size_plot = Image.open("size_plot_DELETE_ME0000.png").convert("RGBA")
+
+    # Convert to numpy array
+    arr = np.array(size_plot)
+
+    # Create mask of non-white pixels (ignore alpha channel)
+    non_white_mask = np.any(arr[:, :, :3] != 255, axis=2)
+
+    # Get bounding box of non-white pixels
+    coords = np.column_stack(np.where(non_white_mask))
+    y_min, x_min = coords.min(axis=0)
+    y_max, x_max = coords.max(axis=0)
+
+    # Crop (note: PIL uses (left, upper, right, lower))
+    cropped = img.crop((x_min, y_min, x_max + 1, y_max + 1))
+
+    # Convert PIL image → numpy array
+    cropped_np = np.array(cropped)
+
+    return cropped_np
 
 if __name__ == "__main__":
     compile_images_func()
