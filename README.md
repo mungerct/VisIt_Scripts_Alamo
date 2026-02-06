@@ -5,7 +5,7 @@ This section describes the `high_var.sh` tool
 <details>
 <summary><h2>High Variable Plotting</h2></summary>
 
-This code produces a compiled image the highest variable over all timesteps, the example image below shows how temperature timesteps can be combined to visualize where the highest temperature in a given simulation is over all time. 
+To use this feature, the `high_var.mode = space` must be specificed in the input deck. This mode "spacially" adds a value and takes the highest value at each spacial point over time. This code produces a compiled image the highest variable over all timesteps, the example image below shows how temperature timesteps can be combined to visualize where the highest temperature in a given simulation is over all time. 
 
 ![Make High Temp Plot Example](/examples/make_high_temp_plot_example/Make_High_Temp_Plot_Example.svg)
 
@@ -44,6 +44,9 @@ This file was run using the following command
 ```
 
 </details>
+
+To use this feature, the `high_var.mode = time` must be specificed in the input deck. This "temporally" adds all of the plots togeather, taking the points from larger time values at each spacial point. The example below is from the burning of a propellant, and the "burn front" can be seen as time increases. The different colors coorspond to the edge of the burned region at each time value.
+![Make eta_reg Example](/examples/make_high_temp_plot_example/eta_reg.png)
 
 </details>
 
