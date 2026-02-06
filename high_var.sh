@@ -18,6 +18,8 @@ fi
 
 DATA_DIR="$1"
 
+conda init > /dev/null 2>&1
+
 echo "Running VisIt CLI script on ${DATA_DIR}..."
 visit -cli -np ${NP} -nowin -s "${VISIT_SCRIPT}" "${DATA_DIR}"
 

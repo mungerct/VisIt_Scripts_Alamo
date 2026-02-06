@@ -107,7 +107,7 @@ def compile_images_func(
         cbar = fig.colorbar(sm, ax=ax, fraction=0.046, pad=0.04)
         
         if params["plotting.legend.name.on"]:
-            cbar.set_label("Value")  # optional
+            cbar.set_label(params["plotting.legend.name.text"])  # optional
 
     fig.savefig(os.path.join(cwd, params["file.output_filename"] + ".png"), dpi=800, bbox_inches="tight", pad_inches=0)
 
