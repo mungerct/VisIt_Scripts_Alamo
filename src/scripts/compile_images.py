@@ -16,14 +16,10 @@ def compile_images_func(
     from PIL import Image
     import numpy as np
     import matplotlib.pyplot as plt
+    import matplotlib as mpl
 
     # Use current working directory (which you changed to the image folder)
     cwd = os.getcwd()
-
-    legend_path = os.path.join(cwd, legend_file)
-
-    # Open overlay images
-    legend = Image.open(legend_path).convert("RGBA")
 
     # Collect all image filenames in cwd
     filenames = []
@@ -64,28 +60,54 @@ def compile_images_func(
     result[mask] = colormap_rgb[mask]
     result_img = Image.fromarray(result)
 
-    result_img = paste_image(result_img, legend, position=(0, 0))
-
     if params["plotting.background_var.on"]:
         initial_field_path = os.path.join(cwd, initial_field_file)
         initial_field = Image.open(initial_field_path).convert("RGBA")
         result_img = paste_image(initial_field, result_img, position=(0, 0))
-
-    if params["plotting.legend.name.on"]:
-        legend = latex_text_image(text=params["plotting.legend.name.text"], 
-                            dpi=params["plotting.legend.name.dpi"],
-                            fontsize=params["plotting.legend.name.fontsize"])
-        result_img = paste_image(result_img, legend, 
-                            position=(params["plotting.legend.name.position.x"], params["plotting.legend.name.position.y"]))
 
     if params["plotting.contour.on"]:
         contour_path = os.path.join(cwd, contour_field)
         contour_field = Image.open(contour_path).convert("RGBA")
         result_img = paste_image(result_img, contour_field, position=(0,0))
 
-    # Save result
-    result_img.save(os.path.join(cwd, params["file.output_filename"] + ".png"))
-    # result_img.show()
+    size_plot = Image.open("size_plot_DELETE_ME0000.png").convert("RGBA")
+
+    # Convert to numpy array
+    arr = np.array(size_plot)
+
+    # Create mask of non-white pixels (ignore alpha channel)
+    non_white_mask = np.any(arr[:, :, :3] != 255, axis=2)
+
+    # Get bounding box of non-white pixels
+    coords = np.column_stack(np.where(non_white_mask))
+    y_min, x_min = coords.min(axis=0)
+    y_max, x_max = coords.max(axis=0)
+
+    # Crop (note: PIL uses (left, upper, right, lower))
+    cropped = result_img.crop((x_min, y_min, x_max + 1, y_max + 1))
+
+    # Convert PIL image → numpy array
+    cropped_np = np.array(cropped)
+
+    vmin = params["plotting.main_plotting_var.min"]
+    vmax = params["plotting.main_plotting_var.max"]
+    cmap = get_colormap(params["plotting.main_plotting_var.colormap"])
+
+    fig, ax = plt.subplots(figsize=(6, 6))
+
+    ax.imshow(cropped_np)
+    ax.axis("off")
+
+    # Create a ScalarMappable just for the colorbar
+    norm = mpl.colors.Normalize(vmin=vmin, vmax=vmax)
+    sm = mpl.cm.ScalarMappable(norm=norm, cmap=cmap)
+    sm.set_array([])  # required for older matplotlib versions
+
+    # Add colorbar to the side
+    cbar = fig.colorbar(sm, ax=ax, fraction=0.046, pad=0.04)
+    cbar.set_label("Value")  # optional
+
+    fig.savefig(os.path.join(cwd, params["file.output_filename"] + ".png"), dpi=800, bbox_inches="tight", pad_inches=0)
 
 
 def paste_image(background, overlay, position):

@@ -215,15 +215,26 @@ if params["plotting.contour.on"]:
     print("Contour Saved")
 
 # ------------------------------------------------------------
-# Save contour field
+# Save psuedocolor field for png comparsion
 # ------------------------------------------------------------
 
-SaveWindowAtts.fileName = "contour_field_DELETE_ME"
+SetTimeSliderState(1)
+AddPlot("Pseudocolor", plotting_var, 1, 1)
+SizePlot = PseudocolorAttributes()
+SizePlot.minFlag = 1
+SizePlot.min = 0
+SizePlot.maxFlag = 1
+SizePlot.max = 1
+SizePlot.colorTableName = "hot"
+SizePlot.invertColorTable = 0
+SizePlot.legendFlag = 0
+SetPlotOptions(SizePlot)
+DrawPlots()
+
+SaveWindowAtts.fileName = "size_plot_DELETE_ME"
 SetSaveWindowAttributes(SaveWindowAtts)
 SaveWindow()
 DeleteActivePlots()
-
-print("Contour Saved")
 
 # ------------------------------------------------------------
 # Temperature plot attributes
