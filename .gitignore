@@ -210,5 +210,5 @@ marimo/_lsp/
 __marimo__/
 
 Backtrace.*
-*.png
+*DELETE*
 *DELETE_ME*
