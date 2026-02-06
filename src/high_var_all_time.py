@@ -104,68 +104,6 @@ AnnotationAtts.foregroundColor = (0, 0, 0, 255)
 SetAnnotationAttributes(AnnotationAtts)
 
 # ------------------------------------------------------------
-# Save legend
-# ------------------------------------------------------------
-
-AddPlot("Pseudocolor", plotting_var)
-SetTimeSliderState(1)
-
-LegendPlotAtts = PseudocolorAttributes()
-LegendPlotAtts.scaling = LegendPlotAtts.Linear
-LegendPlotAtts.limitsMode = LegendPlotAtts.OriginalData
-LegendPlotAtts.minFlag = 1
-LegendPlotAtts.min = min_var
-LegendPlotAtts.maxFlag = 1
-LegendPlotAtts.max = max_var
-LegendPlotAtts.colorTableName = params["plotting.main_plotting_var.colormap"]
-LegendPlotAtts.opacityType = LegendPlotAtts.FullyOpaque
-LegendPlotAtts.legendFlag = 1
-LegendPlotAtts.lightingFlag = 0
-SetPlotOptions(LegendPlotAtts)
-
-# Draw the plot first so the legend object exists
-DrawPlots()
-
-legend = GetAnnotationObject(
-    GetPlotList().GetPlots(GetNumPlots() - 1).plotName
-)
-legend.xScale = 1.0
-legend.yScale = 2.0
-legend.orientation = legend.VerticalRight
-legend.managePosition = 0
-legend.position = (0.0, 0.8)
-legend.fontHeight = 0.03
-legend.drawTitle = 0
-legend.drawMinMax = 0
-legend.numberFormat = "%1.1f"
-
-# Hide everything except the legend
-AnnotationAtts = AnnotationAttributes()
-AnnotationAtts.axes2D.visible = 0
-AnnotationAtts.userInfoFlag = 0
-AnnotationAtts.databaseInfoFlag = 0
-AnnotationAtts.timeInfoFlag = 0
-AnnotationAtts.legendInfoFlag = 1  # Keep legend visible
-SetAnnotationAttributes(AnnotationAtts)
-
-AddOperator("Isovolume")
-IsoEtaAtts = IsovolumeAttributes()
-IsoEtaAtts.variable = threhold_var
-IsoEtaAtts.lbound = 1.1
-IsoEtaAtts.ubound = 1e37
-SetOperatorOptions(IsoEtaAtts, 0)
-
-# Redraw with updated settings
-DrawPlots()
-
-SaveWindowAtts.fileName = "legend_only_DELETE_ME"
-SetSaveWindowAttributes(SaveWindowAtts)
-SaveWindow()
-DeleteActivePlots()
-
-print("Legend saved")
-
-# ------------------------------------------------------------
 # Save initial eta/phi field
 # ------------------------------------------------------------
 if params["plotting.background_var.on"]:
@@ -215,15 +153,26 @@ if params["plotting.contour.on"]:
     print("Contour Saved")
 
 # ------------------------------------------------------------
-# Save contour field
+# Save psuedocolor field for png comparsion
 # ------------------------------------------------------------
 
-SaveWindowAtts.fileName = "contour_field_DELETE_ME"
+SetTimeSliderState(1)
+AddPlot("Pseudocolor", plotting_var, 1, 1)
+SizePlot = PseudocolorAttributes()
+SizePlot.minFlag = 1
+SizePlot.min = 0
+SizePlot.maxFlag = 1
+SizePlot.max = 1
+SizePlot.colorTableName = "hot"
+SizePlot.invertColorTable = 0
+SizePlot.legendFlag = 0
+SetPlotOptions(SizePlot)
+DrawPlots()
+
+SaveWindowAtts.fileName = "size_plot_DELETE_ME"
 SetSaveWindowAttributes(SaveWindowAtts)
 SaveWindow()
 DeleteActivePlots()
-
-print("Contour Saved")
 
 # ------------------------------------------------------------
 # Temperature plot attributes

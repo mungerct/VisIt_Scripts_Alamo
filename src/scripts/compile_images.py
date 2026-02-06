@@ -20,11 +20,6 @@ def compile_images_func(
     # Use current working directory (which you changed to the image folder)
     cwd = os.getcwd()
 
-    legend_path = os.path.join(cwd, legend_file)
-
-    # Open overlay images
-    legend = Image.open(legend_path).convert("RGBA")
-
     # Collect all image filenames in cwd
     filenames = []
     i = 0
@@ -64,28 +59,28 @@ def compile_images_func(
     result[mask] = colormap_rgb[mask]
     result_img = Image.fromarray(result)
 
-    result_img = paste_image(result_img, legend, position=(0, 0))
-
     if params["plotting.background_var.on"]:
         initial_field_path = os.path.join(cwd, initial_field_file)
         initial_field = Image.open(initial_field_path).convert("RGBA")
         result_img = paste_image(initial_field, result_img, position=(0, 0))
-
-    if params["plotting.legend.name.on"]:
-        legend = latex_text_image(text=params["plotting.legend.name.text"], 
-                            dpi=params["plotting.legend.name.dpi"],
-                            fontsize=params["plotting.legend.name.fontsize"])
-        result_img = paste_image(result_img, legend, 
-                            position=(params["plotting.legend.name.position.x"], params["plotting.legend.name.position.y"]))
 
     if params["plotting.contour.on"]:
         contour_path = os.path.join(cwd, contour_field)
         contour_field = Image.open(contour_path).convert("RGBA")
         result_img = paste_image(result_img, contour_field, position=(0,0))
 
-    # Save result
-    result_img.save(os.path.join(cwd, params["file.output_filename"] + ".png"))
-    # result_img.show()
+    fig, ax = plt.subplots(figsize=(6, 6))
+
+    cropped_np = crop_image(result_img)
+
+    ax.imshow(cropped_np)
+    ax.axis("off")
+
+    fig = add_colorbar(fig, ax, params, cwd)
+    # fig.show()
+    # input("Press Enter to continue...")
+
+    fig.savefig(os.path.join(cwd, params["file.output_filename"] + ".png"), dpi=800, bbox_inches="tight", pad_inches=0)
 
 
 def paste_image(background, overlay, position):
@@ -178,6 +173,84 @@ def latex_text_image(
     buf.seek(0)
     return Image.open(buf).convert("RGBA")
 
+def add_colorbar(fig, ax, params, cwd):
+    import matplotlib as mpl
+    from mpl_toolkits.axes_grid1 import make_axes_locatable
+    """
+    Adds a configurable colorbar (left/right/top/bottom) using make_axes_locatable
+    and saves the figure.
+    """
+
+    if params["plotting.legend.on"]:
+        vmin = params["plotting.main_plotting_var.min"]
+        vmax = params["plotting.main_plotting_var.max"]
+        cmap = get_colormap(params["plotting.main_plotting_var.colormap"])
+        position = params["plotting.legend.position"]
+
+        # ScalarMappable only for the colorbar
+        norm = mpl.colors.Normalize(vmin=vmin, vmax=vmax)
+        sm = mpl.cm.ScalarMappable(norm=norm, cmap=cmap)
+        sm.set_array([])
+
+        divider = make_axes_locatable(ax)
+
+        # ---- CREATE COLORBAR AXES OUTSIDE IMAGE ----
+        if position == "right":
+            cax = divider.append_axes("right", size="4%", pad=0.08)
+            cbar = fig.colorbar(sm, cax=cax, orientation="vertical")
+
+        elif position == "left":
+            cax = divider.append_axes("left", size="4%", pad=0.75)
+            cbar = fig.colorbar(sm, cax=cax, orientation="vertical")
+
+        elif position == "top":
+            cax = divider.append_axes("top", size="6%", pad=0.35)
+            cbar = fig.colorbar(sm, cax=cax, orientation="horizontal")
+            cbar.ax.xaxis.set_label_position("top")
+            cbar.ax.xaxis.tick_top()
+
+        elif position == "bottom":
+            cax = divider.append_axes("bottom", size="6%", pad=0.35)
+            cbar = fig.colorbar(sm, cax=cax, orientation="horizontal")
+
+        else:
+            raise ValueError(
+                f"Invalid legend position '{position}'. "
+                "Use: left, right, top, bottom."
+            )
+
+        # ---- LABEL (also outside image) ----
+        if params["plotting.legend.name.on"]:
+            cbar.set_label(
+                params["plotting.legend.name.text"],
+                labelpad=8
+            )
+
+        return fig
+
+def crop_image(img):
+    from PIL import Image
+    import numpy as np
+    size_plot = Image.open("size_plot_DELETE_ME0000.png").convert("RGBA")
+
+    # Convert to numpy array
+    arr = np.array(size_plot)
+
+    # Create mask of non-white pixels (ignore alpha channel)
+    non_white_mask = np.any(arr[:, :, :3] != 255, axis=2)
+
+    # Get bounding box of non-white pixels
+    coords = np.column_stack(np.where(non_white_mask))
+    y_min, x_min = coords.min(axis=0)
+    y_max, x_max = coords.max(axis=0)
+
+    # Crop (note: PIL uses (left, upper, right, lower))
+    cropped = img.crop((x_min, y_min, x_max + 1, y_max + 1))
+
+    # Convert PIL image → numpy array
+    cropped_np = np.array(cropped)
+
+    return cropped_np
 
 if __name__ == "__main__":
     compile_images_func()

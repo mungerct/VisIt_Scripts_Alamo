@@ -18,6 +18,8 @@ fi
 
 DATA_DIR="$1"
 
+conda init > /dev/null 2>&1
+
 echo "Running VisIt CLI script on ${DATA_DIR}..."
 visit -cli -np ${NP} -nowin -s "${VISIT_SCRIPT}" "${DATA_DIR}"
 
@@ -28,6 +30,6 @@ visit -cli -np ${NP} -nowin -s "${VISIT_SCRIPT}" "${DATA_DIR}"
 echo "Compiling Images ${DATA_DIR}..."
 python "${POST_SCRIPT}" "${DATA_DIR}"
 
-conda deactivate
+conda deactivate > /dev/null 2>&1
 
 echo "All steps completed successfully."
