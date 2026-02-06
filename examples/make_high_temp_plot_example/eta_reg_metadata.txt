@@ -1,6 +1,6 @@
 
 --- Parameters ---
-file.db_path: /home/mungerct/research/papers/RegressionWithVoidsFullFeedback/results/arbitary_geometry_tests/output.arbitary_geo.phi_fake_grain
+file.db_path: /research/papers/RegressionWithVoidsFullFeedback/results/arbitary_geometry_tests/output.arbitary_geo.phi_fake_grain
 file.default_db: celloutput.visit
 file.output_filename: eta_reg
 file.width: 1080
