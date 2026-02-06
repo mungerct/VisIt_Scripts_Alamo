@@ -106,7 +106,7 @@ DEFAULTS = {
     
     # Legend
     "plotting.legend.on": 0,
-    "plotting.legend.position": -1150,
+    "plotting.legend.position": "right",
     "plotting.legend.name.on": 0,
     "plotting.legend.name.text": "Good Legend",
     "plotting.legend.name.fontsize": 8,

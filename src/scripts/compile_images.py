@@ -94,20 +94,10 @@ def compile_images_func(
     ax.imshow(cropped_np)
     ax.axis("off")
 
-    if params["plotting.legend.on"]:
-        vmin = params["plotting.main_plotting_var.min"]
-        vmax = params["plotting.main_plotting_var.max"]
-        cmap = get_colormap(params["plotting.main_plotting_var.colormap"])
-        # Create a ScalarMappable just for the colorbar
-        norm = mpl.colors.Normalize(vmin=vmin, vmax=vmax)
-        sm = mpl.cm.ScalarMappable(norm=norm, cmap=cmap)
-        sm.set_array([])  # required for older matplotlib versions
+    fig = add_colorbar(fig, ax, params, cwd)
+    fig.show()
+    input("Press Enter to continue...")
 
-        # Add colorbar to the side
-        cbar = fig.colorbar(sm, ax=ax, fraction=0.046, pad=0.04)
-        
-        if params["plotting.legend.name.on"]:
-            cbar.set_label(params["plotting.legend.name.text"])  # optional
 
     fig.savefig(os.path.join(cwd, params["file.output_filename"] + ".png"), dpi=800, bbox_inches="tight", pad_inches=0)
 
@@ -202,6 +192,61 @@ def latex_text_image(
     buf.seek(0)
     return Image.open(buf).convert("RGBA")
 
+def add_colorbar(fig, ax, params, cwd):
+    import matplotlib as mpl
+    from mpl_toolkits.axes_grid1 import make_axes_locatable
+    """
+    Adds a configurable colorbar (left/right/top/bottom) using make_axes_locatable
+    and saves the figure.
+    """
+
+    if params["plotting.legend.on"]:
+        vmin = params["plotting.main_plotting_var.min"]
+        vmax = params["plotting.main_plotting_var.max"]
+        cmap = get_colormap(params["plotting.main_plotting_var.colormap"])
+        position = params["plotting.legend.position"]
+
+        # ScalarMappable only for the colorbar
+        norm = mpl.colors.Normalize(vmin=vmin, vmax=vmax)
+        sm = mpl.cm.ScalarMappable(norm=norm, cmap=cmap)
+        sm.set_array([])
+
+        divider = make_axes_locatable(ax)
+
+        # ---- CREATE COLORBAR AXES OUTSIDE IMAGE ----
+        if position == "right":
+            cax = divider.append_axes("right", size="4%", pad=0.08)
+            cbar = fig.colorbar(sm, cax=cax, orientation="vertical")
+
+        elif position == "left":
+            cax = divider.append_axes("left", size="4%", pad=0.75)
+            cbar = fig.colorbar(sm, cax=cax, orientation="vertical")
+
+        elif position == "top":
+            cax = divider.append_axes("top", size="6%", pad=0.35)
+            cbar = fig.colorbar(sm, cax=cax, orientation="horizontal")
+            cbar.ax.xaxis.set_label_position("top")
+            cbar.ax.xaxis.tick_top()
+
+        elif position == "bottom":
+            cax = divider.append_axes("bottom", size="6%", pad=0.35)
+            cbar = fig.colorbar(sm, cax=cax, orientation="horizontal")
+
+        else:
+            raise ValueError(
+                f"Invalid legend position '{position}'. "
+                "Use: left, right, top, bottom."
+            )
+
+        # ---- LABEL (also outside image) ----
+        if params["plotting.legend.name.on"]:
+            cbar.set_label(
+                params["plotting.legend.name.text"],
+                labelpad=8
+            )
+
+        return fig
+    
 
 if __name__ == "__main__":
     compile_images_func()
