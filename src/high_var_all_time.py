@@ -189,6 +189,9 @@ if params["plotting.background_var.on"]:
 
     print("Inital Field Saved")
 
+# ------------------------------------------------------------
+# Save contour field
+# ------------------------------------------------------------
 if params["plotting.contour.on"]:
     SetTimeSliderState(1)
     AddPlot("Contour", params["plotting.contour.var.name"], 1, 1)
@@ -210,6 +213,17 @@ if params["plotting.contour.on"]:
     DeleteActivePlots()
 
     print("Contour Saved")
+
+# ------------------------------------------------------------
+# Save contour field
+# ------------------------------------------------------------
+
+SaveWindowAtts.fileName = "contour_field_DELETE_ME"
+SetSaveWindowAttributes(SaveWindowAtts)
+SaveWindow()
+DeleteActivePlots()
+
+print("Contour Saved")
 
 # ------------------------------------------------------------
 # Temperature plot attributes
