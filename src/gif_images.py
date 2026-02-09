@@ -91,6 +91,19 @@ SaveWindowAtts.screenCapture = 0
 SaveWindowAtts.resConstraint = SaveWindowAtts.NoConstraint
 
 # ------------------------------------------------------------
+# General annotation settings (hide axes, legend, borders)
+# ------------------------------------------------------------
+AnnotationAtts = AnnotationAttributes()
+AnnotationAtts.axes2D.visible = 0
+AnnotationAtts.userInfoFlag = 0
+AnnotationAtts.databaseInfoFlag = 0
+AnnotationAtts.timeInfoFlag = 0
+AnnotationAtts.legendInfoFlag = 1
+AnnotationAtts.backgroundColor = (255, 255, 255, 255)
+AnnotationAtts.foregroundColor = (0, 0, 0, 255)
+SetAnnotationAttributes(AnnotationAtts)
+
+# ------------------------------------------------------------
 # Plot attributes
 # ------------------------------------------------------------
 PseudocolorAtts = PseudocolorAttributes()
@@ -136,27 +149,29 @@ for state in range(start_state, end_state, step_interval):
     SetPlotOptions(PseudocolorAtts)
 
     if params["plotting.main_plotting_var.thresholding.on"]:
-        Thresh = ThresholdAttributes()
-        Thresh.outputMeshType = 0
-        Thresh.boundsInputType = 0
-        Thresh.listedVarNames = (threhold_var)
-        Thresh.zonePortions = (1, 1)
-        Thresh.lowerBounds = (min_threhold)
-        Thresh.upperBounds = (max_threhold)
-        Thresh.defaultVarName = threhold_var
-        Thresh.defaultVarIsScalar = 1
-        Thresh.boundsRange = (f"{min_threhold}", f"{max_threhold}")
+        # Isovolume for eta >= 0.5
+        AddOperator("Isovolume")
+        IsoEtaAtts = IsovolumeAttributes()
+        IsoEtaAtts.variable = threhold_var
+        IsoEtaAtts.lbound = min_threhold
+        IsoEtaAtts.ubound = max_threhold
+        SetOperatorOptions(IsoEtaAtts, 0)  # First operator (index 0)
 
-        AddOperator("Threshold")
-        SetOperatorOptions(Thresh)
-
-    # Isovolume 1: temperature >= min_var
-    AddOperator("Isovolume")
-    IsoTempAtts = IsovolumeAttributes()
-    IsoTempAtts.variable = plotting_var
-    IsoTempAtts.lbound = min_var
-    IsoTempAtts.ubound = 1e37
-    SetOperatorOptions(IsoTempAtts, 0)
+        # Isovolume for temperature >= min_var
+        AddOperator("Isovolume")
+        IsoTempAtts = IsovolumeAttributes()
+        IsoTempAtts.variable = plotting_var
+        IsoTempAtts.lbound = min_var
+        IsoTempAtts.ubound = 1e37
+        SetOperatorOptions(IsoTempAtts, 1)  # Second operator (index 1)
+    else:
+        # Isovolume for temperature >= min_var only
+        AddOperator("Isovolume")
+        IsoTempAtts = IsovolumeAttributes()
+        IsoTempAtts.variable = plotting_var
+        IsoTempAtts.lbound = min_var
+        IsoTempAtts.ubound = 1e37
+        SetOperatorOptions(IsoTempAtts, 0)  # First (and only) operator
 
     DrawPlots()
 
