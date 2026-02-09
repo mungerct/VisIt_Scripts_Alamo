@@ -92,6 +92,50 @@ def parse_value(value_str: str) -> str:
         # Function call or other expression
         return value_str
 
+def print_warning(missing_comments: list) -> None:
+    """
+    Print red warning message for parameters missing comments.
+    
+    Args:
+        missing_comments: List of parameter keys missing comments
+    """
+    if not missing_comments:
+        return
+    
+    # ANSI color codes
+    RED = '\033[91m'
+    BOLD = '\033[1m'
+    RESET = '\033[0m'
+    YELLOW = '\033[93m'
+    
+    print(f"\n{RED}{BOLD}⚠ WARNING: Missing Comments{RESET}")
+    print(f"{RED}{'=' * 60}{RESET}")
+    print(f"{YELLOW}The following parameters are missing inline comments:{RESET}\n")
+    
+    for key in sorted(missing_comments):
+        print(f"  {RED}✗{RESET} {key}")
+    
+    print(f"\n{YELLOW}Add comments like this:{RESET}")
+    print(f'  "{missing_comments[0]}": value,  # Description here')
+    print(f"\n{RED}{'=' * 60}{RESET}\n")
+
+def validate_comments(config: Dict[str, Tuple[Any, str]]) -> list:
+    """
+    Check for parameters missing comments.
+    
+    Args:
+        config: Dictionary mapping keys to (value, comment) tuples
+        
+    Returns:
+        List of keys that are missing comments
+    """
+    missing_comments = []
+    
+    for key, (value, comment) in config.items():
+        if not comment or comment.strip() == "":
+            missing_comments.append(key)
+    
+    return missing_comments
 
 def format_value_for_table(value: str) -> str:
     """Format a value for display in markdown table."""
@@ -311,11 +355,18 @@ def main():
         if custom_header:
             print(f"  Using custom header from {header_file}")
         
+        # Validate comments
+        missing_comments = validate_comments(config)
+        if missing_comments:
+            print_warning(missing_comments)
+            # Continue anyway, but user is warned
+
         # Define category titles
         category_titles = {
             'file': 'Database Settings',
             'step': 'Step Control',
-            'plotting': 'Plotting Configuration'
+            'plotting': 'Plotting Configuration (Variables, legend, location, etc.)',
+            'sim': 'Data Transfer, not for input use'
         }
         
         # Generate README
@@ -328,6 +379,10 @@ def main():
         
         print(f"✓ README.md generated successfully!")
         print(f"  Output: {output_path.absolute()}")
+
+        if missing_comments:
+            print(f"\n⚠ Note: {len(missing_comments)} parameter(s) missing comments (see warning above)")
+        
         
     except Exception as e:
         print(f"Error: {e}")

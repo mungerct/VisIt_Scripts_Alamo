@@ -28,14 +28,14 @@ This document describes the default configuration values for the visualization t
 </details>
 
 <details>
-<summary><h3>Plotting Configuration</h3></summary>
+<summary><h3>Plotting Configuration (Variables, legend, location, etc.)</h3></summary>
 
 <details>
 <summary><h4>Background Var</h4></summary>
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
-| `plotting.background_var.colormap` | `"gray"` | Background colormap |
+| `plotting.background_var.colormap` | `"gray"` | Configuration parameter |
 | `plotting.background_var.invert` | `"0"` | Invert background colors (0=off, 1=on) |
 | `plotting.background_var.name` | `"eta"` | Background variable name |
 | `plotting.background_var.on` | `"0"` | Enable background variable (0=off, 1=on) |
@@ -130,7 +130,7 @@ This document describes the default configuration values for the visualization t
 </details>
 
 <details>
-<summary><h3>Sim</h3></summary>
+<summary><h3>Data Transfer, not for input use</h3></summary>
 
 <details>
 <summary><h4>Time</h4></summary>
