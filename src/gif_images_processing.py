@@ -27,5 +27,5 @@ image_list = sorted(image_dir.glob(image_pattern))
 if not image_list:
     print(f"Warning: No files matching '{image_pattern}' found in {image_dir}")
 
-images_to_gif(image_list, params["file.output_filename"] + ".gif", fps=10, loop=0)
+images_to_gif(image_list, params, fps=10, loop=0)
 delete_delete_me_files()

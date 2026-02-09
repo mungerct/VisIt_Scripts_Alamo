@@ -111,7 +111,7 @@ def compile_images_func(
     ax.imshow(cropped_np)
     ax.axis("off")
 
-    fig = add_colorbar(fig, ax, params, cwd)
+    fig = add_colorbar(fig, ax, params)
     # fig.show()
     # input("Press Enter to continue...")
 
@@ -208,7 +208,7 @@ def latex_text_image(
     buf.seek(0)
     return Image.open(buf).convert("RGBA")
 
-def add_colorbar(fig, ax, params, cwd):
+def add_colorbar(fig, ax, params):
     import matplotlib as mpl
     from mpl_toolkits.axes_grid1 import make_axes_locatable
     """
@@ -267,9 +267,11 @@ def add_colorbar(fig, ax, params, cwd):
         if params["plotting.legend.name.on"]:
             cbar.set_label(
                 params["plotting.legend.name.text"],
+                fontsize=params["plotting.legend.name.fontsize"],
                 labelpad=8
             )
-
+        # fig.show()
+        # input("enter")
         return fig
 
 def crop_image(img):

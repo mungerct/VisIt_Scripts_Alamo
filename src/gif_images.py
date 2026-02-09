@@ -214,5 +214,33 @@ for state in range(start_state, end_state, step_interval):
 # Save metadata
 # ------------------------------------------------------------
 
+AnnotationAtts = AnnotationAttributes()
+AnnotationAtts.axes2D.visible = 0
+AnnotationAtts.userInfoFlag = 0
+AnnotationAtts.databaseInfoFlag = 0
+AnnotationAtts.timeInfoFlag = 0
+AnnotationAtts.legendInfoFlag = 0
+AnnotationAtts.backgroundColor = (255, 255, 255, 255)
+AnnotationAtts.foregroundColor = (0, 0, 0, 255)
+SetAnnotationAttributes(AnnotationAtts)
+
+SetTimeSliderState(1)
+AddPlot("Pseudocolor", plotting_var, 1, 1)
+SizePlot = PseudocolorAttributes()
+SizePlot.minFlag = 1
+SizePlot.min = 0
+SizePlot.maxFlag = 1
+SizePlot.max = 1
+SizePlot.colorTableName = "hot"
+SizePlot.invertColorTable = 0
+SizePlot.legendFlag = 0
+SetPlotOptions(SizePlot)
+DrawPlots()
+
+SaveWindowAtts.fileName = "size_plot_DELETE_ME"
+SetSaveWindowAttributes(SaveWindowAtts)
+SaveWindow()
+DeleteActivePlots()
+
 save_metadata_with_git(params, ".")
 sys.exit(0)

@@ -112,7 +112,7 @@ DEFAULTS = {
     "plotting.legend.name.fontsize": 8, # Legend font size
 
     # High variable comparsion mode
-    "high_var.mode": "time", # The 2 different modes for the high_var.sh script, see the high var section for details, the two options are time and space
+    "high_var.mode": "space", # The 2 different modes for the high_var.sh script, see the high var section for details, the two options are time and space
 
     # Data Transfer (): Not meant as inputs, used to transfer data between scripts
     "sim.time.arr": 0, # not a user input, used to transfer data between scripts, will get overwritten if included in input file
