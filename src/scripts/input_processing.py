@@ -110,6 +110,8 @@ DEFAULTS = {
     "plotting.legend.name.on": 0, # Enable legend name/label (0=off, 1=on)
     "plotting.legend.name.text": "Good Legend", # Legend text
     "plotting.legend.name.fontsize": 8, # Legend font size
+    "plotting.legend.ticks.numticks": 5, # Number of ticks in the colorbar
+    "plotting.legend.ticks.fontsize": 10, # fontsize of the ticks in the colorbar
 
     # High variable comparsion mode
     "high_var.mode": "space", # The 2 different modes for the high_var.sh script, see the high var section for details, the two options are time and space

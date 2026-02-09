@@ -201,9 +201,9 @@ for state in range(start_state, end_state, step_interval):
         ContourAtts.legendFlag = 0
         SetPlotOptions(ContourAtts)
 
-        if params["plotting.main_plotting_var.thresholding.on"]:
-            AddOperator("Threshold")
-            SetOperatorOptions(Thresh)
+        # if params["plotting.main_plotting_var.thresholding.on"]:
+            # AddOperator("Threshold")
+            # SetOperatorOptions(Thresh)
     DrawPlots()
 
     SaveWindowAtts.fileName = "temp_field_DELETE_ME"

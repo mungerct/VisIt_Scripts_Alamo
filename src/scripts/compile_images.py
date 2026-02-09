@@ -211,6 +211,7 @@ def latex_text_image(
 def add_colorbar(fig, ax, params):
     import matplotlib as mpl
     from mpl_toolkits.axes_grid1 import make_axes_locatable
+    import numpy as np
     """
     Adds a configurable colorbar (left/right/top/bottom) using make_axes_locatable
     and saves the figure.
@@ -262,6 +263,11 @@ def add_colorbar(fig, ax, params):
                 f"Invalid legend position '{position}'. "
                 "Use: left, right, top, bottom."
             )
+        
+        ticks = np.linspace(vmin, vmax, num=params["plotting.legend.ticks.numticks"])  # choose how many you want
+        cbar.set_ticks(ticks)
+        cbar.set_ticklabels([f"{t:g}" for t in ticks])
+        cbar.ax.tick_params(labelsize=params["plotting.legend.ticks.fontsize"])  # 12 = font size in points
 
         # ---- LABEL (also outside image) ----
         if params["plotting.legend.name.on"]:
