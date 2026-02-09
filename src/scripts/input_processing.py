@@ -65,57 +65,57 @@ ALLOWED_COLORMAPS = {
 # -----------------------------
 DEFAULTS = {
     # Database
-    "file.db_path": os.getcwd(),
-    "file.default_db": "celloutput.visit",
-    "file.output_filename": "high_var_all_time",
-    "file.width": 1080,
-    "file.height": 1080,
+    "file.db_path": os.getcwd(), # Path to database directory
+    "file.default_db": "celloutput.visit", # Default database filename
+    "file.output_filename": "high_var_all_time", # Output file name for generated visualizations
+    "file.width": 1080, # Output image width in pixels
+    "file.height": 1080, # Output image height in pixels
 
     # Step control
-    "step.interval": 1,
-    "step.start": 0, 
-    "step.end": -1, # -1 means all available timesteps
+    "step.interval": 1, # Interval between timesteps
+    "step.start": 0, # Starting timestep
+    "step.end": -1, # Ending timestep (-1 = all timesteps)
 
     # Plotting Variables
-    "plotting.main_plotting_var.name": "temp",
-    "plotting.main_plotting_var.colormap": "plasma",
-    "plotting.main_plotting_var.define_scalar_expression.on": 0,
-    "plotting.main_plotting_var.define_scalar_expression.name": "expression_name",
-    "plotting.main_plotting_var.define_scalar_expression.expression": "expression_here",
-    "plotting.main_plotting_var.min": 0,
-    "plotting.main_plotting_var.max": 2000,
+    "plotting.main_plotting_var.name": "temp", # Variable to plot
+    "plotting.main_plotting_var.colormap": "plasma", # Colormap for visualization, see available colormaps section for support VisIt colormaps
+    "plotting.main_plotting_var.define_scalar_expression.on": 0, # Enable custom scalar expression (0=off, 1=on)
+    "plotting.main_plotting_var.define_scalar_expression.name": "expression_name", # Name for the expression
+    "plotting.main_plotting_var.define_scalar_expression.expression": "expression_here", # Mathematical expression definition
+    "plotting.main_plotting_var.min": 0, # Minimum value for color scale
+    "plotting.main_plotting_var.max": 2000, # Maximum value for color scale
 
     # Thresholding
-    "plotting.main_plotting_var.thresholding.on": 0,
-    "plotting.main_plotting_var.thresholding.var.name": "eta",
-    "plotting.main_plotting_var.thresholding.var.min": 0.0,
-    "plotting.main_plotting_var.thresholding.var.max": 1e37,
+    "plotting.main_plotting_var.thresholding.on": 0, # Enable thresholding (0=off, 1=on)
+    "plotting.main_plotting_var.thresholding.var.name": "eta", # Variable to threshold by
+    "plotting.main_plotting_var.thresholding.var.min": 0.0, # Minimum threshold value
+    "plotting.main_plotting_var.thresholding.var.max": 1e37, # Maximum threshold value
     
     # Background variable
-    "plotting.background_var.on": 0,
-    "plotting.background_var.name": "eta",
-    "plotting.background_var.invert": 0,
-    "plotting.background_var.colormap": "gray",
+    "plotting.background_var.on": 0, # Enable background variable (0=off, 1=on)
+    "plotting.background_var.name": "eta", # Background variable name
+    "plotting.background_var.invert": 0, # Invert background colors (0=off, 1=on)
+    "plotting.background_var.colormap": "gray", # Background colormap
 
     # Contours
-    "plotting.contour.on": 0,
-    "plotting.contour.var.name": "phi",
-    "plotting.contour.values": 0.5,
-    "plotting.contour.linewidth": 2,
-    "plotting.contour.color": (0, 0, 0, 255),  # black
+    "plotting.contour.on": 0, # Enable contour lines (0=off, 1=on)
+    "plotting.contour.var.name": "phi", # Variable to contour
+    "plotting.contour.values": 0.5, # Contour value(s)
+    "plotting.contour.linewidth": 2, # Contour line width
+    "plotting.contour.color": (0, 0, 0, 255),  # Contour color (RGBA) (default: black)
     
     # Legend
-    "plotting.legend.on": 0,
-    "plotting.legend.position": "right",
-    "plotting.legend.name.on": 0,
-    "plotting.legend.name.text": "Good Legend",
-    "plotting.legend.name.fontsize": 8,
-
-    # Data Transfer (): Not meant as inputs, used to transfer data between scripts
-    "sim.time.arr": 0,
+    "plotting.legend.on": 0, # Enable legend (0=off, 1=on)
+    "plotting.legend.position": "right", # Legend X position (left/right/top/bottom)
+    "plotting.legend.name.on": 0, # Enable legend name/label (0=off, 1=on)
+    "plotting.legend.name.text": "Good Legend", # Legend text
+    "plotting.legend.name.fontsize": 8, # Legend font size
 
     # High variable comparsion mode
-    "high_var.mode": "time"
+    "high_var.mode": "space", # The 2 different modes for the high_var.sh script, see the high var section for details, the two options are time and space
+
+    # Data Transfer (): Not meant as inputs, used to transfer data between scripts
+    "sim.time.arr": 0, # not a user input, used to transfer data between scripts, will get overwritten if included in input file
 }
 
 
