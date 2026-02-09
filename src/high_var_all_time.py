@@ -10,7 +10,7 @@ import sys
 import os
 from scripts.savemetadata import save_metadata_with_git
 from scripts.compile_images import progress_bar
-from scripts.input_processing import get_parameters
+from scripts.input_processing import get_parameters, write_time
 
 SuppressMessages(2)  # Suppress warnings
 SuppressQueryOutputOn()  # Suppress query output
@@ -194,17 +194,18 @@ PseudocolorAtts.lightingFlag = 0
 # Loop over temperature levels and timesteps (no eta background)
 # ------------------------------------------------------------
 
+time_values = []
 print(f"\nSaving Time Steps:")
 
 for state in range(start_state, end_state, step_interval):
     progress_bar(state + 1, end_state)
     SetTimeSliderState(state)
 
-    # Remove previous temperature plots
+    # Remove previous plots
     for i in range(GetNumPlots() - 1, 0, -1):
         DeleteActivePlots()
 
-    # Add temperature plot only
+    # Add new plot
     AddPlot("Pseudocolor", plotting_var, 1, 0)
     SetPlotOptions(PseudocolorAtts)
 
@@ -217,19 +218,40 @@ for state in range(start_state, end_state, step_interval):
         IsoEtaAtts.ubound = max_threhold
         SetOperatorOptions(IsoEtaAtts, 1)
 
-    # Isovolume 1: temperature >= min_var
-    AddOperator("Isovolume")
-    IsoTempAtts = IsovolumeAttributes()
-    IsoTempAtts.variable = plotting_var
-    IsoTempAtts.lbound = min_var
-    IsoTempAtts.ubound = 1e37
-    SetOperatorOptions(IsoTempAtts, 0)
+    if params["high_var.mode"] == "space":
+        AddOperator("Isovolume")
+        IsoTempAtts = IsovolumeAttributes()
+        IsoTempAtts.variable = plotting_var
+        IsoTempAtts.lbound = min_var
+        IsoTempAtts.ubound = 1e37
+        SetOperatorOptions(IsoTempAtts, 0)
 
-    SetActivePlots(GetNumPlots() - 1)
-    SetPlotFollowsTime(0)
+    if params["high_var.mode"] == "time":
+        Thresh = ThresholdAttributes()
+        Thresh.outputMeshType = 0
+        Thresh.boundsInputType = 0
+        Thresh.listedVarNames = (threhold_var)
+        Thresh.zonePortions = (1, 1)
+        Thresh.lowerBounds = (min_threhold)
+        Thresh.upperBounds = (max_threhold)
+        Thresh.defaultVarName = threhold_var
+        Thresh.defaultVarIsScalar = 1
+        Thresh.boundsRange = (f"{min_threhold}", f"{max_threhold}")
+
+        AddOperator("Threshold")
+        SetOperatorOptions(Thresh, 0)
+
+    if params["high_var.mode"] == "space":
+        SetActivePlots(GetNumPlots() - 1)
+        SetPlotFollowsTime(0)
 
     # Draw and save each timestep
     DrawPlots()
+
+    if params["high_var.mode"] == "time":
+        time = Query("Time")            # get the current simulation time
+        time_values.append(time)        # store it
+
     SaveWindowAtts.fileName = "temp_field_DELETE_ME"
     SetSaveWindowAttributes(SaveWindowAtts)
     SaveWindow()
@@ -237,6 +259,11 @@ for state in range(start_state, end_state, step_interval):
 # ------------------------------------------------------------
 # Save metadata
 # ------------------------------------------------------------
+
+if params["high_var.mode"] == "time":
+    time_values = [float(s.split()[-1][:-1]) for s in time_values]
+    params["sim.time.arr"] = time_values
+    write_time(input_file=input_file, time_arr=params["sim.time.arr"])
 
 save_metadata_with_git(params, ".")
 sys.exit(0)
