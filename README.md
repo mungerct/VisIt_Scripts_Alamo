@@ -118,6 +118,16 @@ high_var.mode: time
 <summary><h3>Plotting Configuration (Variables, legend, location, etc.)</h3></summary>
 
 <details>
+<summary><h4>Background Img</h4></summary>
+
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| `plotting.background_img.name` | `"path/to/img/img.png"` | Path to background image |
+| `plotting.background_img.on` | `"0"` | Enable a background image instead of a background variable |
+
+</details>
+
+<details>
 <summary><h4>Background Var</h4></summary>
 
 | Parameter | Default | Description |
