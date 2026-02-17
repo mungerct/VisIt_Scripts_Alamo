@@ -97,6 +97,10 @@ DEFAULTS = {
     "plotting.background_var.invert": 0, # Invert background colors (0=off, 1=on)
     "plotting.background_var.colormap": "gray", # Background colormap
 
+    # Background image
+    "plotting.background_img.on": 0, # Enable a background image instead of a background variable
+    "plotting.background_img.name": "path/to/img/img.png", # Path to background image
+
     # Contours
     "plotting.contour.on": 0, # Enable contour lines (0=off, 1=on)
     "plotting.contour.var.name": "phi", # Variable to contour

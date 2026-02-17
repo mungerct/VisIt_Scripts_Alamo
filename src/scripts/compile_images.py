@@ -94,6 +94,13 @@ def compile_images_func(
         result[mask] = colormap_rgb[mask]
         result_img = Image.fromarray(result)
 
+        if params["plotting.background_img.on"]:
+            r, g, b, a = result_img.split()
+
+            # Replace alpha channel
+            new_alpha = Image.new("L", result_img.size, 150)  # 150 = transparency level
+            result_img.putalpha(new_alpha)
+
     if params["plotting.background_var.on"]:
         initial_field_path = os.path.join(cwd, initial_field_file)
         initial_field = Image.open(initial_field_path).convert("RGBA")
@@ -105,8 +112,16 @@ def compile_images_func(
         result_img = paste_image(result_img, contour_field, position=(0,0))
 
     fig, ax = plt.subplots(figsize=(6, 6))
-
     cropped_np = crop_image(result_img)
+
+    if params["plotting.background_img.on"]:
+        background_img = Image.open(params["plotting.background_img.name"]).convert("RGBA")
+
+        result_img = Image.fromarray(cropped_np)
+        background_img = background_img.resize(result_img.size, Image.LANCZOS)
+        result_img = paste_image(background_img, result_img, position=(0,0))
+
+        cropped_np = np.array(result_img)
 
     ax.imshow(cropped_np)
     ax.axis("off")
