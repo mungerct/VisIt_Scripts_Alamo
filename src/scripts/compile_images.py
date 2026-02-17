@@ -66,6 +66,15 @@ def compile_images_func(
 
             progress_bar(idx + 1, total, width=40)
 
+        result_img.show()
+        if params["plotting.background_img.on"]:
+            result_img = result_img.convert("RGBA")
+
+            new_alpha = Image.new("L", result_img.size, 100)  # 0–255
+            result_img.putalpha(new_alpha)
+
+            result_img.show()
+
         print("Done creating composite")
 
     if params["high_var.mode"] == "space":
@@ -93,13 +102,6 @@ def compile_images_func(
         result = np.ones((*result_arr.shape, 3), dtype=np.uint8) * 255
         result[mask] = colormap_rgb[mask]
         result_img = Image.fromarray(result)
-
-        if params["plotting.background_img.on"]:
-            r, g, b, a = result_img.split()
-
-            # Replace alpha channel
-            new_alpha = Image.new("L", result_img.size, 150)  # 150 = transparency level
-            result_img.putalpha(new_alpha)
 
     if params["plotting.background_var.on"]:
         initial_field_path = os.path.join(cwd, initial_field_file)
