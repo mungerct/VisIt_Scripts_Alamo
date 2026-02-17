@@ -66,14 +66,14 @@ def compile_images_func(
 
             progress_bar(idx + 1, total, width=40)
 
-        result_img.show()
+        # result_img.show()
         if params["plotting.background_img.on"]:
             result_img = result_img.convert("RGBA")
 
-            new_alpha = Image.new("L", result_img.size, 100)  # 0–255
+            new_alpha = Image.new("L", result_img.size, 200)  # 0–255
             result_img.putalpha(new_alpha)
 
-            result_img.show()
+            # result_img.show()
 
         print("Done creating composite")
 
@@ -121,8 +121,13 @@ def compile_images_func(
 
         result_img = Image.fromarray(cropped_np)
         background_img = background_img.resize(result_img.size, Image.LANCZOS)
-        result_img = paste_image(background_img, result_img, position=(0,0))
 
+        if params["high_var.mode"] == "space":
+            result_img = paste_image(background_img, result_img, position=(0,0))
+
+        if params["high_var.mode"] == "time":
+            result_img = Image.alpha_composite(background_img, result_img)
+            # result_img.show()
         cropped_np = np.array(result_img)
 
     ax.imshow(cropped_np)
