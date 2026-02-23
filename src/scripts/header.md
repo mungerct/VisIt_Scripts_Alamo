@@ -1,9 +1,14 @@
+# Overview
+
+This git repo provides a framework to use VisIt to analyse the results of scientific simulations in a reproducible and systemic way. Currently there are 2 main functionalities of the repo, "high variable plotting" and making gifs. The high variable plotting is meant to collapse a 3 dimensional simulations (2 length axis and 1 time axis) into a 2d image, removing the time dimension to be used in publications. This can be used to see the highest temperature at each cell over the course of a simulation (see example below) or to find where the highest stress in a simulated domain occurs at. The make gifs section of the repo makes a gif to be used in presentations of your data. Both of these options use .txt files as input files (see sample inputs below) and a metadata file with all parameters and the git hash is saved after every image/gif is made. This is meant to make all figures reproducible, speeding up research so if you forget how you made an image, the metadata will allow you to remake it. Below is a summary of the "high_var.sh" and "make_gif.sh" shell scripts that are used to run this code.
+
+
 # High Variable Plotting
 
 This section describes the `high_var.sh` tool
 
 <details>
-<summary><h2>High Variable Plotting</h2></summary>
+<summary><h3>High Variable Plotting</h3></summary>
 
 To use this feature, the `high_var.mode = space` must be specificed in the input deck. This mode "spacially" adds a value and takes the highest value at each spacial point over time. This code produces a compiled image the highest variable over all timesteps, the example image below shows how temperature timesteps can be combined to visualize where the highest temperature in a given simulation is over all time. 
 
