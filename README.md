@@ -111,6 +111,25 @@ high_var.mode: time
 </details>
 
 <details>
+<summary><h3>Gif Images</h3></summary>
+
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| `gif_images.filetype` | `"gif"` | Output file type of gif images script, supported file types are .gif "gif" and Web M "webm" |
+| `gif_images.fps` | `"10"` | Frames per second (fps) of the completed gif |
+
+<details>
+<summary><h4>Webm</h4></summary>
+
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| `gif_images.webm.quality` | `"16"` | Quality of the completed Web M file, (0 lossless, 63 lowest quality), controls the imageio "-crf" parameter |
+
+</details>
+
+</details>
+
+<details>
 <summary><h3>High Var</h3></summary>
 
 | Parameter | Default | Description |
@@ -243,6 +262,10 @@ high_var.mode: time
 
 <details>
 <summary><h3>Data Transfer, not for input use</h3></summary>
+
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| `sim.type` | `"0"` | not a user input, used to transfer data between scripts (used to tell if high_var vs gif_images was used) |
 
 <details>
 <summary><h4>Time</h4></summary>
