@@ -74,7 +74,7 @@ def process_images(images, params):
 
     for k in range(len(images)):
         images[k] = crop_image(images[k])
-        
+
         fig, ax = plt.subplots(figsize=(8, 8))
 
         ax.imshow(images[k])
@@ -97,13 +97,27 @@ def process_images(images, params):
         # Convert to PIL Image
         images[k] = Image.fromarray(buf, mode="RGBA")
 
+        # Get tight bounding box in inches
+        bbox = fig.get_tightbbox(fig.canvas.get_renderer())
+        bbox_inches = bbox.transformed(fig.dpi_scale_trans.inverted())
+
+        # Resize figure exactly to bounding box
+        fig.set_size_inches(bbox_inches.width, bbox_inches.height)
+
+        # Redraw after resizing
+        fig.canvas.draw()
+
+        # size_inches = fig.get_size_inches()
+        # print(f"Figure size in inches: {size_inches}")
+
+        # plt.show()
         plt.close(fig)
     
     # print(images)
 
     return images
 
-def images_to_grid(image_paths, params, cols=4, hspace=0.1, wspace=0.1):
+def images_to_grid(image_paths, params, cols=4, hspace=0.0, wspace=0.0):
     """
     Display processed images in a customizable grid using matplotlib subplots.
     Args:
