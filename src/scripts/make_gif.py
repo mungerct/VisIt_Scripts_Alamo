@@ -102,3 +102,44 @@ def process_images(images, params):
     # print(images)
 
     return images
+
+def images_to_grid(image_paths, params, cols=4, hspace=0.1, wspace=0.1):
+    """
+    Display processed images in a customizable grid using matplotlib subplots.
+    Args:
+        image_paths (list[str]): Paths to image files (in order).
+        params (dict): Parameter dictionary including output filename.
+        cols (int): Number of columns in the grid.
+        hspace (float): Vertical space between rows (0.0 = none, 1.0 = full height).
+        wspace (float): Horizontal space between columns (0.0 = none, 1.0 = full width).
+    """
+    import matplotlib.pyplot as plt
+    import numpy as np
+    from PIL import Image
+    import math
+
+    if not image_paths:
+        raise ValueError("image_paths list is empty")
+
+    images = [Image.open(p).convert("RGB") for p in image_paths]
+    images = process_images(images, params)
+
+    n = len(images)
+    rows = math.ceil(n / cols)
+
+    fig, axes = plt.subplots(rows, cols, figsize=(cols * 3, rows * 3))
+    axes = np.array(axes).flatten()
+
+    for i, ax in enumerate(axes):
+        if i < n:
+            ax.imshow(np.array(images[i]))
+        ax.axis("off")
+
+    fig.suptitle(params.get("file.output_filename", "Image Grid"), fontsize=12)
+    plt.subplots_adjust(hspace=hspace, wspace=wspace)
+
+    output_path = params["file.output_filename"] + "_grid.png"
+    plt.savefig(output_path, bbox_inches="tight", dpi=150)
+    plt.show()
+
+    print(f"Saved grid to {output_path}")

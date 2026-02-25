@@ -3,7 +3,7 @@
 import sys
 import os
 from scripts.input_processing import delete_delete_me_files
-from scripts.make_gif import images_to_gif, images_to_webm
+from scripts.make_gif import images_to_gif, images_to_webm, images_to_grid
 from scripts.input_processing import get_parameters
 from pathlib import Path
 
@@ -29,11 +29,13 @@ if not image_list:
 
 fps = params["gif_images.fps"]
 
-if params["gif_images.filetype"] == "gif":
-    images_to_gif(image_list, params, fps=fps, loop=0)
-elif params["gif_images.filetype"] == "webm":
-    images_to_webm(image_list, params, fps=fps)
-else:
-    print("Unsupported file type")
+# if params["gif_images.filetype"] == "gif":
+#     images_to_gif(image_list, params, fps=fps, loop=0)
+# elif params["gif_images.filetype"] == "webm":
+#     images_to_webm(image_list, params, fps=fps)
+# else:
+#     print("Unsupported file type")
 
-delete_delete_me_files()
+images_to_grid(image_list, params, cols=4)
+
+# delete_delete_me_files()
