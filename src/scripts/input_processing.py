@@ -120,8 +120,14 @@ DEFAULTS = {
     # High variable comparsion mode
     "high_var.mode": "space", # The 2 different modes for the high_var.sh script, see the high var section for details, the two options are time and space
 
+    # Gif images options
+    "gif_images.filetype": "gif", # Output file type of gif images script, supported file types are .gif "gif" and Web M "webm"
+    "gif_images.fps": 10, # Frames per second (fps) of the completed gif
+    "gif_images.webm.quality": 10, # Quality of the completed Web M file, (0 lowest, 10 highest), uses the imageio "quality" parameter
+
     # Data Transfer (): Not meant as inputs, used to transfer data between scripts
     "sim.time.arr": 0, # not a user input, used to transfer data between scripts, will get overwritten if included in input file
+    "sim.type": 0, # not a user input, used to transfer data between scripts (used to tell if high_var vs gif_images was used)
 }
 
 

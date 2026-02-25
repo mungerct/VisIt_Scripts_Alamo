@@ -60,6 +60,7 @@ def save_metadata_with_git(params, output_dir):
                 continue
             elif params["high_var.mode"] == "space" and key in {"sim.time.arr"}:
                 continue
+            elif params["sim.type"] == "high_var" and key in {}
 
             else:
                 f.write(f"{key}: {value}\n")

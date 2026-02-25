@@ -3,7 +3,7 @@
 import sys
 import os
 from scripts.input_processing import delete_delete_me_files
-from scripts.make_gif import images_to_gif
+from scripts.make_gif import images_to_gif, images_to_webm
 from scripts.input_processing import get_parameters
 from pathlib import Path
 
@@ -27,5 +27,13 @@ image_list = sorted(image_dir.glob(image_pattern))
 if not image_list:
     print(f"Warning: No files matching '{image_pattern}' found in {image_dir}")
 
-images_to_gif(image_list, params, fps=10, loop=0)
-delete_delete_me_files()
+fps = params["gif_images.fps"]
+
+if params["gif_images.filetype"] == "gif":
+    images_to_gif(image_list, params, fps=fps, loop=0)
+elif params["gif_images.filetype"] == "webm":
+    images_to_webm(image_list, params, fps=fps)
+else:
+    print("Unsupported file type")
+
+# delete_delete_me_files()

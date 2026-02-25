@@ -4,7 +4,7 @@ from .compile_images import crop_image, add_colorbar
 import matplotlib.pyplot as plt
 import numpy as np
 
-def images_to_gif(image_paths, params, fps=10, loop=0):
+def images_to_gif(image_paths, params, fps, loop=0):
 
     """
     Create a GIF from a list of image paths.
@@ -38,6 +38,35 @@ def images_to_gif(image_paths, params, fps=10, loop=0):
     )
     print(f"Saved GIF to {output_path} with {len(images)} frames at {fps} FPS")
     return
+
+def images_to_webm(image_paths, params, fps):
+    """
+    Create a WebM video from a list of image paths.
+    Args:
+        image_paths (list[str]): Paths to image files (in order).
+        params (dict): Parameter dictionary including output filename.
+        fps (int): Frames per second.
+    """
+    import imageio
+    import numpy as np
+    from PIL import Image
+
+    if not image_paths:
+        raise ValueError("image_paths list is empty")
+
+    # Load and process images using your existing pipeline
+    images = [Image.open(p).convert("RGB") for p in image_paths]
+    images = process_images(images, params)
+
+    output_path = params["file.output_filename"] + ".webm"
+
+    # Convert PIL images to numpy arrays
+    frames = [np.array(img) for img in images]
+    quality = params["gif_images.webm.quality"]
+    # Write frames to WebM
+    imageio.mimwrite(output_path, frames, fps=fps, codec="vp9", format="webm", quality=quality)
+
+    print(f"Saved WebM to {output_path} with {len(images)} frames at {fps} FPS")
 
 def process_images(images, params):
 
