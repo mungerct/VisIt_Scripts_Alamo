@@ -36,4 +36,4 @@ elif params["gif_images.filetype"] == "webm":
 else:
     print("Unsupported file type")
 
-# delete_delete_me_files()
+delete_delete_me_files()

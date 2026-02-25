@@ -64,7 +64,9 @@ def images_to_webm(image_paths, params, fps):
     frames = [np.array(img) for img in images]
     quality = params["gif_images.webm.quality"]
     # Write frames to WebM
-    imageio.mimwrite(output_path, frames, fps=fps, codec="vp9", format="webm", quality=quality)
+    # imageio.mimwrite(output_path, frames, fps=fps, codec="vp9", format="webm", quality=quality)
+    imageio.mimwrite(output_path, frames, fps=fps, codec="vp9", format="webm",
+                output_params=["-crf", str(quality), "-b:v", "0"])
 
     print(f"Saved WebM to {output_path} with {len(images)} frames at {fps} FPS")
 

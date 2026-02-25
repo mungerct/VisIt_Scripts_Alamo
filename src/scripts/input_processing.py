@@ -123,7 +123,7 @@ DEFAULTS = {
     # Gif images options
     "gif_images.filetype": "gif", # Output file type of gif images script, supported file types are .gif "gif" and Web M "webm"
     "gif_images.fps": 10, # Frames per second (fps) of the completed gif
-    "gif_images.webm.quality": 10, # Quality of the completed Web M file, (0 lowest, 10 highest), uses the imageio "quality" parameter
+    "gif_images.webm.quality": 16, # Quality of the completed Web M file, (0 lossless, 63 lowest quality), controls the imageio "-crf" parameter
 
     # Data Transfer (): Not meant as inputs, used to transfer data between scripts
     "sim.time.arr": 0, # not a user input, used to transfer data between scripts, will get overwritten if included in input file
