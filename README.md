@@ -117,6 +117,17 @@ high_var.mode: time
 |-----------|---------|-------------|
 | `gif_images.filetype` | `"gif"` | Output file type of gif images script, supported file types are .gif "gif" and Web M "webm" |
 | `gif_images.fps` | `"10"` | Frames per second (fps) of the completed gif |
+| `gif_images.mode` | `"movie"` | Makes a move/gif of from the output images, other option is "grid", where the frames are placed in a grid |
+
+<details>
+<summary><h4>Grid</h4></summary>
+
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| `gif_images.grid.ncols` | `"4"` | Number of columns in the output grid (number of rows is based on number of columns) |
+| `gif_images.grid.padding` | `"50"` | padding (in pixels) of the space between images in the grid mode |
+
+</details>
 
 <details>
 <summary><h4>Webm</h4></summary>
