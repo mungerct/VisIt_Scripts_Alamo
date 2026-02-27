@@ -62,10 +62,17 @@ def save_metadata_with_git(params, output_dir):
                 continue
             elif params["sim.type"] == "high_var" and key in {"gif_images.filetype",
                                                                                 "gif_images.fps",
-                                                                                "gif_images.webm.quality"}:
+                                                                                "gif_images.webm.quality",
+                                                                                "gif_images.mode",
+                                                                                "gif_images.grid.ncols",
+                                                                                "gif_images.grid.padding"}:
                 continue
             elif params["sim.type"] == "gif_images" and key in {"high_var",
                                                                 "sim.time.arr"}:
+                continue
+                
+            elif params["gif_images.mode"] == "movie" and key in {"gif_images.grid.ncols",
+                                                                  "gif_images.grid.padding"}:
                 continue
 
             else:

@@ -37,6 +37,6 @@ if params["gif_images.mode"] == "movie":
     else:
         print("Unsupported file type")
 elif params["gif_images.mode"] == "grid":
-    images_to_grid(image_list, params, cols=4)
+    images_to_grid(image_list, params)
 
 delete_delete_me_files()

@@ -123,6 +123,9 @@ def images_to_grid(image_paths, params, cols=9, padding=50):
     from PIL import Image
     import math
 
+    cols = params["gif_images.grid.ncols"]
+    padding = params["gif_images.grid.padding"]
+
     if not image_paths:
         raise ValueError("image_paths list is empty")
 
@@ -139,11 +142,8 @@ def images_to_grid(image_paths, params, cols=9, padding=50):
         images[i] = trim_whitespace(images[i])
         img_w, img_h = images[i].size
 
-    cols = 9
     n = len(images)
     rows = math.ceil(n / cols)
-    print(rows)
-    print(cols)
 
     # Assume all images same size
     img_w, img_h = images[0].size

@@ -125,6 +125,8 @@ DEFAULTS = {
     "gif_images.fps": 10, # Frames per second (fps) of the completed gif
     "gif_images.webm.quality": 16, # Quality of the completed Web M file, (0 lossless, 63 lowest quality), controls the imageio "-crf" parameter
     "gif_images.mode": "movie", # Makes a move/gif of from the output images, other option is "grid", where the frames are placed in a grid
+    "gif_images.grid.ncols": 4, # Number of columns in the output grid (number of rows is based on number of columns)
+    "gif_images.grid.padding": 50, # padding (in pixels) of the space between images in the grid mode
 
     # Data Transfer (): Not meant as inputs, used to transfer data between scripts
     "sim.time.arr": 0, # not a user input, used to transfer data between scripts, will get overwritten if included in input file
