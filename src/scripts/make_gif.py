@@ -80,7 +80,9 @@ def process_images(images, params):
         ax.imshow(images[k])
         ax.axis("off")
 
-        # images[k] = add_colorbar(fig, ax, params)
+
+        if params["gif_images.mode"] != "grid":
+            images[k] = add_colorbar(fig, ax, params)
         fig.tight_layout(pad = 0.1)
         fig.canvas.draw()
 
@@ -117,7 +119,7 @@ def process_images(images, params):
 
     return images
 
-def images_to_grid(image_paths, params, cols=4, padding=50):
+def images_to_grid(image_paths, params, cols=9, padding=50):
     from PIL import Image
     import math
 
@@ -137,8 +139,11 @@ def images_to_grid(image_paths, params, cols=4, padding=50):
         images[i] = trim_whitespace(images[i])
         img_w, img_h = images[i].size
 
+    cols = 9
     n = len(images)
     rows = math.ceil(n / cols)
+    print(rows)
+    print(cols)
 
     # Assume all images same size
     img_w, img_h = images[0].size
@@ -165,11 +170,12 @@ def images_to_grid(image_paths, params, cols=4, padding=50):
     grid_img = add_colorbar(fig, ax, params)
     fig.tight_layout(pad = 0.1)
     fig.canvas.draw()
-    plt.show()
+    # plt.show()
+    output_path = params["file.output_filename"] + ".png"
 
-    output_path = params["file.output_filename"] + "_grid.png"
-    grid_img.show()
-    grid_img.save(output_path)
+    plt.savefig(output_path, dpi=600, bbox_inches="tight")
+    # grid_img.show()
+    # grid_img.save(output_path)
 
     print(f"Saved grid to {output_path}")
 

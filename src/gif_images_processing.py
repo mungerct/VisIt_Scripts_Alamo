@@ -29,13 +29,14 @@ if not image_list:
 
 fps = params["gif_images.fps"]
 
-# if params["gif_images.filetype"] == "gif":
-#     images_to_gif(image_list, params, fps=fps, loop=0)
-# elif params["gif_images.filetype"] == "webm":
-#     images_to_webm(image_list, params, fps=fps)
-# else:
-#     print("Unsupported file type")
+if params["gif_images.mode"] == "movie":
+    if params["gif_images.filetype"] == "gif":
+        images_to_gif(image_list, params, fps=fps, loop=0)
+    elif params["gif_images.filetype"] == "webm":
+        images_to_webm(image_list, params, fps=fps)
+    else:
+        print("Unsupported file type")
+elif params["gif_images.mode"] == "grid":
+    images_to_grid(image_list, params, cols=4)
 
-images_to_grid(image_list, params, cols=4)
-
-# delete_delete_me_files()
+delete_delete_me_files()
