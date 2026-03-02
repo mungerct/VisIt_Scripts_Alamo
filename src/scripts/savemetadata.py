@@ -74,6 +74,8 @@ def save_metadata_with_git(params, output_dir):
             elif params["gif_images.mode"] == "movie" and key in {"gif_images.grid.ncols",
                                                                   "gif_images.grid.padding"}:
                 continue
+            elif params["plotting.background_img.on"] == 0 and key in {"plotting.background_img.name"}:
+                continue
 
             else:
                 f.write(f"{key}: {value}\n")
