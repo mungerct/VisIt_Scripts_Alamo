@@ -111,8 +111,9 @@ DEFAULTS = {
     # Mesh
     "plotting.mesh.on": 0, # If "1" plots the mesh
     "plotting.mesh.var.name": "Mesh", # name of the mesh variable in your database
-    "plotting.mesh.linewdith": 1, # Linewidth of mesh, must be an integer to work correcly
-    "Plotting.mesh.color": (0, 0, 0, 255), # RGBA — black by default
+    "plotting.mesh.linewidth": 0, # Linewidth of mesh, must be an integer to work correcly
+    "plotting.mesh.color": (0, 0, 0, 255), # RGBA — black by default, note may not work correctly
+    "plotting.mesh.opacity": 1, # 1 is fully opaque, 0 is fully transparent
     
     # Legend
     "plotting.legend.on": 0, # Enable legend (0=off, 1=on)

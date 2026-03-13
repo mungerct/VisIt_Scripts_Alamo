@@ -190,14 +190,23 @@ for state in range(start_state, end_state, step_interval):
 
     if params["plotting.mesh.on"]:
         AddPlot("Mesh", params["plotting.mesh.var.name"], 1, 1)
+        DrawPlots()
         MeshAtts = MeshAttributes()
         MeshAtts.legendFlag = 0
         MeshAtts.lineWidth = params["plotting.mesh.linewidth"]
         MeshAtts.meshColor = params["plotting.mesh.color"]
-        MeshAtts.meshColorSource = MeshAtts.MeshCustom
-        MeshAtts.opaqueColorSource = MeshAtts.Background
-        MeshAtts.backgroundFlag = 0
-        MeshAtts.opaqueMode = MeshAtts.Auto
+        MeshAtts.meshColorSource = MeshAtts.Foreground  # Foreground, MeshCustom, MeshRandom
+        MeshAtts.opaqueColorSource = MeshAtts.Background  # Background, OpaqueCustom, OpaqueRandom
+        MeshAtts.opaqueMode = MeshAtts.Auto  # Auto, On, Off
+        MeshAtts.pointSize = 0.05
+        MeshAtts.opaqueColor = (255, 255, 255, 255)
+        MeshAtts.smoothingLevel = MeshAtts.NONE  # NONE, Fast, High
+        MeshAtts.pointSizeVarEnabled = 0
+        MeshAtts.pointSizeVar = "default"
+        MeshAtts.pointType = MeshAtts.Point  # Box, Axis, Icosahedron, Octahedron, Tetrahedron, SphereGeometry, Point, Sphere
+        MeshAtts.showInternal = 0
+        MeshAtts.pointSizePixels = 2
+        MeshAtts.opacity = params["plotting.mesh.opacity"]
         SetPlotOptions(MeshAtts)
         DrawPlots()
 
