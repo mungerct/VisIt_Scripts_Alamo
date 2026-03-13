@@ -265,5 +265,7 @@ if params["high_var.mode"] == "time":
     params["sim.time.arr"] = time_values
     write_time(input_file=input_file, time_arr=params["sim.time.arr"])
 
+params["sim.type"] = "high_var"
+
 save_metadata_with_git(params, ".")
 sys.exit(0)

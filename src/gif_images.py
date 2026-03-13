@@ -210,10 +210,6 @@ for state in range(start_state, end_state, step_interval):
     SetSaveWindowAttributes(SaveWindowAtts)
     SaveWindow()
 
-# ------------------------------------------------------------
-# Save metadata
-# ------------------------------------------------------------
-
 AnnotationAtts = AnnotationAttributes()
 AnnotationAtts.axes2D.visible = 0
 AnnotationAtts.userInfoFlag = 0
@@ -241,6 +237,8 @@ SaveWindowAtts.fileName = "size_plot_DELETE_ME"
 SetSaveWindowAttributes(SaveWindowAtts)
 SaveWindow()
 DeleteActivePlots()
+
+params["sim.type"] = "gif_images"
 
 save_metadata_with_git(params, ".")
 sys.exit(0)
