@@ -107,6 +107,12 @@ DEFAULTS = {
     "plotting.contour.values": 0.5, # Contour value(s)
     "plotting.contour.linewidth": 2, # Contour line width
     "plotting.contour.color": (0, 0, 0, 255),  # Contour color (RGBA) (default: black)
+
+    # Mesh
+    "plotting.mesh.on": 0, # If "1" plots the mesh
+    "plotting.mesh.var.name": "Mesh", # name of the mesh variable in your database
+    "plotting.mesh.linewdith": 1, # Linewidth of mesh, must be an integer to work correcly
+    "Plotting.mesh.color": (0, 0, 0, 255), # RGBA — black by default
     
     # Legend
     "plotting.legend.on": 0, # Enable legend (0=off, 1=on)

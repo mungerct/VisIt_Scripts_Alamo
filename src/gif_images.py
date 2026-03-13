@@ -188,6 +188,19 @@ for state in range(start_state, end_state, step_interval):
     legend.drawMinMax = 0
     legend.numberFormat = "%1.1f"
 
+    if params["plotting.mesh.on"]:
+        AddPlot("Mesh", params["plotting.mesh.var.name"], 1, 1)
+        MeshAtts = MeshAttributes()
+        MeshAtts.legendFlag = 0
+        MeshAtts.lineWidth = params["plotting.mesh.linewidth"]
+        MeshAtts.meshColor = params["plotting.mesh.color"]
+        MeshAtts.meshColorSource = MeshAtts.MeshCustom
+        MeshAtts.opaqueColorSource = MeshAtts.Background
+        MeshAtts.backgroundFlag = 0
+        MeshAtts.opaqueMode = MeshAtts.Auto
+        SetPlotOptions(MeshAtts)
+        DrawPlots()
+
     if params["plotting.contour.on"]:
         AddPlot("Contour", params["plotting.contour.var.name"], 1, 1)
         ContourAtts = ContourAttributes()
