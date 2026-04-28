@@ -92,9 +92,12 @@ def compile_images_func(
         print()
 
         # Apply colormap
-        mask = result_arr < 255
+        mask = result_arr < 255 
         norm = result_arr / 255.0
-        cmap = get_colormap(params["plotting.main_plotting_var.colormap"])
+        start = 0.35 # TODO Add as input in input deck
+        end = 1.0
+        cmap = get_colormap(params["plotting.main_plotting_var.colormap"], start=start, end=end)
+        # cmap = get_truncated_cmap(params["plotting.main_plotting_var.colormap"], end, start)
         cmap = cmap.reversed()
         colormap_rgb = cmap(norm)[:, :, :3]
         colormap_rgb = (colormap_rgb * 255).astype(np.uint8)
@@ -220,19 +223,37 @@ def hot(N=256):
         (1.0, 0.0, 0.0),
     ]
     return LinearSegmentedColormap.from_list(
-        "hot", colors, N=N
+        "hot", colors[::-1], N=N
     )
 
 CUSTOM_COLORMAPS = {
     "hot": hot,
 }
 
-def get_colormap(name, N=256):
+def get_colormap(name, N=256, start=0.0, end=1.0):
+    import numpy as np
     import matplotlib.pyplot as plt
+    import matplotlib as mpl
+
     if name in CUSTOM_COLORMAPS:
-        return CUSTOM_COLORMAPS[name](N)
+        base_cmap = CUSTOM_COLORMAPS[name](N)
     else:
-        return plt.cm.get_cmap(name, N)
+        base_cmap = plt.cm.get_cmap(name, N)
+
+    # If using full range, return as-is
+    if start == 0.0 and end == 1.0:
+        return base_cmap
+
+    # Otherwise truncate
+    colors = base_cmap(np.linspace(start, end, N))
+    return mpl.colors.ListedColormap(colors)
+
+# def get_colormap(name, N=256):
+#     import matplotlib.pyplot as plt
+#     if name in CUSTOM_COLORMAPS:
+#         return CUSTOM_COLORMAPS[name](N)
+#     else:
+#         return plt.cm.get_cmap(name, N)
 
 def latex_text_image(
     text,
@@ -294,7 +315,10 @@ def add_colorbar(fig, ax, params):
             vmin = time_arr[0]
             vmax = time_arr[-1]
 
-        cmap = get_colormap(params["plotting.main_plotting_var.colormap"])
+        start = 0.35 # TODO Add as input in input deck
+        end = 1.0
+        # cmap = get_truncated_cmap(params["plotting.main_plotting_var.colormap"], start, end)
+        cmap = get_colormap(params["plotting.main_plotting_var.colormap"], start=start, end=end)
         position = params["plotting.legend.position"]
 
         # ScalarMappable only for the colorbar
