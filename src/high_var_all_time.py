@@ -107,7 +107,7 @@ SetAnnotationAttributes(AnnotationAtts)
 # Save initial eta/phi field
 # ------------------------------------------------------------
 if params["plotting.background_var.on"]:
-    SetTimeSliderState(1)
+    SetTimeSliderState(0)
     AddPlot("Pseudocolor", background_var, 1, 1)
     PhiAtts = PseudocolorAttributes()
     PhiAtts.minFlag = 1
@@ -117,6 +117,7 @@ if params["plotting.background_var.on"]:
     PhiAtts.colorTableName = params["plotting.background_var.colormap"]
     PhiAtts.invertColorTable = invert_phi
     PhiAtts.legendFlag = 0
+    PhiAtts.centering = PhiAtts.Nodal
     SetPlotOptions(PhiAtts)
     DrawPlots()
 
@@ -131,7 +132,7 @@ if params["plotting.background_var.on"]:
 # Save contour field
 # ------------------------------------------------------------
 if params["plotting.contour.on"]:
-    SetTimeSliderState(1)
+    SetTimeSliderState(0)
     AddPlot("Contour", params["plotting.contour.var.name"], 1, 1)
     ContourAtts = ContourAttributes()
     ContourAtts.contourMethod = ContourAtts.Value  # Explicitly set method
@@ -166,6 +167,7 @@ SizePlot.max = 1
 SizePlot.colorTableName = "hot"
 SizePlot.invertColorTable = 0
 SizePlot.legendFlag = 0
+
 SetPlotOptions(SizePlot)
 DrawPlots()
 
@@ -189,7 +191,7 @@ PseudocolorAtts.invertColorTable = 1
 PseudocolorAtts.opacityType = PseudocolorAtts.FullyOpaque
 PseudocolorAtts.legendFlag = 0
 PseudocolorAtts.lightingFlag = 0
-
+PseudocolorAtts.centering = PseudocolorAtts.Nodal
 # ------------------------------------------------------------
 # Loop over temperature levels and timesteps (no eta background)
 # ------------------------------------------------------------
@@ -209,22 +211,22 @@ for state in range(start_state, end_state, step_interval):
     AddPlot("Pseudocolor", plotting_var, 1, 0)
     SetPlotOptions(PseudocolorAtts)
 
-    if params["plotting.main_plotting_var.thresholding.on"]:
-        # Isovolume 2: eta >= 0.5
-        AddOperator("Isovolume")
-        IsoEtaAtts = IsovolumeAttributes()
-        IsoEtaAtts.variable = threhold_var
-        IsoEtaAtts.lbound = min_threhold
-        IsoEtaAtts.ubound = max_threhold
-        SetOperatorOptions(IsoEtaAtts, 1)
-
     if params["high_var.mode"] == "space":
-        AddOperator("Isovolume")
+        AddOperator("Isovolume", 0)
         IsoTempAtts = IsovolumeAttributes()
         IsoTempAtts.variable = plotting_var
         IsoTempAtts.lbound = min_var
         IsoTempAtts.ubound = 1e37
-        SetOperatorOptions(IsoTempAtts, 0)
+        SetOperatorOptions(IsoTempAtts, 0, 0)
+
+    if params["plotting.main_plotting_var.thresholding.on"]:
+        # Isovolume 2: eta >= 0.5
+        AddOperator("Isovolume", 0)
+        IsoEtaAtts = IsovolumeAttributes()
+        IsoEtaAtts.variable = threhold_var
+        IsoEtaAtts.lbound = min_threhold
+        IsoEtaAtts.ubound = max_threhold
+        SetOperatorOptions(IsoEtaAtts, 1, 0)
 
     if params["high_var.mode"] == "time":
         Thresh = ThresholdAttributes()

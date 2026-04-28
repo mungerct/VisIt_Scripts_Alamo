@@ -67,11 +67,11 @@ def compile_images_func(
             progress_bar(idx + 1, total, width=40)
 
         # result_img.show()
-        if params["plotting.background_img.on"]:
-            result_img = result_img.convert("RGBA")
+        # if params["plotting.background_img.on"]:
+            # result_img = result_img.convert("RGBA")
 
-            new_alpha = Image.new("L", result_img.size, 200)  # 0–255
-            result_img.putalpha(new_alpha)
+            # new_alpha = Image.new("L", result_img.size, 200)  # 0–255
+            # result_img.putalpha(new_alpha)
 
             # result_img.show()
 
@@ -105,8 +105,11 @@ def compile_images_func(
 
     if params["plotting.background_var.on"]:
         initial_field_path = os.path.join(cwd, initial_field_file)
+        # result_img.show()
         initial_field = Image.open(initial_field_path).convert("RGBA")
-        result_img = paste_image(initial_field, result_img, position=(0, 0))
+        # initial_field.show()
+        # input()
+        result_img = paste_image(initial_field, result_img, position=(0, 0), preserve_dark_bg=True, black_threshold=150)
 
     if params["plotting.contour.on"]:
         contour_path = os.path.join(cwd, contour_field)
@@ -140,18 +143,58 @@ def compile_images_func(
     fig.savefig(os.path.join(cwd, params["file.output_filename"] + ".png"), dpi=800, bbox_inches="tight", pad_inches=0)
 
 
-def paste_image(background, overlay, position):
+def paste_image(background, overlay, position, preserve_dark_bg=False, black_threshold=30):
     from PIL import Image
     import numpy as np
-    """Paste overlay onto background at the given position using overlay's alpha channel as mask."""
+
+    """
+    Paste overlay onto background at the given position.
+
+    Args:
+        preserve_dark_bg (bool): If True, prevents overwriting dark background pixels.
+        black_threshold (int): Pixel values below this (0–255) are considered "dark".
+                               Applies per channel (R, G, B).
+
+    """
     x, y = position
 
     overlay_arr = np.array(overlay)
-    mask = np.sum(overlay_arr[:, :, :3], axis=2) < 765
-    mask_img = Image.fromarray((mask * 255).astype(np.uint8))
+    bg_arr = np.array(background)
+
+    # Base mask: non-white pixels from overlay
+    overlay_mask = np.sum(overlay_arr[:, :, :3], axis=2) < 765
+
+    if preserve_dark_bg:
+        h, w = overlay_arr.shape[:2]
+
+        # Crop corresponding region from background
+        bg_crop = bg_arr[y:y+h, x:x+w]
+
+        # Detect dark pixels in background (all channels below threshold)
+        bg_dark_mask = np.all(bg_crop[:, :, :3] <= black_threshold, axis=2)
+
+        # Final mask: overlay AND NOT dark background
+        final_mask = overlay_mask & (~bg_dark_mask)
+    else:
+        final_mask = overlay_mask
+
+    mask_img = Image.fromarray((final_mask * 255).astype(np.uint8))
 
     background.paste(overlay, (x, y), mask_img)
     return background
+
+# def paste_image(background, overlay, position):
+#     from PIL import Image
+#     import numpy as np
+#     """Paste overlay onto background at the given position using overlay's alpha channel as mask."""
+#     x, y = position
+
+#     overlay_arr = np.array(overlay)
+#     mask = np.sum(overlay_arr[:, :, :3], axis=2) < 765
+#     mask_img = Image.fromarray((mask * 255).astype(np.uint8))
+
+#     background.paste(overlay, (x, y), mask_img)
+#     return background
 
 def progress_bar(i, total, width=40):
     import sys

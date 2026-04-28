@@ -21,7 +21,7 @@ DATA_DIR="$1"
 # conda init > /dev/null 2>&1
 
 echo "Running VisIt CLI script on ${DATA_DIR}..."
-visit -cli -np ${NP} -s -nowin "${VISIT_SCRIPT}" "${DATA_DIR}"
+visit -cli -np ${NP} -nowin -s "${VISIT_SCRIPT}" "${DATA_DIR}"
 
 # echo "Activating conda environment: ${CONDA_ENV}"
 # source "$(conda info --base)/etc/profile.d/conda.sh"

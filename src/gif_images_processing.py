@@ -35,8 +35,11 @@ if params["gif_images.mode"] == "movie":
     elif params["gif_images.filetype"] == "webm":
         images_to_webm(image_list, params, fps=fps)
     else:
-        print("Unsupported file type")
+        print("Unsupported gif_images.filetype")
 elif params["gif_images.mode"] == "grid":
     images_to_grid(image_list, params)
+
+if params["gif_images.mode"] != "movie" or params["gif_images.mode"] != "grid":
+    print("unsupported gif_images.mode")
 
 delete_delete_me_files()
