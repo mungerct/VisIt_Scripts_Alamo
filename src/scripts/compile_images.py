@@ -36,7 +36,9 @@ def compile_images_func(
     
     if params["high_var.mode"] == "time":
         total = len(filenames)
-        cmap = get_colormap(params["plotting.main_plotting_var.colormap"])  # first = yellow
+        start = 0.0 # TODO Add as input in input deck
+        end = 1.0
+        cmap = get_colormap(params["plotting.main_plotting_var.colormap"], start=start, end=end)  # first = yellow
         norm_indices = np.linspace(0, 1, total)
 
         composite_arr = None  # to hold the growing composite
@@ -94,7 +96,7 @@ def compile_images_func(
         # Apply colormap
         mask = result_arr < 255 
         norm = result_arr / 255.0
-        start = 0.35 # TODO Add as input in input deck
+        start = 0.0 # TODO Add as input in input deck
         end = 1.0
         cmap = get_colormap(params["plotting.main_plotting_var.colormap"], start=start, end=end)
         # cmap = get_truncated_cmap(params["plotting.main_plotting_var.colormap"], end, start)
@@ -237,23 +239,12 @@ def get_colormap(name, N=256, start=0.0, end=1.0):
 
     if name in CUSTOM_COLORMAPS:
         base_cmap = CUSTOM_COLORMAPS[name](N)
+        colors = base_cmap(np.linspace(end, start, N))
+        return mpl.colors.ListedColormap(colors)
     else:
         base_cmap = plt.cm.get_cmap(name, N)
-
-    # If using full range, return as-is
-    if start == 0.0 and end == 1.0:
-        return base_cmap
-
-    # Otherwise truncate
-    colors = base_cmap(np.linspace(start, end, N))
-    return mpl.colors.ListedColormap(colors)
-
-# def get_colormap(name, N=256):
-#     import matplotlib.pyplot as plt
-#     if name in CUSTOM_COLORMAPS:
-#         return CUSTOM_COLORMAPS[name](N)
-#     else:
-#         return plt.cm.get_cmap(name, N)
+        colors = base_cmap(np.linspace(start, end, N))
+        return mpl.colors.ListedColormap(colors)
 
 def latex_text_image(
     text,
@@ -315,7 +306,7 @@ def add_colorbar(fig, ax, params):
             vmin = time_arr[0]
             vmax = time_arr[-1]
 
-        start = 0.35 # TODO Add as input in input deck
+        start = 0.0 # TODO Add as input in input deck
         end = 1.0
         # cmap = get_truncated_cmap(params["plotting.main_plotting_var.colormap"], start, end)
         cmap = get_colormap(params["plotting.main_plotting_var.colormap"], start=start, end=end)
